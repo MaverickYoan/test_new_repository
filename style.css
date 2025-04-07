@@ -1,0 +1,972 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
+* {
+    border: 1px solid rgb(76, 0, 255);
+}--*/
+
+/*--couleur du fond--*/
+body {
+    background-color: #ffffff;
+    font-family: 'Poppins', 'Volkohv', 'Opens_Sans';
+    /*background-color: #d3ded3a1;*/
+    margin: 0;
+    padding: 0;
+}
+
+/*Styles spécifiques pour les écrans de taille moyenne type tablette*/
+@media screen and (max-width: 810px) {
+
+    /*body {
+        background-color: greenyellow;
+    }*/
+
+    /*--navbar responsive--*/
+    .navlinks ul {
+        font-size: larger;
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .header-global {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-responsive3 {
+        margin-top: 0rem;
+    }
+
+    .cheftextbis {
+        text-align: center;
+        margin-bottom: 0rem;
+    }
+
+    #wrapper_illustration_11 {
+        /*display: none;*/
+        /*width: fit-content;*/
+        width: 250px;
+        position: relative;
+        transform: translateY(80px);
+
+    }
+
+    #wrapper_illustration_3 {
+        /*display: none;*/
+        /*width: fit-content;*/
+        width: 250px;
+        position: relative;
+        margin-left: 250px;
+        transform: translateX(200px);
+        transform: translateY(30px);
+        z-index: 3;
+    }
+
+    h6 {
+        padding-top: 00px;
+    }
+
+    /*_______afficher la vidéo puis l'image du chef_______transform-translate..._____________________*/
+    iframe {
+        width: 100%;
+    }
+
+    .footer {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+
+    .google,
+    .apple {
+        width: 40%;
+    }
+
+    /*__________________________faire un diaporama des slider-container slider-1_____________________________________________*/
+    /*-- slider --*/
+    .slider-1 {
+        width: auto;
+        max-width: fit-content;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slider-1 .slider {
+        animation: slider-1 12s infinite ease-in-out;
+    }
+
+    .slider-1 figure {
+        background-color: white;
+        padding: 0px 0;
+        width: 100%;
+        height: 430px;
+        text-align: center;
+        font-size: 13.5pt;
+    }
+
+    /*animation des plats*/
+    @keyframes slider-1 {
+
+        0%,
+        20% {
+            transform: translateX(101%);
+        }
+
+        30%,
+        60% {
+            transform: translateX(-0%);
+        }
+
+        70%,
+        100% {
+            transform: translateX(-107%);
+        }
+    }
+
+    /*section des makis qui changent de disposition*/
+
+    .maki-responsive {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #UberEats {
+        width: 50px;
+        height: 50px;
+    }
+
+    .form-titre,
+    .form-sous-titre,
+    .contact {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .form-titre {
+        display: flex;
+        justify-content: center;
+        margin-left: 25%;
+    }
+
+    .form-sous-titre {
+        margin-left: 20%;
+    }
+
+    .form {
+        margin-left: 25%;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 330px;
+        position: relative;
+        margin: auto;
+        margin-top: 1rem;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 5%;
+        overflow: hidden;
+    }
+
+    /* Hide slides by default */
+    .plat-slides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 1s ease-in-out;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Position the "next" button to the right */
+    .next {
+        right: 0;
+        border-radius: 5px 0 0 5px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .text {
+        text-align: center;
+    }
+}
+
+/*dispose les éléments et met sur la même ligne */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    z-index: 99;
+}
+
+/*--variables couleurs pour le boutton Découvrir la carte--*/
+body {
+    --accentcolor: #fab31af2;
+    --txtcolor: #5F6383;
+    --titre: #DF6951;
+}
+
+/*--navbar fixe au top de la page web--*/
+.navbar {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+
+/*display flex aligne les éléments*/
+.navbar .navlinks ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+/*marge entre les éléments et taille*/
+.navbar .navlinks ul li {
+    margin: 0;
+}
+
+/*espace entre les éléments et taille*/
+.navbar .navlinks ul li.active a {
+    color: rgb(216, 137, 17);
+    font-weight: 700;
+}
+
+/*menu burger taille et position*/
+.burger {
+    position: relative;
+    right: 50px;
+    width: 25px;
+}
+
+/**/
+.navlinks.mobile-menu {
+    margin-left: 0;
+    display: none;
+}
+
+/*disposition de la navbar*/
+.navlinks ul {
+    display: flex;
+    flex-direction: inline;
+    align-items: center;
+    gap: 2em;
+}
+
+/*________________________________________________________________________*/
+
+header {
+    padding-top: 7rem;
+    width: 100%;
+    background-image: url(illustration_principale.jpg);
+    background-size: cover;
+}
+
+.header-responsive2 {
+    margin-left: 5.5rem;
+    width: auto;
+    font-size: calc(20pt + 4.5vw);
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*--titre UN VOYAGE CULINAIRE GOURMET ET GOURMAND.--*/
+#titre {
+    left: 0;
+    margin-left: 4rem;
+    font-family: 'Poppins';
+    color: var(--titre);
+    font-weight: bold;
+    font-size: 15pt;
+    text-align: left;
+}
+
+#voyage {
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+/*--Bienvenue au restaurant Jadoo avec une image bottom--*/
+.Bienvenue {
+    background-image: url(souligne_rose.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+/*--sous-texte Bienvenue Jadoo vous accueille dans son ambiance zen et épurée...--*/
+.titre {
+    font-family: 'Poppins';
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12pt;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+/*_______________________________________________________________________*/
+
+/*--global style du bouton Découvrir la carte--*/
+.favorite-styled1 {
+    display: flex;
+    justify-self: center;
+    border-radius: 10px;
+    width: 220px;
+    height: 50px;
+    background-color: var(--accentcolor);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    transition-property: var(--accentcolor);
+    transition-duration: 4ms;
+}
+
+/*--header style du bouton Découvrir la carte--*/
+.favorite-styled2,
+.favorite-styled3 {
+    display: flex;
+}
+
+/*--header style du bouton Découvrir la carte quand nous passons la souris dessus--*/
+.favorite-styled2,
+.favorite-styled3:hover {
+    background-color: #c271c9b4;
+}
+
+/*--header style du bouton Découvrir la carte quand nous cliquons dessus--*/
+.favorite-styled2,
+.favorite-styled3:active {
+    background-color: green;
+}
+
+/*--header style du bouton Découvrir la carte--*/
+.favorite-styled2,
+.favorite-styled3 {
+    display: flex;
+    justify-self: center;
+    border: #000000;
+    border-radius: 10px;
+    background-color: var(--accentcolor);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    transition-property: var(--accentcolor);
+    transition-duration: 4ms;
+    width: 220px;
+}
+
+.favorite-styled2 {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 1rem;
+    font-size: 15pt;
+    text-align: center;
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.favorite-styled3 {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 1rem;
+    font-size: 15pt;
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.bouton3 {
+    padding-bottom: 20px;
+}
+
+/*________________________________________________________________________*/
+
+/*positionnement logo jadoo dans le bloc navbar*/
+.logos {
+    position: absolute
+}
+
+/*taille icone logo_jadoo_1.svg*/
+.logo_jadoo_1_anim {
+    height: 2em;
+    display: inline;
+    justify-content: center;
+}
+
+/*param animation logo top left icon jadoo sur passage souris*/
+.logo_jadoo_1_anim:hover {
+    height: 2em;
+    animation: logo 0.4s 1 ease-in-out;
+}
+
+/*param rotattion animation logo top left icon jadoo sur passage souris*/
+@keyframes logo {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+/*taille icone logo_jadoo_1.svg*/
+.logo2bis {
+    height: 3em;
+    display: inline;
+    justify-content: center;
+}
+
+/*param animation logo top left icon jadoo sur passage souris*/
+.logo2bis:hover {
+    height: 3em;
+    animation: logo 0.4s 1 ease-in-out;
+}
+
+/*taille icone logo_jadoo_2.svg titre jadoo*/
+.logo2 {
+    height: 2em;
+    display: inline;
+    justify-content: center;
+}
+
+/*taille icone logo_jadoo_1bis.svg et logo_jadoo_2bis.svg*/
+.logo1bis,
+.logo2bis {
+    height: 3em;
+    display: inline;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/*taille icone logo_jadoo_1delta.svg et logo_jadoo_2bis.svg*/
+.logo2delta {
+    height: 3.5em;
+}
+
+/*_______________________________________________________________________*/
+
+/*--titre Découvrez section slider-container slider-1--*/
+.discover {
+    padding-top: 3rem;
+    background-image: url(decor_1.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: auto;
+    color: lightslategray;
+    font-family: 'Poppins';
+    font-size: 13.5pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*--sous-titre Les nouveautés Jadoo section slider-container slider-1--*/
+.news {
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin: 0%;
+    color: #14183E;
+    font-family: 'Volkhov';
+    font-size: 37.5pt;
+    font-weight: 700;
+    text-align: center;
+}
+
+/*--section des slider-container slider-1--*/
+.slider-container {
+    border: #000000;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+/*--section des slider-container slider-1--*/
+.slider {
+    display: flex;
+    justify-content: center;
+    width: 335px;
+    border-radius: 25%;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.plats {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+/*--encadré en dessous des slider-container slider-1--*/
+.plat_1,
+.plat_2,
+.plat_3 {
+    border: 2px solid #000000;
+    width: 300px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    text-align: center;
+    font-family: 'Poppins';
+    font-family: 'Poppins';
+    color: #696C8A;
+    font-size: 13.5pt;
+    width: auto;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/*--section des makis--*/
+
+.maki-bold {
+    display: block;
+    justify-content: center;
+}
+
+/*--section des makis--*/
+.maki {
+    margin-top: 2rem;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/*--encadré avec border radius et titre makis bold et sous-texte --*/
+/*--titre makis bold--*/
+.maki-bold {
+    font-family: 'Poppins';
+    color: #000000;
+    font-size: 13.5pt;
+    font-weight: bold;
+}
+
+/*-- encadré avec border radius et sous-texte--*/
+.maki_1,
+.maki_2,
+.maki_3,
+.maki_4 {
+    border-radius: 25px;
+    font-family: 'Poppins';
+    font-size: 12pt;
+    font-weight: 200;
+    color: #696C8A;
+    text-align: center;
+    width: auto;
+}
+
+.maki_3,
+.maki_4 {
+    z-index: 0;
+}
+
+.background_carre {
+    width: 250px;
+    height: 250px;
+}
+
+.background_carre:hover {
+    position: relative;
+    background-color: #d4d0d0;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #b2b9b2e1;
+    border-radius: 25px;
+}
+
+.rose {
+    border: 1px solid #DF6951;
+    background-color: #DF6951;
+    width: 80px;
+    height: 80px;
+    bottom: 0;
+    left: -50px;
+    position: absolute;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+
+.rose:hover {
+    transform: rotate(0deg);
+    transition-duration: 0.9s;
+    opacity: 1;
+    animation: ro 0.9s 1 ease-in-out;
+    isolation: isolate;
+}
+
+@keyframes ro {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-45deg);
+    }
+}
+
+/*_______________________________________________________________________*/
+
+/*--section chef--*/
+/*--vidéo chef--*/
+iframe {
+    padding: 1% 0% 0% 2%;
+    border: #000000;
+    border-radius: "20px"
+}
+
+/*--image de fond de la section chef--*/
+.chef {
+    background-image: url(illustration_chef.jpg);
+    background-size: cover;
+}
+
+#voyage {
+    margin-left: 2rem;
+}
+
+/*--texte Un voyage gastro... avec une image bottom--*/
+.voyage {
+    background-image: url(souligne_rose.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+/*--texte top section chef avec classe commander--*/
+.voyage {
+    font-family: 'Volkhov';
+    font-size: 60px;
+    font-weight: bold;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+}
+
+.cheftext {
+    margin-left: 10%;
+}
+
+/*--texte bottom section chef avec classe commander--*/
+.cheftextbis {
+    font-family: 'Poppins';
+    font-size: 12.5pt;
+    color: #ffffff;
+    text-align: left;
+    width: 100%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+}
+
+/*_______________________________________________________________________*/
+
+/*--section chef avec image commander, classes rapide et commandez sur le site Jadoo--*/
+
+/*--deux images qui se supperposent de moitié avec la section commandez sur le site--*/
+#wrapper {
+    position: absolute;
+    transform: translateY(-40%);
+    padding-left: 0;
+    height: auto;
+    /*z-index: 99;*/
+}
+
+/*--image--*/
+.commander {
+    position: relative;
+    background-image: url(illustration_commander.jpg);
+    background-size: cover;
+}
+
+h5 {
+    padding-top: 00px;
+    margin-left: 10%;
+    font-family: 'Volkhov';
+    color: var(--titre);
+    font-size: 37.5pt;
+    width: 80%;
+}
+
+/*--texte commandez...--*/
+h6 {
+    margin-left: 10%;
+    font-family: 'Volkhov';
+    color: var(--titre);
+    font-size: 37.5pt;
+    width: 80%;
+}
+
+/*--suite du texte commandez...--*/
+.sur {
+    margin-left: 0%;
+    font-family: 'Volkhov';
+    color: #000000;
+    font-size: 37.5pt;
+    font-weight: bold;
+    width: 80%;
+}
+
+/*--textes des liens...--*/
+.liens {
+    margin-left: 10%;
+    display: flex;
+    justify-content: left;
+    gap: 1em;
+    color: #14183E;
+    width: 90%;
+}
+
+#UberEats {
+    width: 50px;
+}
+
+/*--texte rapide--*/
+.rapide {
+    font-family: 'Poppins';
+    color: var(--txtcolor);
+    font-size: 12pt;
+    width: 80%;
+    margin-top: 200px;
+}
+
+/*--textes au dessus du formulaire--*/
+
+/*--titre au dessus de la section du formulaire--*/
+.rdv {
+    margin-top: 3rem;
+    font-family: 'Poppins';
+    font-size: 13.5pt;
+    font-weight: bold;
+    text-align: center;
+    color: var(--txtcolor);
+}
+
+/*--sous-titre au dessus de la section du formulaire--*/
+.nous {
+    color: #000000;
+    font-family: 'Volkhov';
+    font-size: 37.5pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-sous-titre {
+    color: var(--txtcolor);
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-img {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    width: 250px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    opacity: 1;
+}
+
+aside>.contact {
+    margin: 1rem;
+}
+
+/*_______________________________________________________________________*/
+
+/*positionnement logo jadoo dans le bloc footer*/
+.logo {
+    position: static;
+}
+
+/*--footer flex-center-row-background-color--*/
+.footer,
+.uber,
+.uber-download {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    background-color: #F3F3F3;
+}
+
+.uber-download {
+    margin-bottom: 10px;
+}
+
+/*--padding--*/
+.footer {
+    padding-top: 5%;
+}
+
+/*--font--*/
+.gastro,
+.uber,
+.ligne,
+.droits {
+    font-family: 'Poppins';
+    font-size: 13.5pt;
+    font-weight: 400;
+    color: var(--txtcolor);
+}
+
+/*--padding-text-font---*/
+.table {
+    padding-left: 1rem;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 13.5pt;
+    font-weight: lighter;
+    color: var(--txtcolor);
+}
+
+/*--padding-color-font--*/
+.Restaurant,
+.table-titre {
+    padding: 1rem;
+    color: #000000;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*--tous droits réservés--*/
+.droits {
+    display: contents;
+    align-items: bottom;
+    text-align: center;
+    background-color: #eee7e7ba;
+    font-size: small;
+}
+
+/*-------------navbar au propre----------------*/
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: var(--accentcolor);
+    text-decoration: none;
+}
+
+/* Burger menu styles */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--accentcolor);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
