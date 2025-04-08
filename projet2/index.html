@@ -15,7 +15,7 @@
     <link href=fonts.css rel=stylesheet>
     <link href=style.css rel=stylesheet>
     <!-- Titre -->
-    <title>Projet_2</title>
+    <title>Clair'Pets</title>
 </head>
 
 <body>
@@ -32,6 +32,14 @@
                     <li><a href="#shop">Shop</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class=logo>
+                </div>
+                <div class="burger" id="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
             </nav>
         </div>
     </header>
@@ -39,12 +47,11 @@
     <!-- Welcome section - ---------------------------------------------- -->
     <section id="welcome">
         <div class="welcome">
-            <h1>Welcome</h1>
+            <div class="section-image-chat"></div>
+            <h1>Clair’Pet apporte une solution à la vue de votre animal !</h1>
+            <p>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur qualité de
+                vie.</p>
             <p>Une vision claire pour nos amis à quatre pattes !</p>
-        </div>
-        <div class="section-image-chat">
-            <img src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan" />
-
 
     </section>
 
@@ -66,14 +73,13 @@
             <h1>contact</h1>
             <p>Une vision claire pour nos amis à quatre pattes !</p>
         </div>
-        <div class="section-image-chat">
-            <img src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan" />
-
-
     </section>
 
     <!-- Droits section - Informations légales -->
     <footer class="footer">
+        <a href="https://www.direct-optic.fr/mag-optique/lunettes-animaux" class="back-to-top" target="_blank">Site web
+            de lunettes pour
+            animaux</a>
         <div class="droits"><img src="" alt="">
             <p>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro</p>
             <p>Mentions légales | Politique de confidentialité</p>
@@ -81,7 +87,16 @@
 
 </body>
 
-<!-- Script section - Script manu burger -->
+<!-- Script Section : Script pour activer le menu mobile -->
 <script src="script.js"></script>
+<script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+
 
 </html>
