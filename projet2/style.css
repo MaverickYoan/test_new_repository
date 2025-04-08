@@ -5,14 +5,37 @@
     padding: 0;
 }
 
-/*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)--*/
+/*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
 * {
     border: 1px solid blue;
-}
+}--*/
 
-@media screen and (max-width: 600px) {
+/*--responsive--*/
+@media screen and (max-width: 810px) {
     * {
         border: 1px solid rgb(0, 255, 26);
     }
 
+}
+
+.navbar {
+    width: 100%;
+    background-color: #000000;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+header {}
+
+.contact {
+    background-image: url(husky.jpg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
 }
