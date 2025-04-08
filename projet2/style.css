@@ -7,5 +7,12 @@
 
 /*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)--*/
 * {
-    border: 1px solid blue outline: 1px solid red;
+    border: 1px solid blue;
+}
+
+@media screen and (max-width: 600px) {
+    * {
+        border: 1px solid rgb(0, 255, 26);
+    }
+
 }
