@@ -1,0 +1,11 @@
+*::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)--*/
+* {
+    border: 1px solid blue outline: 1px solid red;
+}
