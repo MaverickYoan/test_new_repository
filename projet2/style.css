@@ -21,6 +21,16 @@
     * {
         border: 1px solid rgb(0, 255, 26);
     } --*/
+    header,
+    .welcome,
+    .shop,
+    .contact,
+    .footer {
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+    }
 
     .nav-links {
         display: none;
@@ -60,6 +70,13 @@
     }
 
 
+    .husky {
+        width: 200px;
+        height: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
 
 }
 
@@ -74,8 +91,12 @@ body {
 }
 
 /*________________header_____________________*/
-
 header {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.welcome {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -83,7 +104,34 @@ header {
     margin-top: 4rem;
     border: #ffffff solid 2px;
     width: 800px;
-    height: 150px
+    height: 150px;
+}
+
+.hero-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 4rem;
+    border: #ffffff solid 2px;
+    width: 800px;
+    height: 150px;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border: #ffffff solid 2px;
+    width: 800px;
+    height: 250px;
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
 }
 
 /*________________footer_____________________*/
@@ -142,27 +190,13 @@ footer {
 /*________________burger_____________________*/
 
 /*-- menu burger taille et position --*/
-.burger {
+/* .burger {
     position: relative;
     right: 50px;
     width: 25px;
-}
+} */
 
 /*________________contact_____________________*/
-
-.husky {
-    width: 50px;
-    height: 50px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.contact {
-    margin-top: 6rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    color: rgb(255, 255, 255)
-}
 
 .form {
     border: 1px solid black;
@@ -176,6 +210,10 @@ footer {
     align-items: center;
     gap: 1rem;
     margin-left: 15%;
+}
+
+.husky {
+    margin-left: 2rem;
 }
 
 /*_________________flèche retour en haut____________________*/
