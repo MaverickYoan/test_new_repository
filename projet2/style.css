@@ -45,6 +45,18 @@
         width: 25px;
     }
 
+    .burger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+
+
 }
 
 /*-------------navbar au propre----------------*/
@@ -103,18 +115,25 @@ footer {
     gap: 2rem;
 }
 
+/*menu burger taille et position*/
+.burger {
+    position: relative;
+    right: 50px;
+    width: 25px;
+}
+
+.husky {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 .contact {
     margin-top: 6rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    color: black
-}
-
-.contact {
-    background-image: url(husky.jpg);
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
+    color: rgb(255, 255, 255)
 }
 
 .form {
