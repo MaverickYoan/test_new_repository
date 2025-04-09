@@ -104,6 +104,15 @@ html {
         height: 200px;
     }
 
+    .section-image-chat {
+        display: none;
+    }
+
+    .section-text-chat {
+        padding: 5%;
+    }
+
+
     .contact,
     .form {
         margin-left: 0;
@@ -150,6 +159,7 @@ body {
     top: 0;
     height: auto;
     width: 100%;
+    z-index: 100;
 }
 
 .navbar {
@@ -389,8 +399,31 @@ footer {
     font-weight: bold;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 .btn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 16px;
+    background: #645f5f;
+    padding: 7px 10px 10px 10px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #153814;
+    text-decoration: none;
+}
+
+/*.btn {
     text-decoration: none;
     padding: 10px;
     font-family: arial;
@@ -412,7 +445,7 @@ footer {
     box-shadow: 1px 1px 4px #777777;
     -webkit-box-shadow: 1px 1px 4px #777777;
     -moz-box-shadow: 1px 1px 4px #777777;
-}
+} */
 
 
 
@@ -426,6 +459,7 @@ footer {
 /*------------------------BOUTON CLICK ME-------------------------*/
 /*----------------------------------------------------------------*/
 /*----------------------------------------------------------------*/
+
 /*----------------------------------------------------------------*/
 /*----------------------------------------------------------------*/
 /*----------------------------------------------------------------*/
