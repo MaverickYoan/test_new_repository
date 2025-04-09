@@ -24,15 +24,30 @@
     header,
     .welcome,
     .shop,
-    .contact,
     .footer {
+        font-size: calc(2pt + 2vw);
         padding-left: 10%;
         padding-right: 10%;
         display: flex;
         flex-direction: column;
     }
 
-    .nav-links {
+    body,
+    header,
+    .welcome,
+    .footer {
+        font-size: calc(2pt + 2vw);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shop {
+        display: contents;
+    }
+
+    . .nav-links {
         display: none;
         flex-direction: column;
         background-color: #444;
@@ -69,12 +84,23 @@
         background-color: transparent;
     }
 
+    .contact,
+    .form {
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     .husky {
         width: 200px;
         height: auto;
         margin-left: 1rem;
         margin-right: 1rem;
+        display: none;
+        opacity: 0;
     }
 
 
@@ -197,6 +223,14 @@ footer {
 } */
 
 /*________________contact_____________________*/
+.contact {
+    background-image: url(husky.jpg);
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
 
 .form {
     border: 1px solid black;
@@ -326,6 +360,15 @@ footer {
     }
 }
 
+.header {
+    margin-left: 5.5rem;
+    width: auto;
+    font-size: calc(20pt + 4.5vw);
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
+}
 
 
 
