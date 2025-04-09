@@ -5,18 +5,22 @@
     padding: 0;
 }
 
-/*--créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
+/*________________blue outline_____________________*/
+
+/*-- créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
 * {
     border: 1px solid blue;
-}--*/
+} --*/
 
-/*--responsive--*/
+/*________________responsive_____________________*/
+
+/*-- responsive --*/
 @media screen and (max-width: 810px) {
 
-    /*
+    /*-- 
     * {
         border: 1px solid rgb(0, 255, 26);
-    }*/
+    } --*/
 
     .nav-links {
         display: none;
@@ -37,7 +41,7 @@
         display: flex;
     }
 
-    /*menu burger taille et position*/
+    /*-- menu burger taille et position --*/
     .burger {
         position: relative;
         color: black;
@@ -59,8 +63,9 @@
 
 }
 
-/*-------------navbar au propre----------------*/
-/* Body*/
+/*________________body_____________________*/
+
+/*-- Body --*/
 body {
     color: white;
     margin: 0;
@@ -69,9 +74,13 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
+/*________________header_____________________*/
+
 header {
     margin-top: 0;
 }
+
+/*________________footer_____________________*/
 
 footer {
     text-align: center;
@@ -79,12 +88,21 @@ footer {
     padding-bottom: 1rem;
 }
 
+/*________________welcome_____________________*/
+
 #welcome {
-    background-image: url(vision-chat-nuit.jpg);
-    background-size: cover;
-    background-position: center;
     width: 100%;
     color: white;
+}
+
+/*________________navbar_____________________*/
+/*--navbar fixe au top de la page web--*/
+.navbar {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
 }
 
 .navbar {
@@ -93,7 +111,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 .nav-links {
@@ -115,12 +133,16 @@ footer {
     gap: 2rem;
 }
 
-/*menu burger taille et position*/
+/*________________burger_____________________*/
+
+/*-- menu burger taille et position --*/
 .burger {
     position: relative;
     right: 50px;
     width: 25px;
 }
+
+/*________________contact_____________________*/
 
 .husky {
     width: 50px;
@@ -148,4 +170,113 @@ footer {
     align-items: center;
     gap: 1rem;
     margin-left: 15%;
+}
+
+/*_________________Flêche retour en haut____________________*/
+/*-- flèche retour en haut --*/
+.back-to-top {
+    /*-- Basic styling --*/
+    background-color: oklch(100% 0 0);
+    border: 2px solid currentColor;
+    border-radius: 0.5rem;
+    display: inline-block;
+    padding: 0.3rem;
+    /*-- Hidden by default --*/
+    position: fixed;
+    inset: auto 2rem 2rem auto;
+}
+
+/*-- utiliser la couleur du texte --*/
+.back-to-top:is(:link, :visited) {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/*-- masquer le texte retour en haut --*/
+.back-to-top span {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.back-to-top {
+    --green: oklch(85.33% 0.15 141.46);
+    --white: oklch(100% 0 0);
+    background-image: linear-gradient(var(--green), var(--white));
+}
+
+.back-to-top {
+    background-image: linear-gradient(var(--green) 0% 50%, var(--white) 50% 100%);
+}
+
+.back-to-top {
+    background-image: linear-gradient(var(--green) 0% var(--white) var(--progress) 100%);
+}
+
+/*-- animation progression de couleur la flèche --*/
+@keyframes progress {
+    0% {
+        --progress: 0%;
+    }
+
+    100% {
+        --progress: 100%;
+    }
+}
+
+/*-- animation de la flèche --*/
+.back-to-top {
+    --green: oklch(85.33% 0.15 141.46);
+    --white: oklch(100% 0 0);
+    background-image: linear-gradient(var(--green) 0% var(--white) var(--progress) 100%);
+    animation: progress linear;
+    animation-timeline: scroll();
+}
+
+@property --progress {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: -90deg;
+}
+
+@keyframes progress {
+    0% {
+        --progress: 0%;
+        --angle: 90deg;
+    }
+
+    2% {
+        --angle: 90deg;
+
+    }
+
+    100% {
+        --progress: 100%;
+    }
+}
+
+.back-to-top svg {
+    transform: rotate(var(--angle));
+}
+
+@supports not (animation-timeline: scroll; ) {
+    .back-to-top {
+        background: var(--green);
+    }
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
