@@ -95,7 +95,6 @@
     }
 
     .husky {
-        width: 200px;
         height: auto;
         margin-left: 1rem;
         margin-right: 1rem;
@@ -247,7 +246,9 @@ footer {
 }
 
 .husky {
-    margin-left: 2rem;
+
+    width: 300px;
+    margin-left: 1rem;
 }
 
 /*_________________flèche retour en haut____________________*/
