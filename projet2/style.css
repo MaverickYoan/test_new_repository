@@ -373,7 +373,7 @@ footer {
     }
 }
 
-@supports not (animation-timeline: scroll; ) {
+@supports not (animation-timeline: scroll) {
     .back-to-top {
         background: var(--green);
     }
