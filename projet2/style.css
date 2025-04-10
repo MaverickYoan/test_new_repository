@@ -1,8 +1,8 @@
 *::before,
-/* ::after {
-    box-sizing: border-box; */
-margin: 0;
-padding: 0;
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /*________________blue outline_____________________*/
@@ -25,12 +25,11 @@ html {
 /*-- responsive --*/
 @media screen and (max-width: 810px) {
 
-    /*-- 
     * {
         border: 1px solid rgb(0, 255, 26);
-    } --*/
+    }
 
-    html {
+    -- html {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,6 +46,19 @@ html {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .logo {
+        position: absolute;
+        margin-left: 1rem;
+        left: 0;
+        width: max-content;
+        height: 50%;
+
+    }
+
+    .navbar {
+        background-color: rgb(255, 255, 255);
     }
 
     .nav-links {
@@ -142,29 +154,25 @@ body {
 }
 
 /*________________header_____________________*/
-/* header {
-    padding-left: 10%;
-    padding-right: 10%;
-} */
+header {
+    padding-top: 10%;
+}
 
 
 /*________________navbar_____________________*/
 /*--navbar fixe au top de la page web--*/
 .navbar {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background-color: #000000;
     position: fixed;
-    top: 0;
-    height: auto;
-    width: 100%;
-    z-index: 100;
-}
-
-.navbar {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    top: 0;
+    height: auto;
+    width: 100%;
+    z-index: 100;
 }
 
 .nav-links {

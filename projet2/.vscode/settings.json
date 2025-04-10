@@ -2,5 +2,6 @@
     "workbench.editor.labelFormat": "default",
     "workbench.editor.enablePreviewFromCodeNavigation": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
-    "workbench.editor.openSideBySideDirection": "down"
+    "workbench.editor.openSideBySideDirection": "down",
+    "vscode-edge-devtools.headless": false
 }
