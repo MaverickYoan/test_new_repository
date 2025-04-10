@@ -133,10 +133,40 @@ body {
 /*________________navbar_____________________*/
 /*--navbar fixe au top de la page web--*/
 
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+h1 {
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: 250px;
+}
 
+h1 span {
+    font-weight: 600;
+}
 
-
+.nav-toggler {
+    /* position: fixed;
+    z-index: 10; */
+    top: 30;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #307926;
+    outline: bleu;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
