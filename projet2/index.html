@@ -19,33 +19,36 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href=fonts.css rel=stylesheet>
     <link href=style.css rel=stylesheet>
-    <link href=style-bouton.css rel=stylesheet>
     <!-- Titre -->
     <title>Clair'Pets</title>
 </head>
 
 <body id="content" class="body">
+    <!-- Navbar section - ------------------------------------------------>
+    <nav>
+        <a href="#welcome">Welcome</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" aria-label="toogle-curtain-navigation" class="nav-toggler">
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+    </button>
 
-    <!-- Navbar section - ---------------------------------------------- -->
-    <div class="navbar">
-        <div class="logo">
-            <img src="favicon.ico" width="10px" alt="Logo de chat portant nos belles lunettes">
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="#welcome">Welcome</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger" id="burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
-    </div>
+    <section class="class home">
+        <h1>Le <span>menun rideau</span></h1>
+    </section>
 
-    <!-- Welcome section - ---------------------------------------------- -->
+
+
+
+
+    <!-- <div class="navbar">
+        <img class="logo" src="favicon.ico" width="10px" alt="Logo de chat portant nos belles lunettes">
+    </div> -->
+
+    <!-- Welcome section - ------------------------------------------------>
     <header>
         <section id="welcome">
             <div class="welcome">
@@ -61,7 +64,7 @@
 
     <h1>Une vision claire pour nos amis à quatre pattes !</h1>
 
-    <!-- Shop section - ---------------------------------------------- -->
+    <!-- Shop section - ------------------------------------------------>
     <div id="shop">
         <h1 class="shop">shop</h1>
     </div>
@@ -77,7 +80,7 @@
     </div>
     </section>
 
-    <!-- Contact section - ---------------------------------------------- -->
+    <!-- Contact section - ------------------------------------------------>
     <article id="contact">
 
         <h2 class="titre-contact">contact</h2>
@@ -113,55 +116,10 @@
         </a>
     </footer>
 
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
+    ------------------------------------------------>
+    <!-- Script Section : Script pour activer le menu mobile -->
+    <script src="script.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
-    <!-- Bouton click on me please to buy my honey pet's glasses - ---------------------------------------------- -->
 </body>
-
-<!-- Script Section : Script pour activer le menu mobile -->
-<script>
-    const burger = document.getElementById('burger');
-    const navLinks = document.querySelector('.nav-links');
-
-    burger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-    });
-</script>
-
 
 </html>

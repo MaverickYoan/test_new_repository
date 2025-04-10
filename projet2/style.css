@@ -25,16 +25,28 @@ html {
 /*-- responsive --*/
 @media screen and (max-width: 810px) {
 
-    * {
+    /* * {
         border: 1px solid rgb(0, 255, 26);
-    }
+    } */
 
-    -- html {
+    html {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
+
+    /*________________navbar_____________________*/
+    /*--navbar fixe au top de la page web--*/
+
+
+
+
+
+
+
+    /*________________header_____________________*/
+    /*--header, welcome, footer disposition--*/
 
     header,
     .welcome,
@@ -48,38 +60,6 @@ html {
         justify-content: center;
     }
 
-    .navbar {
-        background-color: rgb(255, 255, 255);
-    }
-
-    li {
-        display: none;
-        flex-direction: column;
-        background-color: #444;
-        position: absolute;
-        right: 0;
-        width: auto;
-        padding: 1rem;
-    }
-
-    /*-- menu burger taille et position --*/
-    .burger {
-        position: relative;
-        color: rgb(255, 255, 255);
-        right: 50px;
-        width: 25px;
-    }
-
-    .burger {
-        display: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        background-color: transparent;
-    }
 
     .shop {
         background-image: url(2419b0346ce9b26e2070499fb9604a72d6a29337_original.jpeg);
@@ -125,8 +105,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(0, 0, 0);
-    /* background-color: wheat; */
+    background-color: black;
+    /* background-color: white; */
 }
 
 .contact {
@@ -137,42 +117,22 @@ body {
 }
 
 /*________________header_____________________*/
-header {
+
+.header {
+    width: 100%;
     padding-top: 10%;
+    margin-left: 5.5rem;
+    font-size: calc(20pt + 4.5vw);
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 
 /*________________navbar_____________________*/
 /*--navbar fixe au top de la page web--*/
-.navbar {
-    /* background-color: #ffffff; */
-    background-color: #000000;
-    position: fixed;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    height: auto;
-    width: 100%;
-    z-index: 100;
-}
 
-li {
-    color: #ffffff;
-    list-style: none;
-    text-decoration: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.menu ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: left;
-    flex-direction: row;
-    gap: 2rem;
-}
 
 .logo {
     margin-left: 1rem;
@@ -382,16 +342,6 @@ footer {
     }
 }
 
-.header {
-    margin-left: 5.5rem;
-    width: 100%;
-    font-size: calc(20pt + 4.5vw);
-    font-family: 'Volkhov';
-    font-style: normal;
-    color: #ffffff;
-    font-weight: bold;
-}
-
 .btn-container {
     display: flex;
     justify-content: center;
@@ -415,46 +365,3 @@ footer {
     background: #153814;
     text-decoration: none;
 }
-
-/*.btn {
-    text-decoration: none;
-    padding: 10px;
-    font-family: arial;
-    font-size: 1em;
-    color: #FFFFFF;
-    background-color: #899F11;
-    border-radius: 24px;
-    -webkit-border-radius: 24px;
-    -moz-border-radius: 24px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 3px 3px 12px #444444;
-    -webkit-box-shadow: 3px 3px 12px #444444;
-    -moz-box-shadow: 3px 3px 12px #444444;
-}
-
-
-.btn:hover {
-    padding: 10px;
-    box-shadow: 1px 1px 4px #777777;
-    -webkit-box-shadow: 1px 1px 4px #777777;
-    -moz-box-shadow: 1px 1px 4px #777777;
-} */
-
-
-
-
-
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*------------------------BOUTON CLICK ME-------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
-/*----------------------------------------------------------------*/
