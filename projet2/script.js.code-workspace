@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.editor.labelFormat": "default",
+		"workbench.editor.enablePreviewFromCodeNavigation": true,
+		"workbench.editor.enablePreviewFromQuickOpen": true,
+		"workbench.editor.openSideBySideDirection": "down",
+		"vscode-edge-devtools.headless": false,
+		"liveServer.settings.CustomBrowser": "chrome"
+	}
+}
