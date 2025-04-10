@@ -29,32 +29,56 @@ html {
         border: 1px solid rgb(0, 255, 26);
     }
 
-    html {
+    -- html {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .header {
-        margin-left: 5.5rem;
-        width: 100%;
-        font-size: calc(1vh + 1vw);
-        font-family: 'Volkhov';
-        font-style: normal;
-        color: #ffffff;
-        font-weight: bold;
-    }
-
     header,
-    .welcome {
-        font-size: calc(1vh + 1vw);
+    .welcome,
+    .footer {
+        font-size: calc(2pt + 2vw);
         padding-left: 10%;
         padding-right: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .navbar {
+        background-color: rgb(255, 255, 255);
+    }
+
+    li {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        right: 0;
+        width: auto;
+        padding: 1rem;
+    }
+
+    /*-- menu burger taille et position --*/
+    .burger {
+        position: relative;
+        color: rgb(255, 255, 255);
+        right: 50px;
+        width: 25px;
+    }
+
+    .burger {
+        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        background-color: transparent;
     }
 
     .shop {
@@ -124,18 +148,30 @@ header {
     /* background-color: #ffffff; */
     background-color: #000000;
     position: fixed;
-    height: auto;
-    width: 100%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
+    height: auto;
+    width: 100%;
     z-index: 100;
 }
 
 li {
     color: #ffffff;
     list-style: none;
+    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .logo {
@@ -149,45 +185,12 @@ li {
 
 /*________________burger_____________________*/
 
-#burger {
-    /* Pour que la checkbox ne s'affiche pas */
-    display: none;
-}
-
-#burger-logo {
-    /* Pour que le curseur soit un pointeur */
-    cursor: pointer;
-    background: #ffffff;
-    width: 200px;
-    display: block;
-    color: rgb(0, 0, 0);
-    /* Pour que le menu hamburger s'affiche toujours */
-    text-align: right;
-    /* Pour que le menu hamburger soit "rangé" par défaut */
-    transform: translateX(-168px);
-    padding: 10px;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    background: black;
-    overflow: hidden;
-    width: 200px;
-    /* Pour que les liens soient "rangés" par défaut */
-    transform: translateX(-200px);
-}
-
-#burger-logo,
-.manu {
-    /* Pour qu'il y ait une animation */
-    transition: 0.7s ease-in-out;
-}
-
-/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
-#burger:checked~#burger-logo {
-    transform: translate(0);
-}
+/*-- menu burger taille et position --*/
+/* .burger {
+    position: relative;
+    right: 50px;
+    width: 25px;
+} */
 
 /*________________welcome_____________________*/
 
@@ -261,12 +264,12 @@ nav {
 footer {
     text-align: center;
     margin-top: 0;
+    padding-bottom: 1rem;
 }
 
 .droits {
-    font-size: small;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 /*_________________flèche retour en haut____________________*/
@@ -379,6 +382,16 @@ footer {
     }
 }
 
+.header {
+    margin-left: 5.5rem;
+    width: 100%;
+    font-size: calc(20pt + 4.5vw);
+    font-family: 'Volkhov';
+    font-style: normal;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 .btn-container {
     display: flex;
     justify-content: center;
@@ -402,3 +415,46 @@ footer {
     background: #153814;
     text-decoration: none;
 }
+
+/*.btn {
+    text-decoration: none;
+    padding: 10px;
+    font-family: arial;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: #899F11;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+}
+
+
+.btn:hover {
+    padding: 10px;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+} */
+
+
+
+
+
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*------------------------BOUTON CLICK ME-------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
