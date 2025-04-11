@@ -1,9 +1,4 @@
-const burgerButton = document.queryselector(".nav-toggler")
-const navigation = document.queryselector(".nav")
-
-burgerButton.addEventListenner("click", toggleNav)
-
-function toggleNav() {
-    burgerButton.classList.toggle("active")
-    navigation.classList.toggle("active")
-}
+document.getElementById('hamburgerMenu').addEventListener('click', function () {
+    this.classList.toggle('active');
+    document.getElementById('navLinks').classList.toggle('active');
+});

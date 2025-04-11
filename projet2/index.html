@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- test.06 burger  Informations de base et liens vers les fichiers CSS et typos -->
-
 <head>
     <meta charset=utf-8>
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
@@ -12,11 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Quicksand:wght@300;500&display=swap"
         rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <meta name="keywords"
-        content="hypermétropie, myopie, astigmatisme, lunettes, lunettes de vue, lunettes de vue pour animaux, lunettes de vue pour chats, lunettes de vue pour chiens">
+    <meta name="keywords" content="hypermétropie, myopie, astigmatisme, lunettes">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href=fonts.css rel=stylesheet>
     <link href=style.css rel=stylesheet>
@@ -24,24 +18,22 @@
     <title>Clair'Pets</title>
 </head>
 
-<body id="content">
-    <!-- Navbar section ------------->
-    <nav>
-        <a href="#welcome">Welcome</a>
-        <a href="#shop">Shop</a>
-        <a href="#contact">Contact</a>
+<body>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    <button type="button" aria-label="toogle-curtain-navigation" class="nav-toggler">
-        <span class="line l1"></span>
-        <span class="line l3"></span>
-    </button>
-
     <section class="home">
         <h1 id="welcome">Clair' <span>Pets</span></h1>
-    </section>
-
-
-    <!-- Welcome section -------------->
+    </section><!-- Welcome section -------------->
     <header>
         <section>
             <div class="welcome">
@@ -57,64 +49,17 @@
 
     <h3>Une vision claire pour nos amis à quatre pattes !</h3>
 
-    <!-- Shop section -------------->
-    <section>
-        <div id="shop">
-            <h2 class="shop">shop</h2>
-        </div>
 
-        <div class="hero-text">
-            <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
-            <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos
-                amis
-                les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes correctrices.
-            </p>
-        </div>
-        <div class="btn-container">
-            <button class="btn">Appel gratuit</button>
-        </div>
-    </section>
 
-    <!-- Contact section -------------->
-    <article id="contact">
-
-        <h2 class="titre-contact">contact</h2>
-        <p class="sous-titre-contact">Vous souhaitez améliorer la qualité de vie de votre animal ?</p><br>
-        <div class="contact">
-            <p>Formulaire de contact.</p>
-            <form class="form">
-                <input type="text" name="Prénom" id="prenom" placeholder="Prénom" required>
-                <input type="text" name="Nom" id="nom" placeholder="Nom" required>
-                <input type="email" name="Email" id="email" placeholder="Email" required>
-                <input type="tel" name="Téléphone" id="telephone" placeholder="Téléphone" required>
-                <input type="submit" value="Envoyer">
-            </form>
-            <img class="husky" src="husky.jpg" alt="image de chien Husky aux yeux verrons">
-
-        </div>
-    </article>
-
-    <!-- Droits section - Informations légales -->
-    <footer class="footer">
-        <div class="droits">
-            <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
-                <br>Mentions légales | Politique de confidentialité | Conditions générales de vente
-            </h6>
-        </div>
-        <a href="#content" class="back-to-top">
-            <span>Retour en haut</span>
-            <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
-            <svg width="32" height="32" viewbox=" 0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-            </svg>
-        </a>
-    </footer>
-
-    <!---------------->
-    <!-- Script Section : Script pour activer le menu mobile -->
-    <script src="script.js"></script>
-
+    <!-- back-to-top section -------------->
+    <a href="#content" class="back-to-top">
+        <span>Retour en haut</span>
+        <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
+        <svg width="32" height="32" viewbox=" 0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </svg>
+        <script src="script.js"></script>
 </body>
 
 </html>
