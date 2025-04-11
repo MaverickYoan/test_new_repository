@@ -5,11 +5,12 @@
     padding: 0;
 }
 
-/*  créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
+/* créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
 * {
     border: 1px solid blue;
-}  */
+} */
 
+/* Paramètre - body */
 body {
     width: 100%;
     color: white;
@@ -18,8 +19,10 @@ body {
     /* background-color: white; */
 }
 
+/* Paramètre - .navbar */
 .navbar {
     position: fixed;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +30,7 @@ body {
     padding: 10px 20px;
 }
 
+/* Paramètre - .nav-links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -34,10 +38,12 @@ body {
     padding: 0;
 }
 
+/* Paramètre - .nav-links & li -  margin */
 .nav-links li {
     margin-left: 20px;
 }
 
+/* Paramètre - .nav-links & a -  margin */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -93,7 +99,43 @@ body {
     }
 }
 
-/* ackToTop */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BackToTop */
 /*_________________flèche retour en haut____________________*/
 /*  flèche retour en haut  */
 .back-to-top {
