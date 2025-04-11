@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Interactive</title>
+    <style>
+        #cercle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cercle"></div>
+
+    <script>
+        const cercle = document.getElementById('cercle');
+        let taille = 100;
+        const couleurs = ['blue', 'green', 'red', 'purple', 'orange'];
+        let couleurIndex = 0;
+
+        cercle.addEventListener('click', () => {
+            taille += 20;
+            cercle.style.width = taille + 'px';
+            cercle.style.height = taille + 'px';
+
+            couleurIndex = (couleurIndex + 1) % couleurs.length;
+            cercle.style.backgroundColor = couleurs[couleurIndex];
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEK2OUF STARTER PACK</title>
+    <meta name="description" content="The ultimate underground experience with a retro 1999 vibe" />
+    <meta name="author" content="TEK2OUF" />
+
+    <meta property="og:title" content="TEK2OUF STARTER PACK" />
+    <meta property="og:description" content="The ultimate underground experience with a retro 1999 vibe" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tek2ouf" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script type="module" crossorigin src="/assets/index-ChdlIfd-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CN0KShol.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"92ee4ff64ccdf8cd","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.3.0","token":"dc79be98a7d9454985898a9490bd0402"}' crossorigin="anonymous"></script>
+</body>
+</html>
