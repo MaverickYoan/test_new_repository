@@ -4,5 +4,6 @@
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.openSideBySideDirection": "down",
     "vscode-edge-devtools.headless": false,
-    "liveServer.settings.CustomBrowser": "chrome"
+    "liveServer.settings.CustomBrowser": "chrome",
+    "better-comments.highlightPlainText": true
 }

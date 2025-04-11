@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 
 /* créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
@@ -65,6 +66,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -76,12 +78,14 @@ body {
         text-align: center;
     }
 
-    .hamburger-menu {
+    .nav-links.active {
         display: flex;
     }
 
-    .nav-links.active {
+    /* Disposition du menu burger */
+    .hamburger-menu {
         display: flex;
+        right: 0;
     }
 
     .hamburger-menu.active .bar:nth-child(1) {
@@ -99,41 +103,13 @@ body {
     }
 }
 
+.section-image-chat {
+    /* crop l'image en cercle */
+    clip-path: circle(50.6% at 50% 50%);
+    /* // - crop l'image en polygon 8 côtés */
+    /* // - clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 /* BackToTop */
 /*_________________flèche retour en haut____________________*/
