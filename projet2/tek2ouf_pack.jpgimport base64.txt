@@ -1,0 +1,1168 @@
+tek2ouf_pack.jpgimport base64
+import os
+import mimetypes
+from google import genai
+from google.genai import types
+
+
+def save_binary_file(file_name, data):
+    f = open(file_name, "wb")
+    f.write(data)
+    f.close()
+
+
+def generate():
+    client = genai.Client(
+        api_key=os.environ.get("GEMINI_API_KEY"),
+    )
+
+    model = "gemini-2.0-flash-exp-image-generation"
+    contents = [
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_text(text="""Je lance la création de ton design \"TEK2OUF STARTER PACK\" basé sur tes instructions. Voici le descriptif qui va servir à générer l'image :
+
+Personnage principal :
+Un personnage extraterrestre avec une tête caractéristique (grands yeux noirs).
+
+Accessoires inclus :
+
+Tablette Surface Pro 7
+
+Câbles audio
+
+Microphone
+
+Réplique de pistolet 9mm
+
+Caisson de basse
+
+Style graphique et ambiance :
+
+Ambiance free party underground
+
+Fond : une forêt supernaturelle hantée par des mages et sorcières
+
+Petite soucoupe volante furtive dans le ciel
+
+Texte sur le blister :
+YO – TEK2OUF STARTER PACK
+
+Look visuel :
+Ambiance rétro 1999, avec une vibe contestataire et résiliente inspirée de la résistance civile dans les régions Centre, Est, Auvergne, et Rhône-Alpes. 
+
+Génère une image s'il plait 
+"""),
+            ],
+        ),
+        types.Content(
+            role="model",
+            parts=[
+                types.Part.from_text(text="""Here's a thinking process that could lead to the image generation based on the user's request:
+
+1.  **Deconstruct the Request:** Break down the user's prompt into key components and constraints.
+
+    *   **Core Concept:** \"TEK2OUF STARTER PACK\" design. This implies a product packaging visualization, likely a blister pack common for toys or starter kits.
+    *   **Main Character:** Alien (\"extraterrestre\") with large black eyes (classic \"grey\" alien look).
+    *   **Included Items (Accessories):**
+        *   Surface Pro 7 tablet
+        *   Audio cables
+        *   Microphone
+        *   Replica 9mm pistol
+        *   Subwoofer (\"Caisson de basse\")
+    *   **Setting/Background:**
+        *   Underground free party vibe (\"Ambiance free party underground\").
+        *   Supernatural haunted forest (\"forêt supernaturelle hantée\").
+        *   Inhabited by mages and sorceresses (\"mages et sorcières\").
+        *   Stealthy small flying saucer in the sky (\"Petite soucoupe volante furtive dans le ciel\").
+    *   **Text:** \"YO – TEK2OUF STARTER PACK\" (must be prominent, likely on the blister card).
+    *   **Visual Style/Mood:**
+        *   Retro 1999 aesthetic.
+        *   Contestatory/Resilient vibe (\"vibe contestataire et résiliente\").
+        *   Inspired by civil resistance in specific French regions (Centre, Est, Auvergne, Rhône-Alpes). This is more abstract and needs to be translated visually – maybe through grit, DIY elements, or a slightly defiant pose/expression.
+
+2.  **Identify Potential Challenges and Ambiguities:**
+
+    *   **Combining Elements:** How to realistically fit all the accessories *and* the character into a blister pack format while still showing the background effectively? The background might need to be *part* of the blister card artwork rather than a literal backdrop *behind* the plastic bubble.
+    *   **\"Retro 1999\":** What visual cues define this? Lower resolution textures? Specific color palettes (maybe slightly muted or specific neons)? CRT monitor scan lines (less applicable here)? Grain? Slightly clunky design aesthetics? VHS quality?
+    *   **\"Contestatory/Resilient Vibe\":** How to show this? Maybe the alien's pose? Graffiti elements on the packaging? A slightly worn or DIY look to the pack?
+    *   **\"Mages and Sorceresses\":** Should they be clearly visible or more like subtle silhouettes or environmental effects (glowing eyes in the dark, magical energy)? Making them too prominent might clutter the scene. Subtle is probably better.
+    *   **\"Replica 9mm Pistol\":** Ensure it looks like a *replica* or *toy* within the context of a starter pack, especially given platform content policies. It shouldn't look hyper-realistic or threatening. Maybe make it slightly stylized or brightly colored.
+    *   **Integrating the Background:** The forest/party vibe needs to merge with the 1999 starter pack concept. The blister card artwork is the best place for this.
+
+3.  **Formulate the Prompt for the Image Generator (e.g., Midjourney, DALL-E):** Translate the deconstructed elements into a coherent prompt. Need to specify the *type* of image (product shot, illustration) and combine the elements logically.
+
+    *   **Initial Draft Idea:** \"Blister pack packaging for a 'TEK2OUF STARTER PACK' toy. The pack contains a grey alien figure with large black eyes, a Surface Pro 7 tablet toy, toy audio cables, a toy microphone, a toy replica 9mm pistol, and a small toy subwoofer. The backing card artwork depicts an underground free party scene set in a supernatural haunted forest with hints of mages and sorceresses. A small stealthy UFO is visible in the night sky on the card. The text 'YO – TEK2OUF STARTER PACK' is prominently displayed on the packaging. The overall style is retro 1999, with a contestatory, resilient, underground vibe. Slightly grainy, maybe VHS aesthetic. Focus on the product packaging.\"
+
+    *   **Refinement 1 (Clarity & Conciseness):** \"Product visualization of a 'TEK2OUF STARTER PACK' blister pack. Inside the plastic bubble: a grey alien figure with large black eyes, miniature Surface Pro 7, audio cables, microphone, toy 9mm pistol replica, and a small subwoofer. The cardboard backing card features artwork of a mystical, haunted forest at night, suggesting an underground rave/free party vibe with faint silhouettes or magical glows hinting at mages/sorcerers. A small, subtle flying saucer is in the sky on the artwork. Prominent text on the card: 'YO – TEK2OUF STARTER PACK'. Style: Retro 1999 aesthetic, underground, contestatory feel, slightly grainy/worn look, reminiscent of late 90s counter-culture flyers. Centered composition, focus on the packaged product.\"
+
+    *   **Refinement 2 (Adding French Keywords for Nuance, if the AI understands them well):** \"Visualisation produit d'un blister pack 'TEK2OUF STARTER PACK'. Contenu sous bulle plastique : figurine alien gris aux grands yeux noirs, tablette miniature type Surface Pro 7, câbles audio, microphone, réplique pistolet 9mm jouet, petit caisson de basse jouet. Carton de support illustré : scène de free party underground dans une forêt surnaturelle hantée la nuit, avec silhouettes discrètes de mages/sorcières ou lueurs magiques. Petite soucoupe volante furtive dans le ciel de l'illustration. Texte proéminent sur le carton : 'YO – TEK2OUF STARTER PACK'. Style : Esthétique rétro 1999, ambiance underground, contestataire, résiliente, légèrement granuleux/usé, évoquant les flyers contestataires fin des années 90. Composition centrée sur l'emballage.\" (This uses the user's original French terms where appropriate).
+
+4.  **Generate the Image:** Use the refined prompt with an AI image generator.
+
+5.  **Review and Iterate (if necessary):**
+    *   Does the image capture the \"blister pack\" format?
+    *   Are all the required items present (or reasonably represented)?
+    *   Does the alien look right?
+    *   Is the background visible on the card art? Does it convey the forest/party/magic vibe?
+    *   Is the UFO subtle?
+    *   Is the text clear?
+    *   Does it *feel* retro 1999 and contestatory?
+    *   If not satisfactory, adjust the prompt (e.g., emphasize specific elements, change style keywords, try different compositions like `--ar 3:4` for a vertical pack). Maybe specify \"photorealistic product shot\" or \"illustration\" more clearly. Maybe simplify the number of items if it's too cluttered.
+
+6.  **Final Output:** Present the generated image to the user with a confirmation message."""),
+                types.Part.from_text(text="""Okay, je lance la génération de l'image pour ton \"TEK2OUF STARTER PACK\" avec tous ces éléments ! Voici le résultat :
+
+```json
+{
+  \"prompt\": \"Product visualization of a 'TEK2OUF STARTER PACK' blister pack, centered composition. Inside the plastic bubble: a classic grey alien figure with large black eyes, a miniature Microsoft Surface Pro 7 tablet, coiled audio cables, a small microphone, a toy replica 9mm pistol (clearly looking like a toy), and a miniature subwoofer. The cardboard backing card features artwork depicting an underground free party scene set deep within a supernatural, haunted forest at night. Subtle hints of mages and sorceresses are visible through glowing eyes or faint magical energy within the dark woods. A small, stealthy flying saucer is subtly visible in the dark sky on the artwork. Prominent, bold text on the card reads: 'YO – TEK2OUF STARTER PACK'. The overall style is heavily inspired by the late 1999 retro aesthetic, with a grainy texture, slightly desaturated colors mixed with specific neons (like rave flyers), evoking a contestatory, resilient, underground vibe reminiscent of counter-culture movements. Focus on the packaged product itself.\",
+  \"negative_prompt\": \"photorealistic, real person, clean modern design, minimalist, bright daylight, corporate branding, high definition photography, multiple packs, text illegible, gun looking too realistic\",
+  \"style_raw\": \"retro 1999 aesthetic, underground rave flyer art, slightly grainy, vhs quality\",
+  \"aspect_ratio\": \"9:16\"
+}
+```"""),
+            ],
+        ),
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_text(text="""html css js code generated please
+"""),
+            ],
+        ),
+        types.Content(
+            role="model",
+            parts=[
+                types.Part.from_text(text="""Here's a thinking process for generating the HTML, CSS, and JS code based on the user's request:
+
+1.  **Understand the Goal:** The user wants HTML, CSS, and JavaScript code. They just provided a description for an *image generation prompt*. This means they likely want a simple webpage structure, perhaps to *display* the image that would be generated based on the previous prompt, or maybe just a generic template. Since they didn't specify *what* the code should do, the safest bet is to provide a basic HTML structure with CSS for styling and a placeholder for JS functionality.
+
+2.  **Clarification Needed (Self-Correction):** The user's request is ambiguous. \"html css js code generated please\" *after* providing an image prompt could mean several things:
+    *   They want code *to generate the image* (which is not possible with standard HTML/CSS/JS).
+    *   They want a webpage *to display* the image (most likely).
+    *   They want a webpage *related to the theme* of the image (e.g., a \"TEK2OUF STARTER PACK\" product page).
+    *   They just want *any* basic HTML/CSS/JS example.
+
+3.  **Choose the Most Likely Interpretation:** The most common and reasonable interpretation is that they want a simple webpage template, potentially to display the image later or as a starting point for something related to the theme. Providing a basic structure is the most helpful and least assumption-heavy approach.
+
+4.  **Structure the HTML (index.html):**
+    *   Start with the basic HTML boilerplate (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`).
+    *   Include essential meta tags in the `<head>` (`charset=\"UTF-8\"`, `viewport`).
+    *   Add a `<title>` related to the theme (e.g., \"TEK2OUF STARTER PACK\").
+    *   Link the CSS file (`<link rel=\"stylesheet\" href=\"style.css\">`).
+    *   Inside the `<body>`, create a main container (`<div class=\"container\">`).
+    *   Add a heading (`<h1>`) using the title from the prompt.
+    *   Add a paragraph (`<p>`) explaining the content or providing context.
+    *   Include an `<img>` tag as a placeholder for the generated image. Give it an `id` (e.g., `pack-image`) and `alt` text. Maybe use a placeholder image source initially.
+    *   Include a placeholder for interactive elements if needed (e.g., a button `<button id=\"action-button\">`).
+    *   Link the JavaScript file at the end of the `<body>` (`<script src=\"script.js\"></script>`).
+
+5.  **Style with CSS (style.css):**
+    *   Apply basic reset/normalization (optional but good practice, maybe just `box-sizing: border-box;`).
+    *   Style the `<body>`: font family (something generic like sans-serif), background color (maybe a dark grey or textured background to fit the theme), text color (light grey/white).
+    *   Style the `.container`: center it on the page (`margin: 0 auto;`), set a `max-width`, add padding.
+    *   Style the `<h1>`: center text, maybe add some margin.
+    *   Style the `<p>`: adjust line height, margins.
+    *   Style the `<img>`: make it responsive (`max-width: 100%; height: auto;`), maybe add a border or subtle shadow. Add `display: block; margin: 20px auto;` to center it.
+    *   Style the `<button>`: basic padding, background color, text color, border, cursor. Add hover effects.
+
+6.  **Add Basic JavaScript (script.js):**
+    *   Since the purpose isn't defined, add simple interactivity as an example.
+    *   Use `DOMContentLoaded` to ensure the HTML is loaded before running the script.
+    *   Get references to elements (e.g., the button, maybe the image).
+    *   Add an event listener to the button (e.g., `click`).
+    *   Inside the event listener, perform a simple action (e.g., log a message to the console, change some text on the page, or maybe *later* this could be used to dynamically load the image). Start with a simple `console.log`.
+
+7.  **Review and Refine:**
+    *   Check the code for syntax errors.
+    *   Ensure the HTML, CSS, and JS are linked correctly.
+    *   Make sure the code is well-commented to explain each part.
+    *   Add comments explaining *how* the user could integrate the generated image (by updating the `src` attribute of the `<img>` tag).
+    *   Explain the purpose of each file and how they work together.
+    *   Emphasize that this is a *basic template* and can be heavily customized.
+
+8.  **Format the Output:** Present the code clearly, using code blocks for each language (HTML, CSS, JS) and explaining the purpose and usage of the code bundle."""),
+                types.Part.from_text(text="""Okay, I understand you'd like some basic HTML, CSS, and JavaScript code. Since you didn't specify *what* the code should do, I'll provide a simple structure that could potentially display the image and information related to your \"TEK2OUF STARTER PACK\" concept.
+
+This is a very basic template. You would need to:
+1.  Save the generated image (from the previous step, once generated) into the same folder as these files (e.g., as `tek2ouf_pack.jpg`).
+2.  Update the `src` attribute in the `<img>` tag in the HTML to point to your saved image file.
+
+Here are the code snippets:
+
+**1. HTML (index.html):**
+
+```html
+<!DOCTYPE html>
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>TEK2OUF STARTER PACK</title>
+    <link rel=\"stylesheet\" href=\"style.css\">
+</head>
+<body>
+    <header>
+        <h1>YO – TEK2OUF STARTER PACK</h1>
+    </header>
+
+    <main>
+        <div class=\"product-image\">
+            <!-- ** Replace 'placeholder.jpg' with the actual filename of your generated image ** -->
+            <img id=\"packImage\" src=\"placeholder.jpg\" alt=\"TEK2OUF STARTER PACK Blister\">
+        </div>
+
+        <div class=\"description\">
+            <h2>Contenu du Pack :</h2>
+            <ul>
+                <li>Personnage extraterrestre (yeux noirs)</li>
+                <li>Tablette Surface Pro 7 (miniature)</li>
+                <li>Câbles audio</li>
+                <li>Microphone</li>
+                <li>Réplique Pistolet 9mm (jouet)</li>
+                <li>Caisson de basse (miniature)</li>
+            </ul>
+            <p>
+                Ambiance free party underground dans une forêt supernaturelle hantée, avec une vibe rétro 1999 contestataire.
+            </p>
+        </div>
+
+        <button id=\"infoButton\">Plus d'infos (Console)</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Tek2ouf Industries</p>
+    </footer>
+
+    <script src=\"script.js\"></script>
+</body>
+</html>
+```
+
+**2. CSS (style.css):**
+
+```css
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Retro vibe font */
+    background-color: #1a1a1a; /* Dark background */
+    color: #0f0; /* Neon green text */
+    line-height: 1.6;
+    padding: 20px;
+    background-image: url('data:image/svg+xml,%3Csvg width=\"6\" height=\"6\" viewBox=\"0 0 6 6\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%233a3a3a\" fill-opacity=\"0.4\" fill-rule=\"evenodd\"%3E%3Cpath d=\"M5 0h1L0 6V5zM6 5v1H5z\"/%3E%3C/g%3E%3C/svg%3E'); /* Subtle background pattern */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #ff00ff; /* Neon pink dashed border */
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ff00ff; /* Neon pink title */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #2a2a2a;
+    padding: 25px;
+    border: 1px solid #0f0; /* Neon green border */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Neon green glow */
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #0ff; /* Neon cyan border */
+    background-color: #333; /* Placeholder background */
+}
+
+.description h2 {
+    color: #0ff; /* Neon cyan */
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.description ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.description ul li::before {
+    content: '» '; /* Custom bullet */
+    color: #ff00ff; /* Neon pink bullet */
+    margin-right: 5px;
+}
+
+.description p {
+    font-style: italic;
+    color: #ccc; /* Lighter grey for description */
+}
+
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ff00ff; /* Neon pink */
+    color: #1a1a1a; /* Dark text */
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+button:hover {
+    background-color: #0f0; /* Neon green on hover */
+    color: #1a1a1a;
+    box-shadow: 0 0 12px #0f0;
+}
+
+button:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+    font-size: 0.8em;
+    color: #666;
+    border-top: 1px solid #444;
+}
+
+```
+
+**3. JavaScript (script.js):**
+
+```javascript
+// Wait for the HTML document to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Get the button element by its ID
+    const infoButton = document.getElementById('infoButton');
+    // Get the image element
+    const packImage = document.getElementById('packImage');
+
+    // Check if the button exists
+    if (infoButton) {
+        // Add an event listener for the 'click' event
+        infoButton.addEventListener('click', function() {
+            // Log a message to the browser's developer console
+            console.log(\"------------------------------\");
+            console.log(\"YO! TEK2OUF STARTER PACK Info:\");
+            console.log(\"Image Source:\", packImage.src);
+            console.log(\"Vibe: Rétro 1999, Contestataire, Underground Free Party\");
+            console.log(\"Contenu: Alien, Surface Pro 7, Cables, Mic, Réplique 9mm, Subwoofer\");
+            console.log(\"Lieu: Forêt supernaturelle hantée\");
+            console.log(\"------------------------------\");
+
+            // Optional: Alert message (can be annoying, console is better)
+            // alert(\"Check the console (F12) for more details!\");
+        });
+    } else {
+        console.error(\"Error: Button with ID 'infoButton' not found.\");
+    }
+
+    // Example: Log image source on load (or error)
+    if (packImage) {
+        packImage.onload = () => {
+            console.log(\"Pack image loaded successfully:\", packImage.src);
+        };
+        packImage.onerror = () => {
+            console.error(\"Error loading pack image. Check the 'src' attribute in index.html and the filename:\", packImage.src);
+            // You could replace the src with a default \"not found\" image here
+            // packImage.src = 'image_not_found.png';
+        };
+        // If the image is already cached, onload might not fire, so check complete status
+        if (packImage.complete && packImage.naturalWidth > 0) {
+             console.log(\"Pack image was already loaded (possibly cached):\", packImage.src);
+        } else if (packImage.complete) {
+             console.error(\"Error loading pack image (already complete but failed). Check the 'src' attribute in index.html and the filename:\", packImage.src);
+        }
+    } else {
+         console.error(\"Error: Image with ID 'packImage' not found.\");
+    }
+
+}); // End of DOMContentLoaded
+```
+
+**How to Use:**
+
+1.  Create a folder named `tek2ouf_project` (or any name you prefer).
+2.  Save the HTML code as `index.html` inside that folder.
+3.  Save the CSS code as `style.css` inside the same folder.
+4.  Save the JavaScript code as `script.js` inside the same folder.
+5.  **Crucially:** Save the image you generated (or want to use) into this *same folder*. Make sure its filename matches the `src` attribute in the `<img>` tag within `index.html` (I used `placeholder.jpg` as a default, you need to change this).
+6.  Open the `index.html` file in your web browser.
+
+This will display a basic webpage with the title, image, description, and a button that logs information to the browser's developer console when clicked (usually opened by pressing F12)."""),
+            ],
+        ),
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_text(text="""Concept d'Emballage de Jouet Blister
+Thème: \"Tek2ouf Starter Pack\" - Un jouet inspiré de la culture free party/musique électronique underground, avec une touche de science-fiction.
+Cible: Adultes et jeunes adultes intéressés par la musique électronique, la culture alternative, et l'esthétique rétro/futuriste.
+Description Visuelle:
+Type d'emballage: Blister classique, avec une coque en plastique transparent moulée pour mettre en valeur le jouet et une carte en carton imprimée servant de fond et de support d'informations.
+Jouet:
+Un personnage extraterrestre stylisé, rappelant le design que nous avons évoqué précédemment :
+Grande tête ovoïde, peut-être translucide ou avec des parties lumineuses.
+Grands yeux noirs expressifs.
+Corps mince avec des détails futuristes (combinaison moulante, accessoires cyber).
+Positionné de manière dynamique dans le blister, comme s'il était en mouvement ou en train de mixer.
+Accessoires inclus (miniatures) :
+Une petite réplique de tablette Surface Pro 7 avec des graphiques psychédéliques à l'écran.
+Des câbles audio colorés et emmêlés de manière artistique.
+Un microphone rétro-futuriste.
+Une réplique stylisée de pistolet 9mm (avec un design non menaçant, peut-être en plastique transparent ou avec des motifs gravés).
+Un mini caisson de basse avec des détails lumineux.
+Carte en carton:
+Style graphique : Mélange d'esthétique rétro (années 90/2000) et futuriste/cyberpunk.
+Couleurs : Dominante de noir, avec des touches de couleurs vives et saturées (vert fluo, bleu électrique, violet psychédélique).
+Texte :
+Grand titre : \"YO – TEK2OUF STARTER PACK\" (police de caractères percutante et stylisée).
+Slogan : \"Prépare-toi à la révolution sonore.\" ou \"Le son de la résistance.\"
+Petits textes : Liste des accessoires inclus, logo \"Tek2ouf\", avertissements légaux (discrets).
+Images/Motifs :
+En arrière-plan, des éléments graphiques évoquant une forêt surnaturelle (comme décrit précédemment) avec des formes géométriques et des effets de lumière.
+Une petite soucoupe volante stylisée, discrètement intégrée au décor.
+Des symboles ou des motifs associés à la culture free party (ondes sonores, égaliseurs, etc.).
+Disposition:
+Le jouet et les accessoires sont disposés de manière attractive à l'intérieur du blister, occupant la majeure partie de l'espace transparent.
+La carte en carton sert de fond, avec le titre en haut, les informations sur les côtés, et les motifs en arrière-plan.
+L'ensemble donne une impression de dynamisme, d'énergie et de mystère.
+create please a responsive website dynamic ultra realistic and quantic html css js php sql xml 
+"""),
+            ],
+        ),
+        types.Content(
+            role="model",
+            parts=[
+                types.Part.from_text(text="""Alright, let's translate this detailed toy blister pack concept into a comprehensive multi-page website structure using HTML, CSS, JavaScript, PHP, MySQL, and XML. This will be a more involved project incorporating dynamic content and a sense of realism.
+
+**Conceptual Outline:**
+
+*   **Homepage:** Introduction to the \"Tek2ouf Starter Pack\" concept, showcasing the blister pack image (ultra-realistic rendering), highlighting the target audience and themes.
+*   **Product Page:** Detailed view of the toy and its accessories. Interactive elements could allow users to zoom in, view different angles, and read more about each component.
+*   **Free Party Culture Page:** Information and media (images, potentially embedded audio/video) related to the free party/underground electronic music culture that inspires the toy.
+*   **Gallery/Media Page:** Showcase high-quality images and potentially videos related to the \"Tek2ouf\" universe (e.g., mockups of the toy in its intended environment, artistic interpretations).
+*   **About/Lore Page:** Background information on the \"Tek2ouf\" concept, the alien character, and the fictional world.
+*   **Contact Page:** Basic contact form or information.
+
+**Database (MySQL):**
+
+We'll need a database to store information about the product, lore, gallery images, etc.
+
+**Tables:**
+
+*   `products`:
+    *   `id` INT PRIMARY KEY AUTO_INCREMENT
+    *   `name` VARCHAR(255)
+    *   `description` TEXT
+    *   `image_url` VARCHAR(255)
+    *   `slogan` VARCHAR(255)
+    *   `release_date` DATE
+*   `accessories`:
+    *   `id` INT PRIMARY KEY AUTO_INCREMENT
+    *   `product_id` INT, FOREIGN KEY (product_id) REFERENCES products(id)
+    *   `name` VARCHAR(255)
+    *   `description` TEXT
+    *   `image_url` VARCHAR(255)
+*   `lore_pages`:
+    *   `id` INT PRIMARY KEY AUTO_INCREMENT
+    *   `title` VARCHAR(255)
+    *   `slug` VARCHAR(255) UNIQUE  -- For SEO-friendly URLs
+    *   `content` TEXT
+    *   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+*   `gallery_images`:
+    *   `id` INT PRIMARY KEY AUTO_INCREMENT
+    *   `title` VARCHAR(255)
+    *   `description` TEXT
+    *   `image_url` VARCHAR(255)
+    *   `upload_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+**XML (Optional - for configuration or data exchange):**
+
+Could be used for site configuration, language files, or potentially to import/export product data.
+
+**PHP:**
+
+PHP will handle dynamic content generation, database interaction, form processing, and routing.
+
+**HTML (Structure):**
+
+We'll create a basic HTML structure for each page, with common elements like header, navigation, and footer.
+
+**CSS (Styling):**
+
+The CSS will be crucial for achieving the responsive, dynamic, ultra-realistic, and quantic visual style. This will involve:
+
+*   **Responsive Design:** Media queries to adapt to different screen sizes.
+*   **\"Ultra-realistic\":** High-quality imagery, subtle textures, lighting effects (using CSS and potentially JavaScript animations).
+*   **\"Quantic\":** Geometric elements, sharp lines, futuristic typography, potentially subtle animations that evoke a sense of advanced technology.
+*   **Color Palette:** Dominant black with vibrant neon accents (green, blue, psychedelic purple).
+*   **Animations/Transitions:** Smooth transitions and subtle animations to enhance interactivity and visual appeal.
+
+**JavaScript (Interactivity):**
+
+JavaScript will handle:
+
+*   Dynamic content manipulation (e.g., zooming on product images).
+*   Form handling (e.g., contact form submission via AJAX).
+*   Potentially more complex animations and interactive elements.
+*   Responsiveness enhancements.
+
+**Let's start with the basic file structure and some fundamental code snippets.**
+
+**File Structure:**
+
+Create the following folders and files:
+
+*   `root/`
+    *   `index.php` (Homepage)
+    *   `product.php` (Product Page)
+    *   `culture.php` (Free Party Culture Page)
+    *   `gallery.php` (Gallery Page)
+    *   `about.php` (About/Lore Page)
+    *   `contact.php` (Contact Page)
+    *   `css/`
+        *   `style.css`
+    *   `js/`
+        *   `script.js`
+    *   `images/` (Store your ultra-realistic renderings here)
+    *   `includes/`
+        *   `header.php`
+        *   `navigation.php`
+        *   `footer.php`
+        *   `db_config.php` (Database connection details)
+        *   `functions.php` (Reusable PHP functions)
+    *   `.htaccess` (For URL rewriting, to make URLs like `website.com/product` work)
+    *   `data/` (Optional: for XML data if you choose to use it)
+
+**1. `includes/db_config.php`:**
+
+Replace the placeholders with your actual database credentials.
+
+<?php
+$db_host = 'localhost';
+$db_name = 'your_database_name';
+$db_user = 'your_database_user';
+$db_pass = 'your_database_password';
+
+try {
+    $pdo = new PDO(\"mysql:host=$db_host;dbname=$db_name;charset=utf8\", $db_user, $db_pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die(\"Database connection failed: \" . $e->getMessage());
+}
+?>
+
+**2. `.htaccess` (in the root directory):**
+
+This will enable cleaner URLs (you might need to ensure `mod_rewrite` is enabled on your server).
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+</IfModule>
+
+**3. `includes/functions.php`:**
+
+<?php
+function get_page_title($url) {
+    // Basic logic to set page titles based on the URL
+    switch ($url) {
+        case '':
+        case 'home':
+            return 'Tek2ouf Starter Pack - Ignite the Sound Revolution';
+        case 'product':
+            return 'Tek2ouf Starter Pack - Detailed Look';
+        case 'culture':
+            return 'Underground Soundscapes - The Culture';
+        case 'gallery':
+            return 'Tek2ouf Universe - Visual Gallery';
+        case 'about':
+            return 'About Tek2ouf - Lore and Origins';
+        case 'contact':
+            return 'Contact Us';
+        default:
+            return 'Tek2ouf Starter Pack';
+    }
+}
+
+function get_navigation() {
+    $nav_items = [
+        'home' => 'Home',
+        'product' => 'Product',
+        'culture' => 'Culture',
+        'gallery' => 'Gallery',
+        'about' => 'About',
+        'contact' => 'Contact'
+    ];
+    $current_url = isset($_GET['url']) ? $_GET['url'] : 'home';
+    $html = '<nav>';
+    $html .= '<ul>';
+    foreach ($nav_items as $slug => $label) {
+        $active_class = ($slug === $current_url) ? 'active' : '';
+        $html .= \"<li><a href=\\\"/$slug\\\" class=\\\"{$active_class}\\\">{$label}</a></li>\";
+    }
+    $html .= '</ul>';
+    $html .= '</nav>';
+    return $html;
+}
+
+// Add more utility functions here as needed (e.g., for database queries)
+?>
+
+**4. `includes/header.php`:**
+
+<?php include_once 'functions.php'; ?>
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title><?php echo get_page_title(isset($_GET['url']) ? $_GET['url'] : ''); ?></title>
+    <link rel=\"stylesheet\" href=\"/css/style.css\">
+    <script src=\"/js/script.js\" defer></script>
+</head>
+<body>
+    <header>
+        <h1>YO – TEK2OUF STARTER PACK</h1>
+        <?php echo get_navigation(); ?>
+    </header>
+    <main class=\"container\">
+
+**5. `includes/navigation.php` (content moved to `functions.php` for simplicity):**
+
+**6. `includes/footer.php`:**
+
+    </main>
+    <footer>
+        <p>&copy; <?php echo date(\"Y\"); ?> - Tek2ouf Industries</p>
+    </footer>
+</body>
+</html>
+
+**7. `index.php` (Root Router):**
+
+<?php
+include 'includes/db_config.php';
+include 'includes/header.php';
+
+$url = isset($_GET['url']) ? $_GET['url'] : 'home';
+
+switch ($url) {
+    case '':
+    case 'home':
+        include 'home.php';
+        break;
+    case 'product':
+        include 'product.php';
+        break;
+    case 'culture':
+        include 'culture.php';
+        break;
+    case 'gallery':
+        include 'gallery.php';
+        break;
+    case 'about':
+        include 'about.php';
+        break;
+    case 'contact':
+        include 'contact.php';
+        break;
+    default:
+        include '404.php'; // Create a 404 page
+        break;
+}
+
+include 'includes/footer.php';
+?>
+
+**Now, let's create the basic content files:**
+
+**8. `home.php`:**
+
+<section class=\"hero\">
+    <div class=\"hero-content\">
+        <h2>Ignite the Sound Revolution</h2>
+        <p>Experience the \"Tek2ouf Starter Pack\" - where underground culture meets futuristic vibes.</p>
+        <a href=\"/product\" class=\"button\">Discover the Pack</a>
+    </div>
+    <div class=\"hero-image\">
+        <img src=\"/images/tek2ouf_blister_realistic_hero.jpg\" alt=\"Tek2ouf Starter Pack Blister\">
+        <!-- Replace with your ultra-realistic image -->
+    </div>
+</section>
+
+<section class=\"highlights\">
+    <div class=\"highlight-item\">
+        <h3>Retro-Futuristic Design</h3>
+        <p>Inspired by the energy of free parties and the aesthetics of a bygone future.</p>
+    </div>
+    <div class=\"highlight-item\">
+        <h3>Detailed Collectible</h3>
+        <p>Featuring a unique alien figure and miniature iconic accessories.</p>
+    </div>
+    <div class=\"highlight-item\">
+        <h3>Embrace the Underground</h3>
+        <p>A tribute to the resilient spirit of alternative music culture.</p>
+    </div>
+</section>
+
+**9. `product.php`:**
+
+<section class=\"product-details\">
+    <div class=\"product-image-gallery\">
+        <img src=\"/images/tek2ouf_blister_realistic_front.jpg\" alt=\"Tek2ouf Starter Pack Front\">
+        <!-- Add more images/zoom functionality with JavaScript -->
+    </div>
+    <div class=\"product-info\">
+        <h2>YO – TEK2OUF STARTER PACK</h2>
+        <p class=\"slogan\">Prépare-toi à la révolution sonore.</p>
+        <p>The \"Tek2ouf Starter Pack\" is a collectible toy inspired by the vibrant and rebellious culture of free parties and underground electronic music. Featuring a stylized alien figure with a distinctive design and miniature accessories that echo the essential tools of the sonic underground.</p>
+
+        <h3>Included Accessories:</h3>
+        <ul>
+            <li>Miniature Surface Pro 7 (with psychedelic screen)</li>
+            <li>Color-coded Audio Cables</li>
+            <li>Retro-Futuristic Microphone</li>
+            <li>Stylized 9mm Replica (non-threatening design)</li>
+            <li>Mini Subwoofer (with light details)</li>
+        </ul>
+
+        <p>Perfect for collectors, electronic music enthusiasts, and anyone who appreciates unique, counter-culture inspired design.</p>
+        <!-- Add \"Buy Now\" or similar if applicable -->
+    </div>
+</section>
+
+**10. `culture.php`:**
+
+<section class=\"culture-content\">
+    <h2>The Spirit of Tek2ouf: Underground Soundscapes</h2>
+    <p>The \"Tek2ouf Starter Pack\" is more than just a toy; it's a nod to the enduring spirit of free party culture and underground electronic music. These gatherings, often held in remote locations like the supernatural forests hinted at in our concept, are expressions of freedom, community, and a DIY ethos.</p>
+
+    <h3>A History of Sound Resistance</h3>
+    <p>From the early days of rave culture to modern teknivals, the free party scene has always been a space for sonic exploration and collective experience, often existing outside the mainstream.</p>
+
+    <h3>The Inspiration</h3>
+    <p>The design elements of the \"Tek2ouf Starter Pack\" draw from:
+        <ul>
+            <li>The raw energy and vibrant aesthetics of rave flyers and makeshift sound systems.</li>
+            <li>The sense of community and shared experience found at these events.</li>
+            <li>The rebellious spirit and independence that define the culture.</li>
+            <li>The blend of technology and nature often found in these outdoor gatherings.</li>
+        </ul>
+    </p>
+
+    <!-- Embed relevant images or videos here if you have them -->
+</section>
+
+**11. `gallery.php`:**
+
+<section class=\"gallery\">
+    <h2>Tek2ouf Universe - Visual Gallery</h2>
+    <div class=\"image-grid\">
+        <?php
+        // In a real implementation, you would fetch images from the database
+        $gallery_images = [
+            ['title' => 'Blister Pack Front', 'url' => '/images/gallery/tek2ouf_pack_front.jpg', 'description' => 'Front view of the Tek2ouf Starter Pack'],
+            ['title' => 'Alien Figure Close-up', 'url' => '/images/gallery/alien_closeup.jpg', 'description' => 'Detailed view of the alien character'],
+            ['title' => 'Free Party Scene Mockup', 'url' => '/images/gallery/free_party_scene.jpg', 'description' => 'The pack in its natural environment'],
+            // Add more image data here
+        ];
+
+        foreach ($gallery_images as $image) {
+            echo '<div class=\"gallery-item\">';
+            echo '<img src=\"' . $image['url'] . '\" alt=\"' . $image['title'] . '\" loading=\"lazy\">';
+            echo '<p class=\"caption\">' . $image['title'] . ' - ' . $image['description'] . '</p>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+</section>
+
+**12. `about.php`:**
+
+<section class=\"about-content\">
+    <h2>About Tek2ouf - Lore and Origins</h2>
+    <p>The \"Tek2ouf\" universe is a fictional realm where extraterrestrial curiosity intersects with the vibrant energy of Earth's underground music culture.</p>
+
+    <h3>The Alien Traveler</h3>
+    <p>The central figure of the \"Starter Pack\" is a visitor from a distant star system, drawn to Earth by the unique sonic vibrations of free parties. With their advanced technology and inherent curiosity, they seek to understand and perhaps even participate in this unique form of human expression.</p>
+
+    <h3>The Haunted Forest Connection</h3>
+    <p>The supernatural forest backdrop represents the liminal spaces where these gatherings often occur, blurring the lines between reality and something more mystical. The mages and sorceresses are subtle nods to the hidden energies and transformative experiences often associated with these events.</p>
+
+    <h3>A Symbol of Resistance</h3>
+    <p>\"Tek2ouf\" embodies the spirit of independence, creativity, and resistance against the mundane. It's a celebration of alternative cultures and the power of sound to unite and inspire.</p>
+</section>
+
+**13. `contact.php`:**
+
+<section class=\"contact-form\">
+    <h2>Get in Touch</h2>
+    <p>We'd love to hear from you!</p>
+    <form action=\"#\" method=\"post\">
+        <div class=\"form-group\">
+            <label for=\"name\">Name:</label>
+            <input type=\"text\" id=\"name\" name=\"name\" required>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"email\">Email:</label>
+            <input type=\"email\" id=\"email\" name=\"email\" required>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"message\">Message:</label>
+            <textarea id=\"message\" name=\"message\" rows=\"5\" required></textarea>
+        </div>
+        <button type=\"submit\" class=\"button\">Send Message</button>
+    </form>
+    <?php
+    if ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {
+        // In a real application, you would process the form data here
+        echo '<p class=\"success-message\">Thank you for your message!</p>';
+        // You would typically send an email or store the data in a database
+    }
+    ?>
+</section>
+
+**14. `css/style.css` (Initial Styles - Needs Significant Expansion for the \"Ultra-realistic\" and \"Quantic\" feel):**
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #eee;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #0f0; /* Neon Green */
+}
+
+h1, h2, h3 {
+    color: #0ff; /* Neon Cyan */
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ff00ff; /* Neon Pink */
+    color: #111;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0f0;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.highlight-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.product-details {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.product-image-gallery {
+    flex: 1;
+}
+
+.product-image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.gallery {
+    padding: 40px 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item .caption {
+    padding: 10px;
+    text-align: center;
+    color: #ccc;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Responsive Design (Basic) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .product-details {
+        flex-direction: column;
+    }
+}
+
+**15. `js/script.js` (Basic - Needs Expansion for Interactivity and Animations):**
+
+// Basic example: Log a message when the DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Tek2ouf website ready!');
+
+    // Add more JavaScript for interactive elements and animations here
+});
+
+**Key Next Steps:**
+
+1.  **Ultra-realistic Rendering:** You need to generate a high-quality, ultra-realistic rendering of the \"Tek2ouf Starter Pack\" blister pack as described in your detailed visual description. Save these images in the `images/` folder.
+2.  **Enhanced CSS:** Expand the `style.css` file significantly to achieve the \"ultra-realistic,\" \"quantic,\" and dynamic visual style. This will involve using more advanced CSS techniques, potentially CSS preprocessors (like Sass), and careful attention to detail in styling elements. Consider using gradients, shadows, subtle textures, and animations.
+3.  **JavaScript Interactivity:** Implement JavaScript to add interactive features:
+    *   Image zoom/gallery functionality on the product page.
+    *   Form validation and potentially AJAX submission for the contact form.
+    *   Subtle animations on hover or scroll to enhance the \"quantic\" feel.
+4.  **Database Integration (PHP):**
+    *   Create the MySQL database and tables as outlined.
+    *   Implement PHP code in the relevant pages (e.g., `gallery.php`, potentially `product.php` to fetch accessory details) to fetch and display data from the database. You'll need to use PDO to interact with the database securely.
+5.  **URL Rewriting (`.htaccess`):** Ensure your server supports `.htaccess` and that the rules are working to provide clean URLs.
+6.  **Error Handling:** Implement basic error handling for database connections and other operations.
+7.  **Responsiveness:** Thoroughly test the website on different screen sizes and devices and refine the CSS media queries to ensure a consistent and user-friendly experience.
+8.  **\"Quantic\" Animations/Effects:** Explore using CSS animations, transitions, and potentially a lightweight JavaScript animation library to add subtle, geometric, or futuristic motion elements to the design.
+
+This provides a solid foundation for building your \"Tek2ouf Starter Pack\" website. Remember that achieving a truly \"ultra-realistic\" and \"quantic\" look will heavily rely on the quality of your visual assets (especially the toy rendering) and the details of your CSS styling. The PHP and database integration will add the dynamic functionality. Good luck!"""),
+            ],
+        ),
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_text(text="""INSERT_INPUT_HERE"""),
+            ],
+        ),
+    ]
+    generate_content_config = types.GenerateContentConfig(
+        top_p=1,
+        response_modalities=[
+            "image",
+            "text",
+        ],
+        safety_settings=[
+            types.SafetySetting(
+                category="HARM_CATEGORY_HARASSMENT",
+                threshold="BLOCK_NONE",  # Block none
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_HATE_SPEECH",
+                threshold="BLOCK_NONE",  # Block none
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                threshold="BLOCK_NONE",  # Block none
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_DANGEROUS_CONTENT",
+                threshold="BLOCK_NONE",  # Block none
+            ),
+        ],
+        response_mime_type="text/plain",
+    )
+
+    for chunk in client.models.generate_content_stream(
+        model=model,
+        contents=contents,
+        config=generate_content_config,
+    ):
+        if not chunk.candidates or not chunk.candidates[0].content or not chunk.candidates[0].content.parts:
+            continue
+        if chunk.candidates[0].content.parts[0].inline_data:
+            file_name = "ENTER_FILE_NAME"
+            inline_data = chunk.candidates[0].content.parts[0].inline_data
+            file_extension = mimetypes.guess_extension(inline_data.mime_type)
+            save_binary_file(
+                f"{file_name}{file_extension}", inline_data.data
+            )
+            print(
+                "File of mime type"
+                f" {inline_data.mime_type} saved"
+                f"to: {file_name}"
+            )
+        else:
+            print(chunk.text)
+
+if __name__ == "__main__":
+    generate()

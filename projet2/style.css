@@ -65,6 +65,34 @@ body {
     transition: 0.4s;
 }
 
+aside>.welcome {
+    display: flex;
+}
+
+/* .scroll {
+    animation: reveal linear;
+    animation-timeline: view();
+} */
+
+.scroll {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: contain 50% contain 50%;
+    view-timeline-inset: 0%;
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale (1);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 768px) {
 
     .nav-links {
@@ -105,7 +133,7 @@ body {
 
 .section-image-chat {
     /* crop l'image en cercle */
-    clip-path: circle(50.6% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
     /* // - crop l'image en polygon 8 côtés */
     /* // - clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
 
@@ -257,3 +285,35 @@ body {
     -webkit-box-shadow: 1px 1px 4px #777777;
     -moz-box-shadow: 1px 1px 4px #777777;
 }
+
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    /* Neon pink */
+    color: #1a1a1a;
+    /* Dark text */
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+button:hover {
+    background-color: #0f0;
+    /* Neon green on hover */
+    color: #1a1a1a;
+    box-shadow: 0 0 12px #0f0;
+}
+
+button:active {
+    transform: scale(0.98);
+    /* Slight press effect */
+}
+
+
+/*____________________________________________*/
