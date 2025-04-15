@@ -1,0 +1,20 @@
+
+const btns = document.querySelectorAll('button')
+
+const cards = document.querySelectorAll('.card')
+
+console.log(filters, cards);
+
+const cardsFilter = (e) => {
+    document.querySelector('.active').classList.remove('active');
+    e.target.classList.add('active')
+
+    cards.forEach(card => {
+        card.classList.add('button')
+
+        if (card.dataset.name === e.target.dataset.name
+            || e.target.dataset.name === "tous") { card.classList.remove('button') }
+    })
+}
+
+button.forEach(button => button.addEventListener('click', cardsFilter))
