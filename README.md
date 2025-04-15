@@ -6,6 +6,11 @@
 
 ## Maquette 
 
-Figma : https://figma.com/maquette
+Figma : https://www.figma.com/maquette
 
-[figma]
+[Maquette Figma] (https://www.figma.com/maquette)
+
+## Listes 
+1. Premier truc
+2. Second truc
+3. Troisième truc
