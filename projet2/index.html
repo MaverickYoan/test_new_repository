@@ -1,7 +1,7 @@
 <!-- // - 0 - LEGENDE DES COMMENTAIRES -->
 
 <!-- 1 - COMMENTAIRES -->
-<!-- * - 2 - couleur à modifier dans le fichier setting.js -->
+<!-- * - 2 - OK -->
 <!-- // - 3 - POUR INFOS -->
 <!-- ? - 4 - ATTENTION -->
 <!-- ! - 5 - ERREURS A CORRIGER -->
@@ -11,7 +11,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head><!-- 1 -  HEAD -->
+<!-- * - 2 -HEAD -->
+
+<head>
     <!-- // - 2 - META -->
     <meta charset=utf-8>
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
@@ -21,7 +23,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href=fonts.css rel=stylesheet>
     <link href=style.css rel=stylesheet>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Quicksand:wght@300;500&display=swap"
@@ -29,9 +30,9 @@
     <title>Clair'Pets</title><!-- TITRE -->
 </head>
 
-<!-- Welcome section -->
+<!-- TODO - 6 - BODY -->
 
-<body id="content">
+<body id="content"><!-- 1 - id content / navbar / hamburger / id et class navLinks -->
     <nav class="navbar">
         <div class="hamburger-menu" id="hamburgerMenu">
             <div class="bar"></div>
@@ -44,33 +45,39 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <section class="home">
+
+    <!-- TODO - 6 - home section -->
+
+    <section class="home"><!-- 1 - home / h1 / id welcome / aside / img -->
         <h1 id="welcome">Clair' <span>Pets</span></h1>
         <aside><img src="favicon.ico" width="50px" alt="chat noir et blanc"></aside>
     </section>
 
-    <!-- Welcome section -->
+    <!-- TODO - 6 - Welcome section -->
 
-    <header>
-        <section>
+    <header><!-- 1 - class welcome / section-welcome / h3 / h4 / id infoButton / h3 -->
+        <section id="welcome">
             <div class="welcome">
-                <div class="section-image-chat"></div>
-
-                <h3>Clair’Pet apporte une solution à la vue de votre animal !</h3>
-                <h4>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur qualité
-                    de vie et de leur offrir une vision claire et nette. <br>Nos lunettes sont spécialement conçues pour
-                    s'adapter à la morphologie de votre animal.
-                </h4>
+                <div class="section-welcome">
+                    <h3>Clair’Pet apporte une solution à la vue de votre animal !</h3>
+                    <h4>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur
+                        qualité
+                        de vie et de leur offrir une vision claire et nette. <br>Nos lunettes sont spécialement conçues
+                        pour
+                        s'adapter à la morphologie de votre animal.
+                    </h4>
+                </div>
             </div>
         </section>
+        <button id="infoButton">Testez gratuitement</button><!-- CTA -->
+
+        <h3>Une vision claire pour nos amis à quatre pattes !</h3>
+
     </header>
 
-    <button id="infoButton">Testez gratuitement</button>
+    <!-- TODO - 6 - Shop section -->
 
-    <h3>Une vision claire pour nos amis à quatre pattes !</h3>
-
-    <!-- Shop section -->
-    <section>
+    <section><!-- 1 - id et class shop / h2 / article / h2 / scroll / img / p -->
         <div id="shop">
             <h2 class="shop">shop</h2>
             <article>
@@ -85,17 +92,92 @@
             </article>
         </div>
 
-        <!-- Image-chat -->
-        <div class="hero-text">
-            <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
-            <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai
-                que nos
-                amis
-                les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
-                correctrices.
-            </p>
-        </div>
+        <!-- <br><br>
+        <section class="descriptions"> -->
+        <!-- 1 - descriptions / articles / Catégories / p / Filtres / p / Produits / p -->
+        <!-- <article class="Catégories-chiens">
+                <div class="filtres-chiens">
+                    <div class="filtres-chiens">Lunettes pour chiens</div><br>
+                    <img src="" alt=""><br>
+                    <div>Par taille</div><br>
+                    <div>couleur</div><br>
+                    <div>matériau</div><br>
+                    <div>Images </div><br>
+                    <div>descriptions</div><br>
+                    <div>prix</div><br>
+                    <div>avis des utilisateurs</div><br>
+                </div>
+            </article>
 
+            <br><br>
+
+            <article class="Catégories-chats">
+                <div class="filtres-chats">
+                    <div class="filtres-chats">Lunettes pour chats</div><br>
+                    <img src="" alt=""><br>
+                    <div>Par taille</div><br>
+                    <div>couleur</div><br>
+                    <div>matériau</div><br>
+                    <div>Images </div><br>
+                    <div>descriptions</div><br>
+                    <div>prix</div><br>
+                    <div>avis des utilisateurs</div><br>
+                </div>
+            </article>
+        </section> -->
+
+
+        <div class="container">
+
+            <div class="filter">
+                <button data-name="tous" class="active">Tous</button>
+                <button data-name="chiens">Chiens</button>
+                <button data-name="chats">Chats</button>
+
+            </div>
+            <br><br><br><br><br>
+            <div class="cards">
+
+                <div class="card" data-name="chiens">
+                    <img src="husky.jpg" width="150px" alt="chat noir yeux jaunes">
+                    <div class="card-content">
+                        <h3>taille</h3>
+                        <p>...</p>
+                        <h3>couleur</h3>
+                        <p>...</p>
+                        <h3>matériau</h3>
+                        <p>...</p>
+                        <h3>descriptions</h3>
+                        <p>...</p>
+                        <h3>prix</h3>
+                        <p>...</p>
+                        <h3>avis des utilisateurs</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+
+                <div class="card" data-name="chats">
+                    <img src="istockphoto-1397756029-612x612.jpg" width="150px" alt="chat noir yeux jaunes">
+                    <div class="card-content">
+                        <h3>taille</h3>
+                        <p>...</p>
+                        <h3>couleur</h3>
+                        <p>...</p>
+                        <h3>matériau</h3>
+                        <p>...</p>
+                        <h3>descriptions</h3>
+                        <p>...</p>
+                        <h3>prix</h3>
+                        <p>...</p>
+                        <h3>avis des utilisateurs</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
 
         <!-- CTA -->
         <div class="btn-container">
@@ -103,7 +185,113 @@
         </div>
     </section>
 
-    <footer">
+
+    <!-- Image-chat -->
+    <div class="hero-text"><!-- 1 - hero-text / section-image-chat / section-text-chat / p -->
+        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
+        <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos amis
+            les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
+            correctrices.
+        </p>
+    </div>
+
+    <!-- TODO - 6 - Contact section -->
+
+    <section id="contact"><!-- 1 - form-titre / form-sous-titre / form -->
+        <form action=index.html method=post>
+            <b class=form-titre>Formulaire de contact</b><br>
+            <p class=form-sous-titre>
+                Remplissez le formulaire ci-dessous<br>pour nous contacter</p>
+            <div class=form>
+                <label for=nom>Nom :</label><br>
+                <input id=nom name=nom placeholder="Nom"><br>
+                <label for=prenom>Prénom :</label><br>
+                <input id=prenom name=prenom placeholder="Prénom"><br>
+                <label for=email>Email :</label><br>
+                <input id=email name=email placeholder="Email"><br>
+                <label for=message>Message :</label><br>
+                <textarea id=message name=message placeholder="Message"></textarea><br>
+                <input type=submit value=Envoyer><br>
+            </div>
+        </form>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Témoignages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">
+                            M.D</div>
+                        <div>
+                            <h3 class="font-semibold">Marie Dupont</h3>
+                            <p class="text-sm text-gray-600">Fille de bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Mon chien a bénéficié de ces lunettes et nous revoit de nouveau."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">
+                            J.L</div>
+                        <div>
+                            <h3 class="font-semibold">Jean Lambert</h3>
+                            <p class="text-sm text-gray-600">Bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Ces lunettes sont parfaites. Notre chat, mioppe de naissance,
+                        revit."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">
+                            S.T</div>
+                        <div>
+                            <h3 class="font-semibold">Sophie Tremblay</h3>
+                            <p class="text-sm text-gray-600">Bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Merci, notre chien a repris la joie de vivre."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- * - 2 - FOOTER -->
+
+    <footer"><!-- * - 2 - droits / h6 -->
         <div class="droits">
             <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
                 <br>Mentions légales | Politique de confidentialité | Conditions générales de vente
@@ -113,7 +301,8 @@
 
         </footer>
 
-        <a href="#content" class="back-to-top"><!-- back-to-top section -->
+        <!-- * - 2 - a / span / svg -->
+        <a href="#content" class="back-to-top"><!-- 1 -  back-to-top -->
             <span>Retour en haut</span>
             <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
             <svg width="32" height="32" viewbox=" 0 0 24 24" aria-hidden="true">
@@ -122,8 +311,9 @@
             </svg>
         </a>
 </body>
-<!-- Script Section : Script pour activer le menu mobile -->
-<script src="script.js"></script>
+
+<script src="script.js"></script><!-- * - 2 - Script : activer le menu mobile -->
+<script src="app.js"></script><!-- * - 2 - Script : filtrer les cards chiens/chats -->
 
 
 </html>

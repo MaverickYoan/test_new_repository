@@ -1,0 +1,10 @@
+Peux tu s'il te plaît me créer en html et CSS complet un site internet et créer une partie admin en back-end pour gérer les utilisateurs pour une activité d'auxiliaire de vie qui sera simple à gérer pour des utilisateurs novices.
+
+
+
+
+
+Peux tu s'il te plaît me créer en html et CSS complet un site internet pour une activité d'auxiliaire de vie. 
+
+
+Can you please create a complete website for me with a contact form for a home care activity?

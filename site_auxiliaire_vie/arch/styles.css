@@ -1,0 +1,116 @@
+/* Réinitialisation de quelques styles pour une meilleure cohérence */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles généraux */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+    padding: 20px;
+  }
+  
+  /* En-tête */
+  header {
+    background-color: #67aaca;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    margin-bottom: 10px;
+  }
+  
+  /* Menu de navigation */
+  nav ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul.menu li {
+    margin: 0 15px;
+  }
+  
+  nav ul.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Sections */
+  section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Section Accueil */
+  .intro h2 {
+    margin-bottom: 10px;
+    color: #67aaca;
+  }
+  
+  /* Section Services */
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .service-box {
+    flex: 1 1 250px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #edf5f9;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Formulaire de contact */
+  #contact form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #contact form label {
+    margin-top: 10px;
+  }
+  
+  #contact form input,
+  #contact form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #contact form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #67aaca;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #contact form button:hover {
+    background-color: #559bb6;
+  }
+  
+  /* Pied de page */
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }

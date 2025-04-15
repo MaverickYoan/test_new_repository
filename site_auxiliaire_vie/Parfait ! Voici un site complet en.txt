@@ -1,0 +1,247 @@
+Parfait ! Voici un **site complet en HTML et CSS** (aucun JavaScript ni backend requis) pour une activité d’**auxiliaire de vie**, avec :
+
+- Une page d’accueil
+- Une page à propos
+- Une page services
+- Une page contact avec un formulaire de contact fonctionnel via [Formspree](https://formspree.io)  
+  *(gratuit et sans serveur nécessaire – tu peux ajouter ton e-mail plus tard)*
+
+---
+
+### 📁 Structure :
+```
+site_auxiliaire_vie/
+│
+├── index.html
+├── about.html
+├── services.html
+├── contact.html
+└── style.css
+```
+
+---
+
+### 🧩 Fichiers à copier/coller :
+
+#### ✅ `index.html`
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil - Auxiliaire de Vie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Auxiliaire de Vie</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Bienvenue</h2>
+    <p>
+      Je vous accompagne au quotidien avec bienveillance, respect et
+      professionnalisme.
+    </p>
+  </main>
+  <footer>&copy; 2025 Auxiliaire de Vie</footer>
+</body>
+</html>
+```
+
+#### ✅ `about.html`
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>À propos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>À propos</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Qui suis-je ?</h2>
+    <p>
+      Auxiliaire de vie diplômée, je suis à l’écoute des personnes âgées ou
+      dépendantes pour leur offrir une aide personnalisée dans leur quotidien.
+    </p>
+  </main>
+  <footer>&copy; 2025 Auxiliaire de Vie</footer>
+</body>
+</html>
+```
+
+#### ✅ `services.html`
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Services</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <ul>
+      <li>Aide à la toilette</li>
+      <li>Préparation et aide aux repas</li>
+      <li>Aide au lever et au coucher</li>
+      <li>Accompagnement aux courses et rendez-vous</li>
+      <li>Entretien du domicile</li>
+      <li>Présence et écoute</li>
+    </ul>
+  </main>
+  <footer>&copy; 2025 Auxiliaire de Vie</footer>
+</body>
+</html>
+```
+
+#### ✅ `contact.html`
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <form action="https://formspree.io/f/mnqekgvo" method="POST">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="_replyto" required />
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+  <footer>&copy; 2025 Auxiliaire de Vie</footer>
+</body>
+</html>
+```
+
+#### ✅ `style.css`
+```css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "✔️ ";
+  margin-right: 5px;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+```
+
+---
+
+### 📤 Et après ?
+1. Crée un dossier `site_auxiliaire_vie`
+2. Colle chaque fichier dedans avec les bons noms
+3. Ouvre `index.html` dans ton navigateur pour tester !
+
+---
+
+Tu veux aussi que je t’aide à le **mettre en ligne gratuitement** (par exemple avec GitHub Pages, Netlify ou autre) ?

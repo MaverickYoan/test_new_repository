@@ -1,0 +1,230 @@
+Peux tu s'il te plaît me créer un site internet complet avec formulaire de contact pour une activité d'auxiliaire de vie. 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareLink - Services d'Auxiliaire de Vie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more styling */
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-hands-helping text-3xl text-blue-500 mr-2"></i>
+                <a href="#" class="text-2xl font-bold text-gray-800">Care<span class="text-blue-500">Link</span></a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="nav-link font-medium">Accueil</a>
+                <a href="#services" class="nav-link font-medium">Services</a>
+                <a href="#a-propos" class="nav-link font-medium">À propos</a>
+                <a href="#temoignages" class="nav-link font-medium">Témoignages</a>
+                <a href="#contact" class="nav-link font-medium">Contact</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+            <div class="px-4 py-2 flex flex-col space-y-3">
+                <a href="#accueil" class="py-2 font-medium border-b border-gray-100">Accueil</a>
+                <a href="#services" class="py-2 font-medium border-b border-gray-100">Services</a>
+                <a href="#a-propos" class="py-2 font-medium border-b border-gray-100">À propos</a>
+                <a href="#temoignages" class="py-2 font-medium border-b border-gray-100">Témoignages</a>
+                <a href="#contact" class="py-2 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-gradient pt-32 pb-20 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Assistance et Soins à Domicile Personnalisés</h1>
+                <p class="text-xl mb-8">Votre auxiliaire de vie dévouée pour un accompagnement bienveillant et professionnel au quotidien.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-blue-600 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-100 transition duration-300">Prendre rendez-vous</a>
+                    <a href="#services" class="border-2 border-white text-white font-bold py-3 px-6 rounded-lg text-center hover:bg-white hover:text-blue-600 transition duration-300">Nos services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                     alt="Auxiliaire de vie aidant une personne âgée" 
+                     class="rounded-lg shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Nos Services d'Accompagnement</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Des solutions adaptées pour préserver l'autonomie et le bien-être de vos proches.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-bath text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aide à la toilette et à l'habillage</h3>
+                    <p class="text-gray-600 mb-4">Assistance pour la toilette, l'habillage et les soins d'hygiène dans le respect de l'intimité et de la dignité.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Toilette complète ou partielle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Aide à l'habillage et au déshabillage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Soins de beauté et de confort</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-utensils text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Préparation des repas</h3>
+                    <p class="text-gray-600 mb-4">Préparation de repas équilibrés et adaptés aux goûts et besoins nutritionnels de la personne.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Planification des menus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Courses alimentaires</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Aide à la prise des repas si nécessaire</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ménage et entretien du domicile</h3>
+                    <p class="text-gray-600 mb-4">Maintenir un cadre de vie propre et agréable pour le bien-être quotidien.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Nettoyage des pièces de vie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Linge et repassage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Gestion des déchets</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-pills text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aide à la prise de médicaments</h3>
+                    <p class="text-gray-600 mb-4">Surveillance et aide à la prise des traitements médicaux selon prescription.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Préparation des piluliers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Rappel des prises médicamenteuses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Surveillance des effets secondaires</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-walking text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Accompagnement extérieur</h3>
+                    <p class="text-gray-600 mb-4">Soutien pour les déplacements et activités à l'extérieur du domicile.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Courses et démarches administratives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Visites médicales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Activités sociales et de loisirs</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-6 transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-heart text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Soutien moral et compagnie</h3>
+                    <p class="text-gray-600 mb-4">Présence rassurante et activités stimulantes pour rompre l'isolement.</p>

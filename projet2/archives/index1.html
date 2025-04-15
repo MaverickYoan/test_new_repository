@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clair'Pets</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body id="content"><!-- 1 - id content / navbar / hamburger / id et class navLinks -->
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Clair'Pets</h1>
+    </header>
+
+    <main>
+        <div class="product-image">
+            <!-- ** Replace 'placeholder.jpg' with the actual filename of your generated image ** -->
+            <img id="packImage" src="original.jpeg" width="50px" alt="Clair'Pets">
+        </div>
+
+
+        <div class="description">
+            <h2>Testez gratuitement</h2>
+            <ul>
+                <li>Clair’Pet apporte une solution à la vue de votre animal !</li>
+                <li>Une vision claire pour nos amis à quatre pattes !</li>
+            </ul>
+            <p>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur qualité
+                de vie et de leur offrir une vision claire et nette. <br>Nos lunettes sont spécialement conçues pour
+                s'adapter à la morphologie de votre animal.
+            </p>
+        </div>
+
+        <button id="infoButton">Appel gratuit</button>
+    </main>
+
+    <section class="home"><!-- 1 - home / h1 / id welcome / aside / img -->
+        <h1 id="welcome">Clair' <span>Pets</span></h1>
+        <aside><img src="favicon.ico" width="50px" alt="chat noir et blanc"></aside>
+    </section>
+
+    <!-- TODO - 6 - Welcome section -->
+
+    <header><!-- 1 - class welcome / section-welcome / h3 / h4 / id infoButton / h3 -->
+        <section>
+            <div class="welcome">
+                <div class="section-welcome">
+                    <h3>Clair’Pet apporte une solution à la vue de votre animal !</h3>
+                    <h4>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur
+                        qualité
+                        de vie et de leur offrir une vision claire et nette. <br>Nos lunettes sont spécialement conçues
+                        pour
+                        s'adapter à la morphologie de votre animal.
+                    </h4>
+                </div>
+            </div>
+        </section>
+
+        <button id="infoButton">Testez gratuitement</button>
+
+        <h3>Une vision claire pour nos amis à quatre pattes !</h3>
+
+    </header>
+
+    <!-- TODO - 6 - Shop section -->
+
+    <section><!-- 1 - shop / h2 / article / h2 / scroll / img / p -->
+        <div id="shop">
+            <h2 class="shop">shop</h2>
+            <article>
+                <h2>Faire un caroussel interactif des lunnettes dans l'shop</h2><!-- TODO - 6 - A FAIRE -->
+                <div class="scroll">
+                    <img src="istockphoto-1354460639-612x612.jpg" width="100px" alt="1">
+                    <img src="istockphoto-1397756029-612x612.jpg" width="100px" loading=eager alt="3">
+                    <img src="tek2ouf_project/img.jpg" width="100px" alt="4">
+                    <img src="vue-animal-drole_23-2151098344.avif" width="100px" loading=eager alt="5">
+                    <p>________________________________________________________</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Image-chat -->
+        <div class="hero-text">
+            <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
+            <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai
+                que nos
+                amis
+                les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
+                correctrices.
+            </p>
+        </div>
+
+        <!-- Contact section -------------->
+        <article id="contact">
+
+            <h2 class="titre-contact">contact</h2>
+            <p class="sous-titre-contact">Vous souhaitez améliorer la qualité de vie de votre animal ?</p><br>
+            <div class="contact">
+                <p>Formulaire de contact.</p>
+                <form class="form">
+                    <input type="text" name="Prénom" id="prenom" placeholder="Prénom" required>
+                    <input type="text" name="Nom" id="nom" placeholder="Nom" required>
+                    <input type="email" name="Email" id="email" placeholder="Email" required>
+                    <input type="tel" name="Téléphone" id="telephone" placeholder="Téléphone" required>
+                    <input type="submit" value="Envoyer">
+                </form>
+                <img class="husky" src="husky.jpg" alt="image de chien Husky aux yeux verrons">
+
+            </div>
+        </article>
+
+        <!-- CTA -->
+        <div class="btn-container">
+            <button class="btn">Appel gratuit</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
+            <br>Mentions légales | Politique de confidentialité | Conditions générales de vente
+        </p>
+    </footer>
+
+
+    <!-- * - 2 - a / span / svg -->
+    <a href="#content" class="back-to-top"><!-- 1 -  back-to-top -->
+        <span>Retour en haut</span>
+        <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
+        <svg width="32" height="32" viewbox=" 0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </svg>
+    </a>
+</body>
+
+<script src="script.js"></script><!-- * - 2 - Script Section : activer le menu mobile -->
+
+
+</html>

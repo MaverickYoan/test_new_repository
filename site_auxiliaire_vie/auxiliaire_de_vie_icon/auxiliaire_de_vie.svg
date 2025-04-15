@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main care assistant (left) -->
+  <circle cx="30" cy="28" r="8" stroke="#2D9CDB" stroke-width="3" fill="#EAF6FB"/>
+  <rect x="24" y="38" width="12" height="26" rx="6" fill="#2D9CDB"/>
+  <!-- Assisted person (right) -->
+  <circle cx="62" cy="36" r="7" stroke="#27AE60" stroke-width="3" fill="#EAFBF3"/>
+  <rect x="56" y="44" width="12" height="20" rx="6" fill="#27AE60"/>
+  <!-- Arms showing support -->
+  <path d="M36 50 Q44 54 56 50" stroke="#A569BD" stroke-width="3" fill="none"/>
+  <!-- Heart symbolizing care -->
+  <path d="M48 60 C50 56, 56 56, 56 60 C56 64, 48 68, 48 72 C48 68, 40 64, 40 60 C40 56, 46 56, 48 60 Z" fill="#EB5757"/>
+  <!-- Ground -->
+  <ellipse cx="48" cy="86" rx="32" ry="6" fill="#F2F2F2"/>
+</svg>
