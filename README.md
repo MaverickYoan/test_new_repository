@@ -14,3 +14,13 @@ Figma : https://www.figma.com/maquette
 1. Premier truc
 2. Second truc
 3. Troisième truc
+
+## Bloc 
+```css 
+.classes {
+   Propriété: machin;
+}
+```
+
+Je **commence** `Une phrase`, puis je termine. 
+
