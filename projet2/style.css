@@ -16,6 +16,28 @@
 
 }
 
+/******************************************************************/
+/* style pour la démo */
+html {
+    margin-top: 2em;
+    text-align: center;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 1rem;
+}
+
+a {
+    color: crimson;
+    font-weight: 600;
+    transition: all 0.8s cubic-bezier(.14, 1.36, .5, .88);
+    display: inline-block;
+}
+
+a:hover {
+    transform: scale(1.3)
+}
+
+/******************************************************************/
+
 /* créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
 * {
     border: 1px solid blue;
@@ -228,16 +250,98 @@ h6 {
 
 
 
-
-
-.droits {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 10px;
-    font-size: 0.8em;
-    color: #ffffff;
-    border-top: 1px solid #ffffff;
+/* * - 1 - témoignages section */
+.une {
+    padding: 16px;
+    background: rgb(0, 0, 0);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
 }
+
+.contaner-une {
+    margin: auto;
+    padding: 14px;
+}
+
+.text-une {
+    font-size: 1.875rem;
+    font: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    border: 1px solid white;
+}
+
+.grid {
+    grid-column: 1;
+    grid-row: 3;
+    gap: 8px;
+    border: 1px solid white;
+}
+
+.tem1 {
+    background: #000000;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem;
+    padding: 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.entete {
+    width: 1.875rem;
+    height: 1.875rem;
+    background-size: 100;
+    border-radius: 100;
+    display: flex;
+    justify-content: center;
+    color: rgb(9, 255, 0);
+    font-weight: 700;
+    font: bold;
+    margin-right: 4px;
+}
+
+.une-font {
+    font: 350;
+}
+
+.une-sous-font {
+    font-size: small;
+    color: white;
+    font: 600;
+}
+
+.une-comm-font {
+    font-size: small;
+    color: gray;
+    font: 700;
+    font-style: italic;
+}
+
+.stars {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.fa,
+.fa-star {
+    display: block;
+    font-size: 48px;
+    color: yellow;
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
 
