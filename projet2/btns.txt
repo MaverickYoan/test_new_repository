@@ -18,3 +18,9 @@ const cardsFilter = (e) => {
 }
 
 button.forEach(button => button.addEventListener('click', cardsFilter))
+
+
+
+<img src="https://www.lunettes-originales.fr/wp-content/uploads/2016/06/visuel-dossier-lunettes-japonaises-monture-solaire-bird-s11-masunaga.jpg"
+            alt="">
+

@@ -1,17 +1,17 @@
-<!-- // - 0 - LEGENDE DES COMMENTAIRES -->
+<!-- + - 0 - LEGENDE DES COMMENTAIRES -->
 
 <!-- 1 - COMMENTAIRES -->
 <!-- * - 2 - OK -->
 <!-- // - 3 - POUR INFOS -->
 <!-- ? - 4 - ATTENTION -->
-<!-- ! - 5 - ERREURS A CORRIGER -->
-<!-- TODO - 6 - A FAIRE -->
+<!-- TODO - 5 - A FAIRE -->
+<!-- ! - 6 - ERREURS A CORRIGER -->
 <!-- NEXT - 7 - PROCHAINE ETAPE -->
 
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- * - 2 -HEAD -->
+<!-- * - 2 - HEAD -->
 
 <head>
     <!-- // - 2 - META -->
@@ -32,7 +32,8 @@
     <title>Clair'Pets</title><!-- TITRE -->
 </head>
 
-<!-- TODO - 6 - BODY -->
+
+<!-- TODO - 5 - BODY -->
 
 <body id="content"><!-- 1 - id content / navbar / hamburger / id et class navLinks -->
     <nav class="navbar">
@@ -44,25 +45,26 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#welcome">Welcome</a></li>
             <li><a href="#shop">Shop</a></li>
+            <li><a href="#avis">Avis</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li></li><a href="#avis">Avis</a></li>
         </ul>
     </nav>
 
-    <!-- TODO - 6 - home section -->
+
+    <!-- TODO - 5 - home section -->
 
     <section class="home"><!-- 1 - home / h1 / id welcome / aside / img -->
-        <h1 id="welcome">Clair' <span>Pets</span></h1>
-        <aside><img src="favicon.ico" width="50px" alt="chat noir et blanc"></aside>
+        <h1 id="home">Clair'Pets</h1>
+        <img src="favicon.ico" width="50px" alt="chat noir et blanc">
     </section>
 
-    <!-- TODO - 6 - Welcome section -->
+    <!-- TODO - 5 - Welcome section -->
 
-    <header><!-- 1 - class welcome / section-welcome / h3 / h4 / id infoButton / h3 -->
+    <header><!-- 1 - class welcome / section-welcome / h2 / h4 / id infoButton / h4 -->
         <section id="welcome">
             <div class="welcome">
                 <div class="section-welcome">
-                    <h3>Clair’Pet apporte une solution à la vue de votre animal !</h3>
+                    <h2>Clair’Pet apporte une solution à la vue de votre animal !</h2>
                     <h4>Nous avons conçu une gamme de lunettes correctrices pour animaux, <br>afin d'améliorer leur
                         qualité
                         de vie et de leur offrir une vision claire et nette. <br>Nos lunettes sont spécialement conçues
@@ -72,25 +74,30 @@
                 </div>
             </div>
         </section>
-        <button id="infoButton">Testez gratuitement</button><!-- CTA -->
+        <button>Testez gratuitement</button><!-- ? - 4 - CTA -->
 
-        <h3>Une vision claire pour nos amis à quatre pattes !</h3>
+        <h4>Une vision claire pour nos amis à quatre pattes !</h4>
 
     </header>
 
-    <!-- TODO - 6 - Shop section -->
+    <!-- TODO - 5 - Shop section -->
 
     <section><!-- 1 - id et class shop / h2 / article / h2 / scroll / img / p -->
         <div id="shop">
             <h2 class="shop">shop</h2>
             <article>
-                <h2>Faire un caroussel interactif des lunnettes dans l'shop</h2><!-- TODO - 6 - A FAIRE -->
+                <h2>Les pupilles de votre animal sont dilatées mais ne rétrécissent pas en pleine lumière.</h2>
+                <!-- * - 6 - SCROLL -->
                 <div class="scroll">
-                    <img src="istockphoto-1354460639-612x612.jpg" width="100px" alt="1">
-                    <img src="istockphoto-1397756029-612x612.jpg" width="100px" loading=eager alt="3">
-                    <img src="tek2ouf_project/img.jpg" width="100px" alt="4">
-                    <img src="vue-animal-drole_23-2151098344.avif" width="100px" loading=eager alt="5">
-                    <p>________________________________________________________</p>
+                    <img src="2419b0346ce9b26e2070499fb9604a72d6a29337_original.jpeg" width="100px" alt="1">
+                    <img src="xC6yKJ6ienhqT2-iU0oPr.png" width="100px" loading=eager alt="3">
+                    <img src="vue-rapprochee-du-chien-detournant-regard_1048944-21271398.avif" width="100px"
+                        height="100px" alt="4">
+                    <img src="527910887.jpg" width="100px" loading=eager alt="5">
+                    <h2>Les chiens peuvent-ils porter des lunettes ? En un mot, oui. Les chiens peuvent souffrir, et
+                        souffrent effectivement, de problèmes de vue et de troubles oculaires entraînant une perte de
+                        vision.</h2>
+                    <p>_________________________________________</p>
                 </div>
             </article>
         </div>
@@ -98,46 +105,64 @@
         <h2>Articles</h2>
 
         <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('chiens')"> Chiens</button>
-            <button class="btn" onclick="filterSelection('chats')"> Chats</button>
+            <button id="infoButton" class="btn active" onclick="filterSelection('all')"> Show
+                all</button>
+            <button id="infoButton" class="btn" onclick="filterSelection('chiens')"> Chiens</button>
+            <button id="infoButton" class="btn" onclick="filterSelection('chats')"> Chats</button>
         </div>
         <section class="articles">
             <div class="container">
-                <div class="filterDiv chiens">Chiens
+                <div class="filterDiv chiens">
                     <div class="card" data-name="chiens">
-                        <img src="husky.jpg" width="150px" alt="chat noir yeux jaunes">
-                        <h3>taille : </h3>
-                        <h3>couleur : </h3>
-                        <h3>matériau : </h3>
-                        <h3>descriptions : </h3>
-                        <h3>prix : </h3>
+                        <img src="husky.jpg" width="150px"
+                            alt="chien husky noir et blanc yeux marrons portant nos lunettes de vue légèrement fumé en aluminium avec une monture semi-épaisse">
+                        <div classe="details">
+                            <h5>taille : <span id="details">Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span id="details">Peut être fabriqué dans n'importe quelle couleur.</span>
+                            </h5>
+                            <h5>matériaux : <span id="details">Le matériau utilisé pour fabriquer nos lunettes
+                                    écologiques est
+                                    l'acétate de cellulose.</span></h5>
+                            <h5>descriptions : <span id="details">Dérivé de substances naturelles comme le coton et la
+                                    pulpe de bois,
+                                    il est léger.</span></h5>
+                            <h5>prix : <span id="details">11 balles</span></h5>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="filterDiv chats">Chats
+                <div class="filterDiv chats">
                     <div class="card" data-name="chats">
-                        <img src="istockphoto-1397756029-612x612.jpg" width="150px" alt="chat noir yeux jaunes">
-                        <h3>taille : </h3>
-                        <h3>couleur : </h3>
-                        <h3>matériau : </h3>
-                        <h3>descriptions : </h3>
-                        <h3>prix : </h3>
+                        <img src="istockphoto-1397756029-612x612.jpg" width="150px"
+                            alt="chat à poil roux tigré aux yeux vert-jaunes portant nos lunettes de vue rondes en aluminium avec une monture très fines">
+                        <div classe="details">
+                            <h5>taille : <span id="details">Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span id="details">Peut être fabriqué dans n'importe quelle couleur.</span>
+                            </h5>
+                            <h5>matériaux : <span id="details">Le matériau utilisé pour fabriquer nos lunettes
+                                    écologiques est
+                                    l'acétate de cellulose.</span></h5>
+                            <h5>descriptions : <span id="details">Dérivé de substances naturelles comme le coton et la
+                                    pulpe de bois,
+                                    il est léger.</span></h5>
+                            <h5>prix : <span id="details">10 balles</span></h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <script>
+
+        <script><!-- * - 2 - Script : activer le menu pour fitrer les choix entre chiens ou chat -->
             filterSelection("all")
             function filterSelection(c) {
                 var x, i;
                 x = document.getElementsByClassName("filterDiv");
                 if (c == "all") c = "";
                 for (i = 0; i < x.length; i++) {
-                    w3RemoveClass(x[i], "show");
-                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                    w3RemoveClass(x[i], "show"); if (x[i].className.indexOf(c) > -1)
+                        w3AddClass(x[i], "show");
                 }
             }
 
@@ -145,14 +170,9 @@
                 var i, arr1, arr2;
                 arr1 = element.className.split(" ");
                 arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-                }
-            }
-
-            function w3RemoveClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
+                for (i = 0; i < arr2.length; i++) { if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; } }
+            } function w3RemoveClass(element, name) {
+                var i, arr1, arr2; arr1 = element.className.split(" ");
                 arr2 = name.split(" ");
                 for (i = 0; i < arr2.length; i++) {
                     while (arr1.indexOf(arr2[i]) > -1) {
@@ -163,34 +183,28 @@
             }
 
             // Add active class to the current button (highlight it)
-            var btnContainer = document.getElementById("myBtnContainer");
-            var btns = btnContainer.getElementsByClassName("btn");
-            for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function () {
-                    var current = document.getElementsByClassName("active");
-                    current[0].className = current[0].className.replace(" active", "");
-                    this.className += " active";
-                });
-            }
+            var btnContainer = document.getElementById(" myBtnContainer"); var
+                btns = btnContainer.getElementsByClassName("btn"); for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function () {
+                        var current = document.getElementsByClassName("active");
+                        current[0].className = current[0].className.replace(" active", ""); this.className += " active";
+                    });
+                }
         </script>
 
 
+                <!--  -->
 
-
-
-
-        <!--  -->
-
-        <!-- CTA -->
-        <div class="btn-container">
-            <button class="btn">Appel gratuit</button>
-        </div>
+                <!-- ? - 4 - CTA -->
+                <div class="btn-container">
+                    <button class="btn">Appel gratuit</button>
+                </div>
     </section>
 
 
-    <!-- Image-chat -->
+    <!-- * - 2 - Image-chat -->
     <div class="hero-text"><!-- 1 - hero-text / section-image-chat / section-text-chat / p -->
-        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
+        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" width="70%" alt="Image d'arrière-plan">
         <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos amis
             les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
             correctrices.
@@ -198,26 +212,28 @@
     </div>
 
 
+    <!-- ? - 4 - créé avec : https://dash.elfsight.com/apps/testimonials-slider?installationWidgetPid=77873d24-ec49-467b-b85d-0aaff588fe89 -->
+    <!-- Elfsight Testimonials Slider | Untitled Testimonials Slider
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-77873d24-ec49-467b-b85d-0aaff588fe89" data-elfsight-app-lazy></div> -->
 
-    <!-- * - 2 - Témoignages Section -->
+
+    <!-- TODO - 5 - Témoignages Section - ADD INPUT BUTTON POUR AJOUTER DES AVIS UTILISATEURS -->
     <section class="une" id="avis">
         <div class="container-une">
+
+            <!-- Témoignage 1 -->
             <h2 class="text-une">Témoignages</h2>
             <div class="grid">
-
-                <!-- Témoignage 1 -->
                 <div class="tem1">
                     <div class="tem1">
-                        <div class="entete">
-                            M.D</div>
+                        <div class="entete"> M.D</div>
                         <div>
-                            <h3 class="une-font">Marie Dupont</h3>
+                            <h4 class="une-font">Marie Dupont</h4>
                             <p class="une-sous-font">Fille de bénéficiaire</p>
                         </div>
                     </div>
-                    <p class="une-comm-font">"Mon chien a bénéficié de ces lunettes et nous revoit
-                        de nouveau."
-                    </p>
+                    <p class="une-comm-font">"Mon chien a bénéficié de ces lunettes et nous revoit de nouveau." </p>
                     <div class="stars">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -233,15 +249,13 @@
             <div class="grid">
                 <div class="tem1">
                     <div class="tem1">
-                        <div class="entete">
-                            J.L</div>
+                        <div class="entete"> J.L</div>
                         <div>
-                            <h3 class="une-font">Jean Lambert</h3>
+                            <h4 class="une-font">Jean Lambert</h4>
                             <p class="une-sous-font">Bénéficiaire</p>
                         </div>
                     </div>
-                    <p class="une-comm-font">"Ces lunettes sont parfaites. Notre chat, mioppe de naissance,
-                        revit."</p>
+                    <p class="une-comm-font">"Ces lunettes sont parfaites. Notre chat, mioppe de naissance, revit."</p>
                     <div class="stars">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -256,10 +270,9 @@
             <div class="grid">
                 <div class="tem1">
                     <div class="tem1">
-                        <div class="entete">
-                            S.T</div>
+                        <div class="entete"> S.T</div>
                         <div>
-                            <h3 class="une-font">Sophie Tremblay</h3>
+                            <h4 class="une-font">Sophie Tremblay</h4>
                             <p class="une-sous-font">Bénéficiaire</p>
                         </div>
                     </div>
@@ -274,26 +287,53 @@
                 </div>
             </div>
         </div>
-        </div>
+
     </section>
+
+
+    <!-- * - 2 - Contact section -->
+
+    <section id="contact"><!-- 1 - form-titre / form-sous-titre / form -->
+        <form action=index.html method=post>
+            <b class=form-titre>Formulaire de contact</b><br>
+            <p class=form-sous-titre>
+                Remplissez le formulaire ci-dessous<br>pour nous contacter</p>
+            <div class=form>
+                <label for=nom>Nom :</label><br>
+                <input id=nom name=nom placeholder="Nom"><br>
+                <label for=prenom>Prénom :</label><br>
+                <input id=prenom name=prenom placeholder="Prénom"><br>
+                <label for=email>Email :</label><br>
+                <input id=email name=email placeholder="Email"><br>
+                <label for=message>Message :</label><br>
+                <textarea id=message name=message placeholder="Message"></textarea><br>
+                <input type=submit value=Envoyer><br>
+            </div>
+        </form>
+    </section>
+
 
     <!-- * - 2 - FOOTER -->
 
     <footer"><!-- * - 2 - droits / h6 -->
         <div class="droits">
             <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
-                <br>Mentions légales | Politique de confidentialité | Conditions générales de vente
-            </h6>
+                <br>Mentions légales | Politique de confidentialité | Conditions générales de vente<br>
 
+            </h6>
+            <a class="agrees" href="https://www.direct-optic.fr" target="_blank">Faible coût, qualité certifiée par des
+                opticiens
+                agréés par directOptic&audition</a>
         </div>
 
         </footer>
 
+
         <!-- * - 2 - a / span / svg -->
-        <a href="#content" class="back-to-top"><!-- 1 -  back-to-top -->
+        <a href=" #content" class="back-to-top"><!-- 1 -  back-to-top -->
             <span>Retour en haut</span>
             <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
-            <svg width="32" height="32" viewbox=" 0 0 24 24" aria-hidden="true">
+            <svg width="24" height="24" viewbox=" 0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
             </svg>
@@ -301,7 +341,8 @@
 
 
         <script src="script.js"></script><!-- * - 2 - Script : activer le menu mobile -->
-        <script src="app.js"></script><!-- * - 2 - Script : filtrer les cards chiens/chats -->
+
+
 
 
 </body>

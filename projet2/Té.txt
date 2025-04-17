@@ -1,0 +1,38 @@
+<script>
+        const menuHamburger = document.querySelector(".menu-hamburger")
+        const navLinks = document.querySelector(".nav-links")
+ 
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+</script>
+
+
+masquage et affichage sous-menu */
+            #menu li ul
+            {   position: absolute;
+                width: 150px;
+                left: -999em;}
+              
+              
+            #menu li:hover ul, #menu li li.sfhover ul
+            {   left: auto;
+                min-height: 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
