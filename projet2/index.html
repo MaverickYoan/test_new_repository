@@ -33,7 +33,7 @@
 </head>
 
 
-<!-- TODO - 5 - BODY -->
+<!-- * - 2 - BODY -->
 
 <body id="content"><!-- 1 - id content / navbar / hamburger / id et class navLinks -->
     <nav class="navbar">
@@ -51,16 +51,16 @@
     </nav>
 
 
-    <!-- TODO - 5 - home section -->
+    <!-- * - 2 - home section -->
 
     <section class="home"><!-- 1 - home / h1 / id welcome / aside / img -->
         <h1 id="home">Clair'Pets</h1>
-        <img src="favicon.ico" width="50px" alt="chat noir et blanc">
+        <img src="favicon.ico" width="50" alt="chat noir et blanc">
     </section>
 
-    <!-- TODO - 5 - Welcome section -->
+    <!-- * - 2 - Welcome section -->
 
-    <header><!-- 1 - class welcome / section-welcome / h2 / h4 / id infoButton / h4 -->
+    <header><!-- 1 - class welcome / section-welcome / h2 / h4 / h4 / button -->
         <section id="welcome">
             <div class="welcome">
                 <div class="section-welcome">
@@ -80,20 +80,20 @@
 
     </header>
 
-    <!-- TODO - 5 - Shop section -->
+    <!-- * - 2 - Shop section -->
 
-    <section><!-- 1 - id et class shop / h2 / article / h2 / scroll / img / p -->
+    <section><!-- 1 - id et class shop / h2 / article / h2 / scroll / img / p / h2 -->
         <div id="shop">
             <h2 class="shop">shop</h2>
             <article>
                 <h2>Les pupilles de votre animal sont dilatées mais ne rétrécissent pas en pleine lumière.</h2>
-                <!-- * - 6 - SCROLL -->
+                <!-- * - 2 - SCROLL -->
                 <div class="scroll">
-                    <img src="2419b0346ce9b26e2070499fb9604a72d6a29337_original.jpeg" width="100px" alt="1">
-                    <img src="xC6yKJ6ienhqT2-iU0oPr.png" width="100px" loading=eager alt="3">
-                    <img src="vue-rapprochee-du-chien-detournant-regard_1048944-21271398.avif" width="100px"
-                        height="100px" alt="4">
-                    <img src="527910887.jpg" width="100px" loading=eager alt="5">
+                    <img src="2419b0346ce9b26e2070499fb9604a72d6a29337_original.jpeg" width="100" alt="1">
+                    <img src="xC6yKJ6ienhqT2-iU0oPr.png" width="100" loading=eager alt="3">
+                    <img src="vue-rapprochee-du-chien-detournant-regard_1048944-21271398.avif" width="100" height="100"
+                        alt="4">
+                    <img src="527910887.jpg" width="100" loading=eager alt="5">
                     <h2>Les chiens peuvent-ils porter des lunettes ? En un mot, oui. Les chiens peuvent souffrir, et
                         souffrent effectivement, de problèmes de vue et de troubles oculaires entraînant une perte de
                         vision.</h2>
@@ -103,30 +103,31 @@
         </div>
 
         <h2>Articles</h2>
-
+        <!-- 1 - id myBtnContainer / btn active / btn / articles / container / filterDiv / card / chiens / pets / details / h5 / span -->
         <div id="myBtnContainer">
-            <button id="infoButton" class="btn active" onclick="filterSelection('all')"> Show
+
+            <button class="btn active" onclick="filterSelection('all')"> Show
                 all</button>
-            <button id="infoButton" class="btn" onclick="filterSelection('chiens')"> Chiens</button>
-            <button id="infoButton" class="btn" onclick="filterSelection('chats')"> Chats</button>
+            <button class="btn" onclick="filterSelection('chiens')"> Chiens</button>
+            <button class="btn" onclick="filterSelection('chats')"> Chats</button>
         </div>
         <section class="articles">
             <div class="container">
                 <div class="filterDiv chiens">
                     <div class="card" data-name="chiens">
-                        <img src="husky.jpg" width="150px"
+                        <img class="pets" src="husky.jpg" width="150"
                             alt="chien husky noir et blanc yeux marrons portant nos lunettes de vue légèrement fumé en aluminium avec une monture semi-épaisse">
                         <div classe="details">
-                            <h5>taille : <span id="details">Peut être fabriqué dans n'importe quelle forme.</span></h5>
-                            <h5>couleur : <span id="details">Peut être fabriqué dans n'importe quelle couleur.</span>
+                            <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
                             </h5>
-                            <h5>matériaux : <span id="details">Le matériau utilisé pour fabriquer nos lunettes
+                            <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes
                                     écologiques est
                                     l'acétate de cellulose.</span></h5>
-                            <h5>descriptions : <span id="details">Dérivé de substances naturelles comme le coton et la
+                            <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la
                                     pulpe de bois,
                                     il est léger.</span></h5>
-                            <h5>prix : <span id="details">11 balles</span></h5>
+                            <h5>prix : <span>11 euros</span></h5>
                         </div>
                     </div>
                 </div>
@@ -134,19 +135,19 @@
             <div class="container">
                 <div class="filterDiv chats">
                     <div class="card" data-name="chats">
-                        <img src="istockphoto-1397756029-612x612.jpg" width="150px"
+                        <img class="pets" src="istockphoto-1397756029-612x612.jpg" width="150"
                             alt="chat à poil roux tigré aux yeux vert-jaunes portant nos lunettes de vue rondes en aluminium avec une monture très fines">
                         <div classe="details">
-                            <h5>taille : <span id="details">Peut être fabriqué dans n'importe quelle forme.</span></h5>
-                            <h5>couleur : <span id="details">Peut être fabriqué dans n'importe quelle couleur.</span>
+                            <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
                             </h5>
-                            <h5>matériaux : <span id="details">Le matériau utilisé pour fabriquer nos lunettes
+                            <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes
                                     écologiques est
                                     l'acétate de cellulose.</span></h5>
-                            <h5>descriptions : <span id="details">Dérivé de substances naturelles comme le coton et la
+                            <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la
                                     pulpe de bois,
                                     il est léger.</span></h5>
-                            <h5>prix : <span id="details">10 balles</span></h5>
+                            <h5>prix : <span>10 euros</span></h5>
                         </div>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
         </section>
 
 
-        <script><!-- * - 2 - Script : activer le menu pour fitrer les choix entre chiens ou chat -->
+        <script><!-- * - 2 - Script : activer le menu pour fitrer les choix entre chiens ou chats -->
             filterSelection("all")
             function filterSelection(c) {
                 var x, i;
@@ -192,19 +193,12 @@
                 }
         </script>
 
-
-                <!--  -->
-
-                <!-- ? - 4 - CTA -->
-                <div class="btn-container">
-                    <button class="btn">Appel gratuit</button>
-                </div>
     </section>
 
 
     <!-- * - 2 - Image-chat -->
     <div class="hero-text"><!-- 1 - hero-text / section-image-chat / section-text-chat / p -->
-        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" width="70%" alt="Image d'arrière-plan">
+        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
         <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos amis
             les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
             correctrices.
@@ -212,13 +206,18 @@
     </div>
 
 
-    <!-- ? - 4 - créé avec : https://dash.elfsight.com/apps/testimonials-slider?installationWidgetPid=77873d24-ec49-467b-b85d-0aaff588fe89 -->
-    <!-- Elfsight Testimonials Slider | Untitled Testimonials Slider
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <!-- * - 2 - CTA -->
+    <div class="btn-container">
+        <button class="btn">Appel gratuit</button>
+    </div>
+
+    <!-- // - 3 - créé avec : https://dash.elfsight.com/apps/testimonials-slider?installationWidgetPid=77873d24-ec49-467b-b85d-0aaff588fe89 -->
+    <!-- // - 3 - Elfsight Testimonials Slider | Untitled Testimonials Slider -->
+    <!-- <script src="https://static.elfsight.com/platform/platform.js" async></script>
     <div class="elfsight-app-77873d24-ec49-467b-b85d-0aaff588fe89" data-elfsight-app-lazy></div> -->
 
 
-    <!-- TODO - 5 - Témoignages Section - ADD INPUT BUTTON POUR AJOUTER DES AVIS UTILISATEURS -->
+    <!-- * - 2 - Témoignages Section -->
     <section class="une" id="avis">
         <div class="container-une">
 
@@ -315,7 +314,7 @@
 
     <!-- * - 2 - FOOTER -->
 
-    <footer"><!-- * - 2 - droits / h6 -->
+    <footer><!-- * - 2 - droits / h6 -->
         <div class="droits">
             <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
                 <br>Mentions légales | Politique de confidentialité | Conditions générales de vente<br>
@@ -326,21 +325,21 @@
                 agréés par directOptic&audition</a>
         </div>
 
-        </footer>
+    </footer>
 
 
-        <!-- * - 2 - a / span / svg -->
-        <a href=" #content" class="back-to-top"><!-- 1 -  back-to-top -->
-            <span>Retour en haut</span>
-            <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
-            <svg width="24" height="24" viewbox=" 0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-            </svg>
-        </a>
+    <!-- * - 2 - a / p / svg -->
+    <a href=" #content" class="back-to-top"><!-- 1 -  back-to-top -->
+        <p> </p>
+        <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
+        <svg width="24" height="24" viewbox=" 0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </svg>
+    </a>
 
 
-        <script src="script.js"></script><!-- * - 2 - Script : activer le menu mobile -->
+    <script src="script.js"></script><!-- * - 2 - Script : activer le menu mobile -->
 
 
 

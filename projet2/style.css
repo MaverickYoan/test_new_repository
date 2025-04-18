@@ -198,38 +198,43 @@ p {
     object-fit: contain;
 }
 
-#details {
-    color: white
+/* * - 2 - border radius cartes Chiens et Chats dans Articles */
+.pets {
+    border-radius: 15%;
 }
 
-/* Style div  */
+/* * - 2 - Largeur des cartes Chiens et Chats dans Articles */
 .articles {
-    width: 80%;
+    width: 90%;
 }
 
+/* * - 2 - catégories taille, couleur, matériaux, descriptions et prix */
 .filterDiv {
     float: left;
-    color: #44ff00;
-    width: 50%;
+    color: #22ff00;
+    width: 100%;
     text-align: center;
     margin: 2px;
     display: none;
     gap: 1rem;
 }
 
+/* * - 2 - texte des catégories taille, couleur, matériaux, descriptions et prix */
+span {
+    color: white;
+}
+
+/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
 .show {
     display: block;
-    width: 100%;
 }
 
+/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
 .container {
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    overflow: hidden;
+    margin-top: 0.5rem;
 }
 
-/* Style the buttons */
+/* * - 2 - Style des boutons (Tous, Chiens et le bouton Chats) */
 .btn {
     text-decoration: none;
     padding: 10px;
@@ -246,6 +251,7 @@ p {
     -moz-box-shadow: 3px 3px 12px #444444;
 }
 
+/* * - 2 - au passage de la souris sur le bouton */
 .btn:hover {
     background-color: #0f0;
     /* Neon green on hover */
@@ -253,6 +259,7 @@ p {
     box-shadow: 0 0 12px #0f0;
 }
 
+/* * - 2 - lorsque l'on click sur le bouton */
 .btn.active {
     background-color: #62ff00;
     color: rgb(255, 0, 251);
@@ -362,6 +369,8 @@ p {
     text-decoration-style: none;
 }
 
+
+
 @media (max-width: 768px) {
 
     .nav-links {
@@ -461,8 +470,8 @@ html {
     font-size: clamp(1rem, 2vw, 0.5rem);
 }
 
-
 .section-image-chat {
+    width: 70%;
     /* crop l'image en cercle */
     clip-path: circle(50% at 50% 50%);
     /* // - crop l'image en polygon 8 côtés */
@@ -573,6 +582,7 @@ h6 {
     }
 }
 
+/* * - 2 - Disposition Bouton Appel gratuit */
 .btn-container {
     display: flex;
     justify-content: center;
@@ -580,30 +590,20 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.btn {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    font-family: Georgia;
-    color: #ffffff;
-    font-size: 16px;
-    background: #645f5f;
-    padding: 7px 10px 10px 10px;
-    text-decoration: none;
-}
-
+/* * - 2 - Disposition Bouton Appel gratuit */
 .btn:hover {
     background: #153814;
     text-decoration: none;
 }
 
+/* * - 2 - taille et texte, ombre Bouton Appel gratuit */
 .btn {
     text-decoration: none;
     padding: 10px;
     font-family: arial;
     font-size: 1em;
     color: #FFFFFF;
-    background-color: #899F11;
+    background-color: #3ec615;
     border-radius: 24px;
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
@@ -613,13 +613,15 @@ h6 {
     -moz-box-shadow: 3px 3px 12px #444444;
 }
 
+/* * - 2 - Ombre au passage de la souris sur Bouton Appel gratuit */
 .btn:hover {
     padding: 10px;
-    box-shadow: 1px 1px 4px #777777;
-    -webkit-box-shadow: 1px 1px 4px #777777;
-    -moz-box-shadow: 1px 1px 4px #777777;
+    box-shadow: 1px 1px 4px #ffffff;
+    -webkit-box-shadow: 1px 1px 4px #ffffff;
+    -moz-box-shadow: 1px 1px 4px #ffffff;
 }
 
+/* * - 2 - Bouton Testez gratuitement */
 button {
     display: block;
     margin: 20px auto 0;
@@ -638,6 +640,7 @@ button {
     border-radius: 10%;
 }
 
+/* * - 2 - au passage de la souris sur Bouton Testez gratuitement */
 button:hover {
     background-color: #0f0;
     /* Neon green on hover */
@@ -645,6 +648,7 @@ button:hover {
     box-shadow: 0 0 12px #0f0;
 }
 
+/* * - 2 - lorsque l'on click sur Bouton Testez gratuitement */
 button:active {
     transform: scale(0.98);
     /* Slight press effect */
