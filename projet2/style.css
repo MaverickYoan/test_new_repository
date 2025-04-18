@@ -1,518 +1,436 @@
+Utilities CSS Minifier Online CSS Minifier Tool and Compressor,
+with Fast and Simple API Access Input CSS
 /* + - 0 - LEGENDE DES COMMENTAIRES */
 
-/* 1 - COMMENTAIRES */
-/* * - 2 - OK */
-/* // - 3 - POUR INFOS */
-/* ? - 4 - ATTENTION */
-/* TODO - 5 - A FAIRE */
-/* ! - 6 - ERREURS A CORRIGER */
-/* NEXT - 7 - PROCHAINE ETAPE */
+/* COMMENTAIRES */
+/* * OK */
+/* // - POUR INFOS */
+/* ? - ATTENTION */
+/* TODO - A FAIRE */
+/* ! - ERREURS A CORRIGER */
+/* NEXT - PROCHAINE ETAPE */
 
+/*____________________________________________*/
+Minified CSS Output .navbar,
+body {
+    background-color: #000
+}
+
+.filterDiv,
+.text-une,
+html {
+    text-align: center
+}
+
+.tem1,
+.une {
+    background: #000
+}
 
 * ::before,
 ::after {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-
+    padding: 0
 }
 
-/******************************************************************/
-/* * - 2 - style pour la démo */
 html {
     margin-top: 1em;
-    text-align: center;
     font-family: 'Droid Sans', sans-serif;
-    font-size: 0.5rem;
+    font-size: .5rem;
+    font-size: clamp(1rem, 2vw, .5rem)
 }
 
 a {
-    color: crimson;
+    color: #dc143c;
     font-weight: 400;
-    transition: all 0.8s cubic-bezier(.14, 1.36, .5, .88);
-    display: inline-block;
+    transition: .8s cubic-bezier(.14, 1.36, .5, .88);
+    display: inline-block
+}
+
+.entete,
+.tem1,
+.une,
+button {
+    font-weight: 700
 }
 
 a:hover {
     transform: scale(1.1)
 }
 
-/******************************************************************/
-
-/* * - 2 - créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
-* {
-    border: 1px solid blue;
-} */
-
-/* * - 2 - Paramètre - body */
 body {
-    /* * - 2 - Retro vibe font */
     font-family: 'Courier New', Courier, monospace;
-    /* * - 2 - Dark background */
-    background-color: #000000;
-    /* * - 2 - Neon green text */
     color: #0f0;
     line-height: 1.6;
-    padding: 0px;
+    padding: 0
 }
 
-/* * - 2 - Paramètre - .navbar */
 .navbar {
     position: fixed;
     right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
     padding: 10px 20px;
-    z-index: 99;
+    z-index: 99
 }
 
-/* * - 2 - .nav-links */
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
-/* * - 2 - .nav-links & li - margin */
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 20px
 }
 
-/* * - 2 - .nav-links & a - margin */
 .nav-links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 10px
 }
 
-/* * - 2 - burger - display */
 .hamburger-menu {
     display: none;
     flex-direction: column;
-    cursor: pointer;
+    cursor: pointer
 }
 
-/* * - 2 - burger - width */
 .hamburger-menu .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #fff;
     margin: 4px 0;
-    transition: 0.4s;
+    transition: .4s
 }
 
-/* * - 2 - scroll animation */
 .scroll {
-    animation: reveal linear both;
+    animation: linear both reveal;
     animation-timeline: view();
     animation-range: contain 30% contain 50%;
-    view-timeline-inset: 0%;
+    view-timeline-inset: 0%
 }
 
-/* * - 2 - scroll animation */
 @keyframes reveal {
     from {
         transform: scale(0);
-        opacity: 0;
+        opacity: 0
     }
 
     to {
         transform: scale (1);
-        opacity: 1;
+        opacity: 1
     }
 }
 
-/* * - 2 - images shop taille */
 .shop-img {
     grid-row: auto;
-    width: 20%;
+    width: 20%
 }
 
-/* * - 2 - apparition animation des textes */
 h2,
 p {
-    animation: slide linear;
+    animation: linear slide;
     animation-timeline: view();
-    animation-range: cover 0 cover 30%;
+    animation-range: cover 0 cover 30%
 }
 
-/* * - 2 - apparition animation des textes transform */
 @keyframes slide {
     from {
         transform: translateY(100%);
-        opacity: 0;
+        opacity: 0
     }
 
     to {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 1
     }
 }
-
-/* * - 2 - Articles section */
 
 .container .filter {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2px;
+    gap: 2px
+}
+
+.card,
+.tem1 {
+    justify-content: center
 }
 
 .container button {
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 10%;
-    background-color: #30c52d;
+    background-color: #30c52d
 }
 
 .container button.active {
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1rem
 }
 
-/* * - 2 - disposition card chiens/chats */
 .card {
     display: block;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 1rem
 }
 
-/* * - 2 - taille img chiens/chats */
 .card img {
     width: 80%;
-    object-fit: contain;
+    object-fit: contain
 }
 
-/* * - 2 - marge gauche image chiens/chats desktop */
 .pets {
-    margin-left: 0.5rem;
+    margin-left: .5rem;
+    border-radius: 15%
 }
 
-
-/* * - 2 - border radius cartes Chiens et Chats dans Articles */
-.pets {
-    border-radius: 15%;
-}
-
-/* * - 2 - Largeur des cartes Chiens et Chats dans Articles */
 .articles {
-    width: 90%;
+    width: 90%
 }
 
-/* * - 2 - catégories taille, couleur, matériaux, descriptions et prix */
 .filterDiv {
     float: left;
-    color: #22ff00;
+    color: #2f0;
     width: 100%;
-    text-align: center;
     margin: 2px;
     display: none;
-    gap: 1rem;
+    gap: 1rem
 }
 
-/* * - 2 - texte des catégories taille, couleur, matériaux, descriptions et prix */
+.btn:hover,
+.une,
+h6,
 span {
-    color: white;
+    color: #fff
 }
 
-/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
-.show {
-    display: block;
+#contact,
+.show,
+button {
+    display: block
 }
 
-/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
 .container {
-    margin-top: 0.5rem;
+    margin-top: .5rem
 }
 
-/* * - 2 - Style des boutons (Tous, Chiens et le bouton Chats) */
+/* * Style des boutons (Tous, Chiens et le bouton Chats) */
 .btn {
-    text-decoration: none;
-    padding: 10px;
-    font-family: arial;
-    font-size: 1em;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 24px;
-    -webkit-border-radius: 24px;
-    -moz-border-radius: 24px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 3px 3px 12px #444444;
-    -webkit-box-shadow: 3px 3px 12px #444444;
-    -moz-box-shadow: 3px 3px 12px #444444;
+    border-radius: 24px
 }
 
-/* * - 2 - au passage de la souris sur le bouton */
+/* * bordures blanches autour Témoignages*/
+.grid,
+.text-une,
+.une {
+    border: 1px solid #fff
+}
+
+/* * au passage de la souris sur le bouton */
 .btn:hover {
-    background-color: #0f0;
-    /* * - 2 - Neon green on hover */
-    color: #ffffff;
-    box-shadow: 0 0 12px #0f0;
+    box-shadow: 0 0 12px #0f0
 }
 
-/* * - 2 - lorsque l'on click sur le bouton */
+/* * lorsque l'on click sur le bouton */
 .btn.active {
     background-color: #62ff00;
-    color: rgb(255, 0, 251);
+    color: #ff00fb
 }
 
-/* * - 2 - padding background témoignages section */
+/* * padding background témoignages section */
 .une {
-    padding: 16px;
-    background: rgb(0, 0, 0);
-    font-weight: 700;
-    color: rgb(255, 255, 255);
-    border: 1px solid white;
+    padding: 16px
 }
 
-/* * - 2 - Témoignages */
+/* * Témoignages */
 .text-une {
     font-size: 1.875rem;
-    font: bold;
-    text-align: center;
-    margin-bottom: 12px;
-    border: 1px solid white;
+    margin-bottom: 12px
 }
 
-/* * - 2 - bordures blanches autour Témoignages*/
-.grid {
-    border: 1px solid white;
-}
-
-/* * - 2 - disposition éléments Témoignages */
+/* * disposition éléments Témoignages */
 .tem1 {
-    background: #000000;
-    font-weight: 700;
-    border-radius: 0.5rem;
-    box-shadow: 0.5rem;
+    border-radius: .5rem;
+    box-shadow: .5rem;
     padding: 6px;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 4px;
+    margin-bottom: 4px
 }
 
-/* * - 2 - disposition initiales */
+/* * disposition des initiales - témoignages */
 .entete {
-    width: 1.875rem;
     height: 1.875rem;
     background-size: 100;
-    border-radius: 100;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    color: rgb(9, 255, 0);
-    font-weight: 700;
-    font: bold;
-    font-size: small;
+    color: #09ff00;
     margin-right: 4px;
     align-items: center;
     border: 2px solid green;
-    border-radius: 50%;
     width: 25%;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
-/* * - 2 - textes prénoms et type de bénéficiaire */
+/* * textes prénoms et type de bénéficiaire - témoignages */
 .une-sous-font {
     font-size: small;
-    color: white;
-    font: 600;
+    color: #fff
 }
 
-/* * - 2 - commentaires témoignages */
+/* * commentaires témoignages */
 .une-comm-font {
-    font-size: ;
     color: gray;
-    font: 700;
-    font-style: italic;
+    font-style: italic
 }
 
-/* * - 2 - disposition étoiles témoignages section */
+/* * flex étoiles */
 .stars {
     flex: auto;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
-/* * - 2 - étoiles */
+/* * disposition étoiles */
 .fa,
 .fa-star {
     display: flex;
-    color: rgb(89, 255, 0);
+    color: #59ff00;
     margin-left: 2rem;
-    align-items: center;
+    align-items: center
 }
 
-/* * - 2 - Formulaire de contact */
+/* * Formulaire de contact */
 #contact {
     margin-left: 25%;
     margin-top: 2rem;
     width: 50%;
-    border: 2px solid rgb(0, 255, 0);
-    display: block;
+    border: 2px solid #0f0;
     justify-content: center;
-    align-items: center;
-
+    align-items: center
 }
 
-/* * - 2 - directOptic&audition */
+/* * directOptic&audition */
 .agrees {
-    margin-top: 0.1em;
-    color: white;
-    font-size: 0.5em;
-    text-decoration-style: none;
+    margin-top: .1em;
+    color: #fff;
+    font-size: .5em;
+    text-decoration-style: none
 }
 
+.btn,
+button {
+    font-size: 1em
+}
 
-/* * - 2 - media queries */
-@media (max-width: 768px) {
+/* * media queries */
+@media (max-width:768px) {
+
+    .card,
+    .container {
+        width: 100%;
+        background-color: #000
+    }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 100%
     }
 
     .nav-links li {
         margin: 10px 0;
-        text-align: center;
+        text-align: center
     }
 
+    .card h3,
     .nav-links.active {
-        display: flex;
+        display: flex
     }
 
-    /* * - 2 - Disposition du menu burger */
+    /* * Disposition du menu burger */
     .hamburger-menu {
         display: flex;
-        right: 0;
+        right: 0
     }
 
-    .hamburger-menu.active .bar:nth-child(1) {
-        /* * - 2 - transform: rotate(45deg) translate(5px, 5px); */
-        transform: translateY(0px) rotate(-135deg);
+    .hamburger-menu.active .bar:first-child {
+        transform: translateY(0) rotate(-135deg)
     }
 
     .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
+        opacity: 0
     }
 
     .hamburger-menu.active .bar:nth-child(3) {
-        /* * - 2 - transform: rotate(-45deg) translate(5px, -5px); */
-        transform: translateY(0px) rotate(135deg);
+        transform: translateY(0) rotate(135deg)
     }
 
-    /* * - 2 - - 1 - Articles section */
-
-    .container {
-        max-width: 1000px;
-        position: static;
-        width: 100%;
-        height: 100%;
-        margin: auto;
-        padding: 20px;
-        background-color: #000000;
-    }
-
-    .container .filter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2px;
-        color: #ffffff;
-    }
-
-    .container button {
-        padding: 10px 20px;
-        font-size: 18px;
-        border-radius: 10%;
-        background-color: #30c52d;
-    }
-
-    .container button.active {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .card {
-        width: 100%;
-        background-color: #000000;
-    }
-
+    /* * Images Chiens/Chats section Articles */
     .card img {
-        object-fit: contain;
+        object-fit: contain
     }
 
-    .card h3 {
-        display: flex;
-    }
-
+    /* * Formulaire de contact */
     #contact {
         margin-left: 25%;
         margin-top: 2rem;
         width: 50%;
-        border: 2px solid rgb(0, 255, 0);
+        border: 2px solid #0f0;
         display: block;
         justify-content: center;
-        align-items: center;
-
+        align-items: center
     }
 
-
-    /* * - 2 - marge gauche image chiens/chats mobile */
+    /* * marge gauche image chiens/chats mobile */
     .pets {
-        margin-left: 0.5rem;
+        margin-left: .5rem
     }
-
 }
 
-/* * - 2 - rend le texte adaptable à la taille de la fenêtre */
-html {
-    font-size: clamp(1rem, 2vw, 0.5rem);
-}
-
-/* * - 2 - crop image chat en cercle  */
+/* * crop image chat en cercle  */
 .section-image-chat {
     width: 50%;
-    /* * - 2 - crop l'image en cercle */
-    clip-path: circle(50% at 50% 50%);
-    /* // - 3 - crop l'image en polygon 8 côtés */
-    /* // - 3 - clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
-
+    clip-path: circle(50% at 50% 50%)
 }
 
-/* * - 2 - couleur texte droits */
-h6 {
-    color: white;
-}
-
-/*_________________flèche retour en haut____________________*/
-/* * - 2 - flèche retour en haut  */
+/* * flèche retour en haut  */
 .back-to-top {
-    /* * - 2 -  Basic styling  */
     background-color: oklch(100% 0 0);
     border: 2px solid currentColor;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     display: inline-block;
-    padding: 0.3rem;
-    /* * - 2 -  Hidden by default  */
+    padding: .3rem;
     position: fixed;
     inset: auto 2rem 2rem auto;
+    --green: oklch(85.33% 0.15 141.46);
+    --green: oklch(85.33% 0.15 141.46);
+    animation: linear progress;
+    animation-timeline: scroll()
 }
 
-/* * - 2 - utiliser la couleur du texte  */
+.btn,
+.btn:hover {
+    text-decoration: none;
+    padding: 10px
+}
+
+/* * utiliser la couleur du texte  */
 .back-to-top:is(:link, :visited) {
     color: currentColor;
-    text-decoration: none;
+    text-decoration: none
 }
 
-/* * - 2 - masquer le texte retour en haut  */
+/* * masquer le texte retour en haut  */
 .back-to-top span {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -520,148 +438,114 @@ h6 {
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    width: 1px;
+    width: 1px
 }
 
-.back-to-top {
-    --green: oklch(85.33% 0.15 141.46);
-}
-
-/* * - 2 - animation progression de couleur la flèche  */
-@keyframes progress {
-    0% {
-        --progress: 0%;
-    }
-
-    100% {
-        --progress: 100%;
-    }
-}
-
-/* * - 2 - animation de la flèche  */
-.back-to-top {
-    --green: oklch(85.33% 0.15 141.46);
-    animation: progress linear;
-    animation-timeline: scroll();
-}
-
-/* * - 2 - rotation de la flèche  */
+/* * rotation de la flèche  */
 .back-to-top svg {
-    transform: rotate(var(--angle));
+    transform: rotate(var(--angle))
 }
 
-/* * - 2 - propriete de la progression de la fleche  */
+/* * propriete de la progression de la fleche  */
 @property --progress {
     syntax: '<percentage>';
     inherits: false;
-    initial-value: 0%;
+    initial-value: 0%
 }
 
 @property --angle {
     syntax: '<angle>';
     inherits: true;
-    initial-value: -90deg;
+    initial-value: -90deg
 }
 
 @keyframes progress {
     0% {
         --progress: 0%;
-        --angle: 90deg;
+        --progress: 0%;
+        --angle: 90deg
     }
 
     2% {
-        --angle: 90deg;
-
+        --angle: 90deg
     }
 
     100% {
-        --progress: 100%;
+        --progress: 100%
     }
 }
 
-@supports not (animation-timeline: scroll) {
+@supports not (animation-timeline:scroll) {
     .back-to-top {
-        background: var(--green);
+        background: var(--green)
     }
 }
 
-@media(prefers-reduced-motion: no-preference) {
+@media(prefers-reduced-motion:no-preference) {
     html {
-        scroll-behavior: smooth;
+        scroll-behavior: smooth
     }
 }
 
-/* * - 2 - Disposition Bouton Appel gratuit */
+/* * Disposition Bouton Appel gratuit */
 .btn-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
 }
 
-/* * - 2 - Disposition Bouton Appel gratuit */
-.btn:hover {
-    background: #153814;
-    text-decoration: none;
-}
-
-/* * - 2 - taille et texte, ombre Bouton Appel gratuit */
+/* * taille et texte, ombre Bouton Appel gratuit */
 .btn {
-    text-decoration: none;
-    padding: 10px;
     font-family: arial;
-    font-size: 1em;
-    color: #FFFFFF;
+    color: #fff;
     background-color: #3ec615;
     border-radius: 24px;
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 3px 3px 12px #444444;
-    -webkit-box-shadow: 3px 3px 12px #444444;
-    -moz-box-shadow: 3px 3px 12px #444444;
+    border: 4px solid #fff;
+    box-shadow: 3px 3px 12px #444;
+    -webkit-box-shadow: 3px 3px 12px #444;
+    -moz-box-shadow: 3px 3px 12px #444
 }
 
-/* * - 2 - Ombre au passage de la souris sur Bouton Appel gratuit */
+/* * Ombre au passage de la souris sur Bouton Appel gratuit */
 .btn:hover {
-    padding: 10px;
-    box-shadow: 1px 1px 4px #ffffff;
-    -webkit-box-shadow: 1px 1px 4px #ffffff;
-    -moz-box-shadow: 1px 1px 4px #ffffff;
+    background: #153814;
+    box-shadow: 1px 1px 4px #fff;
+    -webkit-box-shadow: 1px 1px 4px #fff;
+    -moz-box-shadow: 1px 1px 4px #fff
 }
 
-/* * - 2 - Bouton Testez gratuitement */
+/* * Bouton Testez gratuitement */
 button {
-    display: block;
     margin: 20px auto 0;
     padding: 10px 20px;
-    background-color: #ff00ff;
-    /* * - 2 - Neon pink */
+    background-color: #f0f;
     color: #1a1a1a;
-    /* * - 2 - Dark text */
     border: none;
     font-family: inherit;
-    font-size: 1em;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    box-shadow: 0 0 8px #ff00ff;
-    border-radius: 10%;
+    transition: background-color .3s, transform .1s;
+    box-shadow: 0 0 8px #f0f;
+    border-radius: 10%
 }
 
-/* * - 2 - au passage de la souris sur Bouton Testez gratuitement */
+/* * au passage de la souris sur Bouton Testez gratuitement */
 button:hover {
     background-color: #0f0;
-    /* * - 2 - Neon green on hover */
     color: #1a1a1a;
-    box-shadow: 0 0 12px #0f0;
+    box-shadow: 0 0 12px #0f0
 }
 
-/* * - 2 - lorsque l'on click sur Bouton Testez gratuitement */
+/* * lorsque l'on click sur Bouton Testez gratuitement */
 button:active {
-    transform: scale(0.98);
-    /* * - 2 - Slight press effect */
+    transform: scale(.98)
 }
 
-
-/*____________________________________________*/
+CSS Minifier Tool Documentation The API has changed,
+to see more please click here To minify/compress your CSS,
+perform a POST request to API https: //www.toptal.com/developers/cssminifier/api/raw
+with the input parameter set to the CSS you want to minify. Hire World Class Talent with Toptal CSS Developers Landing Page Designers Animation Designers Web Developers Social Media Designers Webflow Designers Blog Designers Salesforce Consultants Mobile UI Designers WPF Developers Level Designers Mobile Game Designers CSS3 Developers VBA Developers Marketo Developers Hire the top 3% of freelance talent Join the Toptal Network Copyright 2010 - 2025 Toptal,
+LLC Privacy Policy Website terms By continuing to use this site you agree to our Cookie Policy Privacy Policy,
+and Terms of Use. Got it
