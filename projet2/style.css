@@ -1,5 +1,3 @@
-Utilities CSS Minifier Online CSS Minifier Tool and Compressor,
-with Fast and Simple API Access Input CSS
 /* + LEGENDE DES COMMENTAIRES */
 
 /* COMMENTAIRES */
@@ -141,7 +139,8 @@ body {
 }
 
 h2,
-p {
+p,
+span {
     animation: linear slide;
     animation-timeline: view();
     animation-range: cover 0 cover 30%
@@ -552,9 +551,4 @@ button:active {
     transform: scale(.98)
 }
 
-CSS Minifier Tool Documentation The API has changed,
-to see more please click here To minify/compress your CSS,
-perform a POST request to API https: //www.toptal.com/developers/cssminifier/api/raw
-with the input parameter set to the CSS you want to minify. Hire World Class Talent with Toptal CSS Developers Landing Page Designers Animation Designers Web Developers Social Media Designers Webflow Designers Blog Designers Salesforce Consultants Mobile UI Designers WPF Developers Level Designers Mobile Game Designers CSS3 Developers VBA Developers Marketo Developers Hire the top 3% of freelance talent Join the Toptal Network Copyright 2010 - 2025 Toptal,
-LLC Privacy Policy Website terms By continuing to use this site you agree to our Cookie Policy Privacy Policy,
-and Terms of Use. Got it
+/* // CSS Minifier Tool Documentation The API has changed */
