@@ -1,14 +1,14 @@
 Utilities CSS Minifier Online CSS Minifier Tool and Compressor,
 with Fast and Simple API Access Input CSS
-/* + - 0 - LEGENDE DES COMMENTAIRES */
+/* + LEGENDE DES COMMENTAIRES */
 
 /* COMMENTAIRES */
 /* * OK */
-/* // - POUR INFOS */
-/* ? - ATTENTION */
-/* TODO - A FAIRE */
-/* ! - ERREURS A CORRIGER */
-/* NEXT - PROCHAINE ETAPE */
+/* // POUR INFOS */
+/* ? ATTENTION */
+/* TODO A FAIRE */
+/* ! ERREURS A CORRIGER */
+/* NEXT PROCHAINE ETAPE */
 
 /*____________________________________________*/
 Minified CSS Output .navbar,
@@ -66,16 +66,19 @@ body {
     padding: 0
 }
 
+/* * navbar position - flex */
 .navbar {
+    background-color: black;
     position: fixed;
     right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
     z-index: 99
 }
 
+/* * nav-links position - flex */
 .nav-links {
     list-style: none;
     display: flex;
@@ -83,28 +86,34 @@ body {
     padding: 0
 }
 
+/* * nav-links margin */
 .nav-links li {
-    margin-left: 20px
+    margin-left: 5px
 }
 
+/* * nav-links color - padding */
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px
+    padding: 5px 5px
 }
 
+/* * flex menu burger only */
 .hamburger-menu {
     display: none;
     flex-direction: column;
-    cursor: pointer
+    cursor: pointer;
+    z-index: 99;
 }
 
+/* * menu burger only */
 .hamburger-menu .bar {
     width: 25px;
     height: 3px;
     background-color: #fff;
     margin: 4px 0;
-    transition: .4s
+    transition: .4s;
+    background-color: #1aff00;
 }
 
 .scroll {
@@ -409,9 +418,9 @@ button {
     border: 2px solid currentColor;
     border-radius: .5rem;
     display: inline-block;
-    padding: .3rem;
+    padding: .2rem;
     position: fixed;
-    inset: auto 2rem 2rem auto;
+    inset: auto 1rem 1rem auto;
     --green: oklch(85.33% 0.15 141.46);
     --green: oklch(85.33% 0.15 141.46);
     animation: linear progress;
