@@ -71,10 +71,8 @@
                 </div>
             </div>
         </section>
-        <button>Testez gratuitement</button><!-- ? - 4 - CTA -->
-
+        <button>Testez gratuitement</button><!-- * - CTA -->
         <h5>Une vision claire pour nos amis à quatre pattes !</h5>
-
     </header>
 
 
@@ -99,6 +97,9 @@
             </article>
         </div>
 
+
+        <!-- * Articles section -->
+
         <h2>Articles</h2>
         <!-- id myBtnContainer / btn active / btn / articles  / filterDiv / card / chiens / pets / details / h5 / span -->
         <div id="myBtnContainer">
@@ -107,230 +108,253 @@
                 all</button>
             <button class="btn" onclick="filterSelection('chiens')"> Chiens</button>
             <button class="btn" onclick="filterSelection('chats')"> Chats</button>
+            <button class="btn" onclick="filterSelection('lunettes')"> Lunettes</button>
         </div>
         <section class="articles">
-            <div class="filterDiv chiens">
-                <div class="card" data-name="chiens">
-                    <img class="pets" src="husky.jpg"
-                        alt="chien husky noir et blanc yeux marrons portant nos lunettes de vue">
+            <div class="filterDiv lunettes">
+                <div class="card" data-name="lunettes">
+                    <img class="lunettes" src="0000.avif" alt="Lunettes">
                     <div classe="details">
-                        <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                        <h5>taille : <span>Peut être fabriqué dans n'importe quelle
+                                forme.</span></h5>
                         <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
                         </h5>
-                        <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes
-                                écologiques est
-                                l'acétate de cellulose.</span></h5>
-                        <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la
-                                pulpe de bois,
-                                il est léger.</span></h5>
-                        <h5>prix : <span>11 euros</span></h5>
+                        <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes écologiques est l'acétate
+                                de cellulose.</span></h5>
+                        <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la pulpe de bois, il
+                                est léger.</span></h5>
+                        <h5>prix : <span>En fonction de votre animal de compagnie.</span></h5>
                     </div>
                 </div>
             </div>
 
-            <div class="filterDiv chats">
-                <div class="card" data-name="chats">
-                    <img class="pets" src="istockphoto-1397756029-612x612.jpg"
-                        alt="chat à poil roux tigré aux yeux vert-jaunes portant nos lunettes de vue">
-                    <div classe="details">
-                        <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
-                        <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
-                        </h5>
-                        <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes
-                                écologiques est
-                                l'acétate de cellulose.</span></h5>
-                        <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la
-                                pulpe de bois,
-                                il est léger.</span></h5>
-                        <h5>prix : <span>10 euros</span></h5>
+            <section class="articles">
+                <div class="filterDiv chiens">
+                    <div class="card" data-name="chiens">
+                        <img class="pets" src="husky.jpg"
+                            alt="chien husky noir et blanc yeux marrons portant nos lunettes de vue">
+                        <div classe="details">
+                            <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
+                            </h5>
+                            <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes écologiques est
+                                    l'acétate
+                                    de cellulose.</span></h5>
+                            <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la pulpe de bois,
+                                    il
+                                    est léger.</span></h5>
+                            <h5>prix : <span>11 euros</span></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="filterDiv chats">
+                    <div class="card" data-name="chats">
+                        <img class="pets" src="istockphoto-1397756029-612x612.jpg"
+                            alt="chat à poil roux tigré aux yeux vert-jaunes portant nos lunettes de vue">
+                        <div classe="details">
+                            <h5>taille : <span>Peut être fabriqué dans n'importe quelle forme.</span></h5>
+                            <h5>couleur : <span>Peut être fabriqué dans n'importe quelle couleur.</span>
+                            </h5>
+                            <h5>matériaux : <span>Le matériau utilisé pour fabriquer nos lunettes écologiques est
+                                    l'acétate de cellulose.</span></h5>
+                            <h5>descriptions : <span>Dérivé de substances naturelles comme le coton et la pulpe de bois,
+                                    il
+                                    est léger.</span></h5>
+                            <h5>prix : <span>10 euros</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <script><!-- * Script : activer le menu pour fitrer les choix entre chiens ou chats -->
+                filterSelection("all")
+                function filterSelection(c) {
+                    var x, i;
+                    x = document.getElementsByClassName("filterDiv");
+                    if (c == "all") c = "";
+                    for (i = 0; i < x.length; i++) {
+                        w3RemoveClass(x[i], "show"); if (x[i].className.indexOf(c) > -1)
+                            w3AddClass(x[i], "show");
+                    }
+                }
+
+                function w3AddClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        if (arr1.indexOf(arr2[i]) == -1) {
+                            element.className += " " + arr2[i];
+                        }
+                    }
+                } function w3RemoveClass(element, name) {
+                    var i, arr1, arr2; arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        while (arr1.indexOf(arr2[i]) > -1) {
+                            arr1.splice(arr1.indexOf(arr2[i]), 1);
+                        }
+                    }
+                    element.className = arr1.join(" ");
+                }
+
+                // Add active class to the current button (highlight it)
+                var btnContainer = document.getElementById(" myBtnContainer"); var
+                    btns = btnContainer.getElementsByClassName("btn"); for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function () {
+                            var
+                            current = document.getElementsByClassName("active");
+                            current[0].className = current[0].className.replace(" active", ""); this.className += " active";
+                        });
+                    } </script>
+
         </section>
 
 
-        <script><!-- * Script : activer le menu pour fitrer les choix entre chiens ou chats -->
-            filterSelection("all")
-            function filterSelection(c) {
-                var x, i;
-                x = document.getElementsByClassName("filterDiv");
-                if (c == "all") c = "";
-                for (i = 0; i < x.length; i++) {
-                    w3RemoveClass(x[i], "show"); if (x[i].className.indexOf(c) > -1)
-                        w3AddClass(x[i], "show");
-                }
-            }
+        <!-- * Image-chat -->
 
-            function w3AddClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) { if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; } }
-            } function w3RemoveClass(element, name) {
-                var i, arr1, arr2; arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    while (arr1.indexOf(arr2[i]) > -1) {
-                        arr1.splice(arr1.indexOf(arr2[i]), 1);
-                    }
-                }
-                element.className = arr1.join(" ");
-            }
-
-            // Add active class to the current button (highlight it)
-            var btnContainer = document.getElementById(" myBtnContainer"); var
-                btns = btnContainer.getElementsByClassName("btn"); for (var i = 0; i < btns.length; i++) {
-                    btns[i].addEventListener("click", function () {
-                        var current = document.getElementsByClassName("active");
-                        current[0].className = current[0].className.replace(" active", ""); this.className += " active";
-                    });
-                }
-        </script>
-
-    </section>
-
-
-    <!-- * Image-chat -->
-
-    <div class="hero-text"><!-- hero-text / section-image-chat / section-text-chat / p -->
-        <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
-        <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos amis
-            les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
-            correctrices.
-        </p>
-    </div>
-
-
-    <!-- * Appelez-nous -->
-
-    <h2>Appelez-nous pour convenir des lunettes les plus adaptées à votre animal de compagnie.</h2>
-    <div class="btn-container"> <!-- * CTA -->
-        <button class="btn">Appel gratuit</button>
-    </div>
-
-
-    <!-- * Témoignages Section -->
-
-    <section class="une" id="avis">
-        <div class="container-une">
-
-            <!-- Témoignage 1 -->
-            <h2 class="text-une">Témoignages</h2>
-            <div class="grid">
-                <div class="tem1">
-                    <div class="tem1">
-                        <div class="entete"> M.D</div>
-                        <div>
-                            <h4 class="une-font">Marie Dupont</h4>
-                            <p class="une-sous-font">Fille de bénéficiaire</p>
-                        </div>
-                    </div>
-                    <p class="une-comm-font">"Mon chien a bénéficié de ces lunettes et nous revoit de nouveau." </p>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Témoignage 2 -->
-            <div class="grid">
-                <div class="tem1">
-                    <div class="tem1">
-                        <div class="entete"> J.L</div>
-                        <div>
-                            <h4 class="une-font">Jean Lambert</h4>
-                            <p class="une-sous-font">Bénéficiaire</p>
-                        </div>
-                    </div>
-                    <p class="une-comm-font">"Ces lunettes sont parfaites. Notre chat, mioppe de naissance, revit."</p>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Témoignage 3 -->
-            <div class="grid">
-                <div class="tem1">
-                    <div class="tem1">
-                        <div class="entete"> S.T</div>
-                        <div>
-                            <h4 class="une-font">Sophie Tremblay</h4>
-                            <p class="une-sous-font">Bénéficiaire</p>
-                        </div>
-                    </div>
-                    <p class="une-comm-font">"Merci, notre chien a repris la joie de vivre."</p>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-text"><!-- hero-text / section-image-chat / section-text-chat / p -->
+            <img class="section-image-chat" src="chat-noir-et-blanc.jpg" alt="Image d'arrière-plan">
+            <p class="section-text-chat">Une vision claire pour nos amis à quatre pattes ! <br>Il est vrai que nos amis
+                les chats ont une super vision, <br>mais ils peuvent aussi avoir besoin de lunettes
+                correctrices.
+            </p>
         </div>
 
-    </section>
 
+        <!-- * Appelez-nous -->
 
-    <!-- * Contact section -->
-
-    <section id="contact"><!-- form-titre / form-sous-titre / form -->
-        <form action=index.html method=post>
-            <b class=form-titre>Formulaire de contact</b><br>
-            <p class=form-sous-titre>
-                Remplissez le formulaire ci-dessous<br>pour nous contacter</p>
-            <div class=form>
-                <label for=nom>Nom :</label><br>
-                <input id=nom name=nom placeholder="Nom"><br>
-                <label for=prenom>Prénom :</label><br>
-                <input id=prenom name=prenom placeholder="Prénom"><br>
-                <label for=email>Email :</label><br>
-                <input id=email name=email placeholder="Email"><br>
-                <label for=message>Message :</label><br>
-                <textarea id=message name=message placeholder="Message"></textarea><br>
-                <input type=submit value=Envoyer><br>
-            </div>
-        </form>
-    </section>
-
-
-    <!-- * FOOTER -->
-
-    <footer><!-- * droits / h6 -->
-        <div class="droits">
-            <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
-                <br>Mentions légales | Politique de confidentialité | Conditions générales de vente<br>
-            </h6>
-            <a class="agrees" href="https://www.direct-optic.fr" target="_blank">Faible coût, qualité certifiée par des
-                opticiens
-                agréés par directOptic&audition</a>
+        <h2>Appelez-nous pour convenir des lunettes les plus adaptées à votre animal de compagnie.</h2>
+        <div class="btn-container"> <!-- * CTA -->
+            <button class="btn">Appel gratuit</button>
         </div>
 
-    </footer>
+
+        <!-- * Témoignages Section -->
+
+        <section class="une" id="avis">
+            <div class="container-une">
+
+                <!-- Témoignage 1 -->
+                <h2 class="text-une">Témoignages</h2>
+                <div class="grid">
+                    <div class="tem1">
+                        <div class="tem1">
+                            <div class="entete"> M.D</div>
+                            <div>
+                                <h4 class="une-font">Marie Dupont</h4>
+                                <p class="une-sous-font">Fille de bénéficiaire</p>
+                            </div>
+                        </div>
+                        <p class="une-comm-font">"Mon chien a bénéficié de ces lunettes et nous revoit de nouveau." </p>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 -->
+                <div class="grid">
+                    <div class="tem1">
+                        <div class="tem1">
+                            <div class="entete"> J.L</div>
+                            <div>
+                                <h4 class="une-font">Jean Lambert</h4>
+                                <p class="une-sous-font">Bénéficiaire</p>
+                            </div>
+                        </div>
+                        <p class="une-comm-font">"Ces lunettes sont parfaites. Notre chat, mioppe de naissance, revit."
+                        </p>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 -->
+                <div class="grid">
+                    <div class="tem1">
+                        <div class="tem1">
+                            <div class="entete"> S.T</div>
+                            <div>
+                                <h4 class="une-font">Sophie Tremblay</h4>
+                                <p class="une-sous-font">Bénéficiaire</p>
+                            </div>
+                        </div>
+                        <p class="une-comm-font">"Merci, notre chien a repris la joie de vivre."</p>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
 
-    <!-- * a / p / svg -->
+        <!-- * Contact section -->
 
-    <a href="#content" class="back-to-top"><!--  back-to-top -->
-        <p> </p>
-        <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
-        <svg width="18" height="18" viewbox=" 0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-        </svg>
-    </a>
+        <section id="contact"><!-- form-titre / form-sous-titre / form -->
+            <form action=index.html method=post>
+                <b class=form-titre>Formulaire de contact</b><br>
+                <p class=form-sous-titre>
+                    Remplissez le formulaire ci-dessous<br>pour nous contacter</p>
+                <div class=form>
+                    <label for=nom>Nom :</label><br>
+                    <input id=nom name=nom placeholder="Nom"><br>
+                    <label for=prenom>Prénom :</label><br>
+                    <input id=prenom name=prenom placeholder="Prénom"><br>
+                    <label for=email>Email :</label><br>
+                    <input id=email name=email placeholder="Email"><br>
+                    <label for=message>Message :</label><br>
+                    <textarea id=message name=message placeholder="Message"></textarea><br>
+                    <input type=submit value=Envoyer><br>
+                </div>
+            </form>
+        </section>
 
+
+        <!-- * FOOTER -->
+
+        <footer><!-- * droits / h6 -->
+            <div class="droits">
+                <h6>&copy; 2025 Projet_2. Tous droits réservés. @onlineformapro
+                    <br>Mentions légales | Politique de confidentialité | Conditions générales de vente<br>
+                </h6>
+                <a class="agrees" href="https://www.direct-optic.fr" target="_blank">Faible coût, qualité certifiée par
+                    des opticiens agréés par directOptic&audition</a>
+            </div>
+
+        </footer>
+
+
+        <!-- * a / p / svg -->
+
+        <a href="#content" class="back-to-top"><!--  back-to-top -->
+            <p> </p>
+            <!-- aria-hidden="true" opur masquer l'icon de l'écran -->
+            <svg width="18" height="18" viewbox=" 0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+            </svg>
+        </a>
+
+        <script src="script.js"></script><!-- * - 2 - Script Section : activer le menu mobile -->
 
 </body>
 

@@ -9,9 +9,17 @@
 /* NEXT PROCHAINE ETAPE */
 
 /*____________________________________________*/
+
+/* variables */
+body {
+    --green: #04ff00;
+}
+
+/*____________________________________________*/
 Minified CSS Output .navbar,
 body {
-    background-color: #000
+    background-color: #000;
+    color: var(--green);
 }
 
 .filterDiv,
@@ -59,59 +67,58 @@ a:hover {
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    color: #0f0;
+    color: var(--green);
     line-height: 1.6;
-    padding: 0
+    padding: 0;
 }
 
-/* * navbar position - flex */
+/* * Paramètre - .navbar */
 .navbar {
-    background-color: black;
     position: fixed;
     right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
-    z-index: 99
+    background-color: #000000;
+    padding: 10px 20px;
+    z-index: 99;
 }
 
-/* * nav-links position - flex */
+/* * .nav-links */
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
-/* * nav-links margin */
+/* * .nav-links & li - margin */
 .nav-links li {
-    margin-left: 5px
+    margin-left: 20px;
 }
 
-/* * nav-links color - padding */
+/* * .nav-links & a - margin */
 .nav-links a {
-    color: #fff;
+    color: rgb(204, 0, 255);
+    font-weight: 700;
     text-decoration: none;
-    padding: 5px 5px
+    padding: 5px 10px;
 }
 
-/* * flex menu burger only */
+/* * burger - display */
 .hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 99;
 }
 
-/* * menu burger only */
+/* * burger - width */
 .hamburger-menu .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: rgb(204, 0, 255);
     margin: 4px 0;
-    transition: .4s;
-    background-color: #1aff00;
+    transition: 0.4s;
 }
 
 .scroll {
@@ -133,9 +140,10 @@ body {
     }
 }
 
+
 .shop-img {
     grid-row: auto;
-    width: 20%
+    width: 20%;
 }
 
 h2,
@@ -174,7 +182,7 @@ span {
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 10%;
-    background-color: #30c52d
+    background-color: var(--green);
 }
 
 .container button.active {
@@ -186,7 +194,7 @@ span {
     display: block;
     align-items: center;
     width: 100%;
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
 .card img {
@@ -195,17 +203,25 @@ span {
 }
 
 .pets {
+    width: 50px;
     margin-left: .5rem;
     border-radius: 15%
 }
 
+.lunettes {
+    width: 50px;
+    margin-left: .5rem;
+    border-radius: 5%;
+}
+
 .articles {
-    width: 90%
+    width: 90%;
+    margin-left: 5%;
 }
 
 .filterDiv {
     float: left;
-    color: #2f0;
+    color: var(--green);
     width: 100%;
     margin: 2px;
     display: none;
@@ -243,12 +259,12 @@ button {
 
 /* * au passage de la souris sur le bouton */
 .btn:hover {
-    box-shadow: 0 0 12px #0f0
+    box-shadow: 0 0 12px var(--green);
 }
 
 /* * lorsque l'on click sur le bouton */
 .btn.active {
-    background-color: #62ff00;
+    background-color: var(--green);
     color: #ff00fb
 }
 
@@ -280,7 +296,7 @@ button {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    color: #09ff00;
+    color: var(--green);
     margin-right: 4px;
     align-items: center;
     border: 2px solid green;
@@ -312,7 +328,7 @@ button {
 .fa,
 .fa-star {
     display: flex;
-    color: #59ff00;
+    color: var(--green);
     margin-left: 2rem;
     align-items: center
 }
@@ -322,7 +338,7 @@ button {
     margin-left: 25%;
     margin-top: 2rem;
     width: 50%;
-    border: 2px solid #0f0;
+    border: 2px solid var(--green);
     justify-content: center;
     align-items: center
 }
@@ -393,7 +409,7 @@ button {
         margin-left: 25%;
         margin-top: 2rem;
         width: 50%;
-        border: 2px solid #0f0;
+        border: 2px solid var(--green);
         display: block;
         justify-content: center;
         align-items: center
