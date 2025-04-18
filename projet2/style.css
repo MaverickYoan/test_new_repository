@@ -1,6 +1,6 @@
 /* + - 0 - LEGENDE DES COMMENTAIRES */
 
-/* 1 - COMMENTAIRES */
+/* - 1 - COMMENTAIRES */
 /* * - 2 - OK */
 /*  // - 3 - POUR INFOS */
 /*  ? - 4 - ATTENTION */
@@ -149,7 +149,7 @@ p {
     }
 }
 
-/* * - 2 - Articles section */
+/* Articles section */
 
 .container .filter {
     display: flex;
@@ -170,7 +170,7 @@ p {
     font-size: 1rem;
 }
 
-/* * - 2 - disposition card chiens/chats */
+/* disposition card chiens/chats */
 .card {
     display: block;
     justify-content: center;
@@ -179,29 +179,29 @@ p {
     margin-top: 1rem;
 }
 
-/* * - 2 - taille img chiens/chats */
+/* taille img chiens/chats */
 .card img {
-    width: 100%;
+    width: 80%;
     object-fit: contain;
 }
 
-/* * - 2 - marge gauche image chiens/chats desktop */
+/* marge gauche image chiens/chats desktop */
 .pets {
     margin-left: 5rem;
 }
 
 
-/* * - 2 - border radius cartes Chiens et Chats dans Articles */
+/* border radius cartes Chiens et Chats dans Articles */
 .pets {
     border-radius: 15%;
 }
 
-/* * - 2 - Largeur des cartes Chiens et Chats dans Articles */
+/* Largeur des cartes Chiens et Chats dans Articles */
 .articles {
     width: 90%;
 }
 
-/* * - 2 - catégories taille, couleur, matériaux, descriptions et prix */
+/* catégories taille, couleur, matériaux, descriptions et prix */
 .filterDiv {
     float: left;
     color: #22ff00;
@@ -212,22 +212,22 @@ p {
     gap: 1rem;
 }
 
-/* * - 2 - texte des catégories taille, couleur, matériaux, descriptions et prix */
+/* texte des catégories taille, couleur, matériaux, descriptions et prix */
 span {
     color: white;
 }
 
-/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
+/* Affichage des cartes Chiens et Chats dans Articles */
 .show {
     display: block;
 }
 
-/* * - 2 - Affichage des cartes Chiens et Chats dans Articles */
+/* Affichage des cartes Chiens et Chats dans Articles */
 .container {
     margin-top: 0.5rem;
 }
 
-/* * - 2 - Style des boutons (Tous, Chiens et le bouton Chats) */
+/* Style des boutons (Tous, Chiens et le bouton Chats) */
 .btn {
     text-decoration: none;
     padding: 10px;
@@ -244,7 +244,7 @@ span {
     -moz-box-shadow: 3px 3px 12px #444444;
 }
 
-/* * - 2 - au passage de la souris sur le bouton */
+/* au passage de la souris sur le bouton */
 .btn:hover {
     background-color: #0f0;
     /* Neon green on hover */
@@ -252,13 +252,13 @@ span {
     box-shadow: 0 0 12px #0f0;
 }
 
-/* * - 2 - lorsque l'on click sur le bouton */
+/* lorsque l'on click sur le bouton */
 .btn.active {
     background-color: #62ff00;
     color: rgb(255, 0, 251);
 }
 
-/* * - 2 - padding background témoignages section */
+/* padding background témoignages section */
 .une {
     padding: 16px;
     background: rgb(0, 0, 0);
@@ -267,7 +267,7 @@ span {
     border: 1px solid white;
 }
 
-/* * - 2 - Témoignages */
+/* Témoignages */
 .text-une {
     font-size: 1.875rem;
     font: bold;
@@ -276,12 +276,12 @@ span {
     border: 1px solid white;
 }
 
-/* * - 2 - bordures blanches autour Témoignages*/
+/* bordures blanches autour Témoignages*/
 .grid {
     border: 1px solid white;
 }
 
-/* * - 2 - disposition éléments Témoignages */
+/* disposition éléments Témoignages */
 .tem1 {
     background: #000000;
     font-weight: 700;
@@ -294,7 +294,7 @@ span {
     margin-bottom: 4px;
 }
 
-/* * - 2 - disposition initiales */
+/* disposition initiales */
 .entete {
     width: 1.875rem;
     height: 1.875rem;
@@ -315,14 +315,14 @@ span {
     padding: 0.5rem;
 }
 
-/* * - 2 - textes prénoms et type de bénéficiaire */
+/* textes prénoms et type de bénéficiaire */
 .une-sous-font {
     font-size: small;
     color: white;
     font: 600;
 }
 
-/* * - 2 - commentaires témoignages */
+/* commentaires témoignages */
 .une-comm-font {
     font-size: ;
     color: gray;
@@ -330,14 +330,14 @@ span {
     font-style: italic;
 }
 
-/* * - 2 - disposition étoiles témoignages section */
+/* disposition étoiles témoignages section */
 .stars {
     flex: auto;
     justify-content: center;
     align-items: center;
 }
 
-/* * - 2 - étoiles */
+/* étoiles */
 .fa,
 .fa-star {
     display: flex;
@@ -346,7 +346,7 @@ span {
     align-items: center;
 }
 
-/* * - 2 - Formulaire de contact */
+/* Formulaire de contact */
 #contact {
     margin-left: 25%;
     margin-top: 2rem;
@@ -358,7 +358,7 @@ span {
 
 }
 
-/* * - 2 - directOptic&audition */
+/* directOptic&audition */
 .agrees {
     margin-top: 0.1em;
     color: rgb(255, 255, 255);
@@ -367,7 +367,7 @@ span {
 }
 
 
-/* * - 2 - media queries */
+/* media queries */
 @media (max-width: 768px) {
 
     .nav-links {
@@ -462,19 +462,19 @@ span {
 
     }
 
-    /* * - 2 - marge gauche image chiens/chats mobile */
+    /* marge gauche image chiens/chats mobile */
     .pets {
-        margin-left: 1rem;
+        margin-left: 0rem;
     }
 
 }
 
-/* * - 2 - rend le texte adaptable à la taille de la fenêtre */
+/* rend le texte adaptable à la taille de la fenêtre */
 html {
     font-size: clamp(1rem, 2vw, 0.5rem);
 }
 
-/* * - 2 - crop image chat en cercle  */
+/* crop image chat en cercle  */
 .section-image-chat {
     width: 50%;
     /* crop l'image en cercle */
@@ -484,13 +484,13 @@ html {
 
 }
 
-/* * - 2 - couleur texte droits */
+/* couleur texte droits */
 h6 {
     color: white;
 }
 
 /*_________________flèche retour en haut____________________*/
-/* * - 2 - flèche retour en haut  */
+/* flèche retour en haut  */
 .back-to-top {
     /*  Basic styling  */
     background-color: oklch(100% 0 0);
@@ -503,13 +503,13 @@ h6 {
     inset: auto 2rem 2rem auto;
 }
 
-/* * - 2 - utiliser la couleur du texte  */
+/* utiliser la couleur du texte  */
 .back-to-top:is(:link, :visited) {
     color: currentColor;
     text-decoration: none;
 }
 
-/* * - 2 - masquer le texte retour en haut  */
+/* masquer le texte retour en haut  */
 .back-to-top span {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -524,7 +524,7 @@ h6 {
     --green: oklch(85.33% 0.15 141.46);
 }
 
-/* * - 2 - animation progression de couleur la flèche  */
+/* animation progression de couleur la flèche  */
 @keyframes progress {
     0% {
         --progress: 0%;
@@ -535,19 +535,19 @@ h6 {
     }
 }
 
-/* * - 2 - animation de la flèche  */
+/* animation de la flèche  */
 .back-to-top {
     --green: oklch(85.33% 0.15 141.46);
     animation: progress linear;
     animation-timeline: scroll();
 }
 
-/* * - 2 - rotation de la flèche  */
+/* rotation de la flèche  */
 .back-to-top svg {
     transform: rotate(var(--angle));
 }
 
-/* * - 2 - propriete de la progression de la fleche  */
+/* propriete de la progression de la fleche  */
 @property --progress {
     syntax: '<percentage>';
     inherits: false;
@@ -588,7 +588,7 @@ h6 {
     }
 }
 
-/* * - 2 - Disposition Bouton Appel gratuit */
+/* Disposition Bouton Appel gratuit */
 .btn-container {
     display: flex;
     justify-content: center;
@@ -596,13 +596,13 @@ h6 {
     margin-bottom: 1rem;
 }
 
-/* * - 2 - Disposition Bouton Appel gratuit */
+/* Disposition Bouton Appel gratuit */
 .btn:hover {
     background: #153814;
     text-decoration: none;
 }
 
-/* * - 2 - taille et texte, ombre Bouton Appel gratuit */
+/* taille et texte, ombre Bouton Appel gratuit */
 .btn {
     text-decoration: none;
     padding: 10px;
@@ -619,7 +619,7 @@ h6 {
     -moz-box-shadow: 3px 3px 12px #444444;
 }
 
-/* * - 2 - Ombre au passage de la souris sur Bouton Appel gratuit */
+/* Ombre au passage de la souris sur Bouton Appel gratuit */
 .btn:hover {
     padding: 10px;
     box-shadow: 1px 1px 4px #ffffff;
@@ -627,7 +627,7 @@ h6 {
     -moz-box-shadow: 1px 1px 4px #ffffff;
 }
 
-/* * - 2 - Bouton Testez gratuitement */
+/* Bouton Testez gratuitement */
 button {
     display: block;
     margin: 20px auto 0;
@@ -646,7 +646,7 @@ button {
     border-radius: 10%;
 }
 
-/* * - 2 - au passage de la souris sur Bouton Testez gratuitement */
+/* au passage de la souris sur Bouton Testez gratuitement */
 button:hover {
     background-color: #0f0;
     /* Neon green on hover */
@@ -654,7 +654,7 @@ button:hover {
     box-shadow: 0 0 12px #0f0;
 }
 
-/* * - 2 - lorsque l'on click sur Bouton Testez gratuitement */
+/* lorsque l'on click sur Bouton Testez gratuitement */
 button:active {
     transform: scale(0.98);
     /* Slight press effect */
