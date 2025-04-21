@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #17510c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* * Paramètre - .navbar */
+.navbar {
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    z-index: 99;
+    margin-top: 100px;
+}
+
+/* * .nav-links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* * .nav-links & li - margin */
+.nav-links li {
+    margin-left: 20px;
+}
+
+/* * .nav-links & a - margin */
+.nav-links a {
+    color: rgb(204, 0, 255);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* * burger - display */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* * burger - width */
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(204, 0, 255);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.scroll {
+    animation: linear both reveal;
+    animation-timeline: view();
+    animation-range: contain 30% contain 50%;
+    view-timeline-inset: 0%
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0);
+        opacity: 0
+    }
+
+    to {
+        transform: scale (1);
+        opacity: 1
+    }
+}
+
+
+nav {
+    background-color: #343a40;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Custom CSS for specific elements */
+.sidebar {
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    transform: translateX(-100%);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #17510c;
+    z-index: 40;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table {
+    min-width: 100%;
+}
+
+
+/* * media queries */
+@media (max-width:768px) {
+
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center
+    }
+
+    h3,
+    .nav-links.active {
+        display: flex
+    }
+
+    /* * Disposition du menu burger */
+    .hamburger-menu {
+        display: flex;
+        right: 0
+    }
+
+    .hamburger-menu.active .bar:first-child {
+        transform: translateY(0) rotate(-135deg)
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(0) rotate(135deg)
+    }
+
+    /* * Formulaire de contact */
+    #contact {
+        margin-left: 25%;
+        margin-top: 2rem;
+        width: 50%;
+        border: 2px solid var(--green);
+        display: block;
+        justify-content: center;
+        align-items: center
+    }
+
+}

@@ -4,17 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <title>Services</title>
-    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <h1>Services</h1>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+            <a href="index_ (2).html" target="_blank">Accueil</a>
+            <a href="about.html" target="_blank">À propos</a>
+            <a href="services.html" target="_blank">Services</a>
+            <a href="contact.html" target="_blank">Contact</a>
+        </nav>
+        <!-- Desktop Navigation -->
+        <nav class="navbar">
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#AuxiCare">AuxiCare</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -27,6 +43,116 @@
             <li>Présence et écoute</li>
         </ul>
     </main>
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-utensils text-5xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Aide aux repas</h3>
+                        <p class="text-gray-600 mb-4">Préparation des repas adaptés et aide à la prise alimentaire dans
+                            le respect des goûts et régimes.</p>
+                        <div class="flex items-center text-blue-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-shower text-5xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Toilette et hygiène</h3>
+                        <p class="text-gray-600 mb-4">Aide à la toilette et à l'habillage dans le respect de l'intimité
+                            et de la dignité de la personne.</p>
+                        <div class="flex items-center text-green-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-home text-5xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Ménage et courses</h3>
+                        <p class="text-gray-600 mb-4">Entretien du logement et aide aux courses pour maintenir un
+                            environnement sain et sécurisé.</p>
+                        <div class="flex items-center text-purple-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-pills text-5xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Gestion des médicaments</h3>
+                        <p class="text-gray-600 mb-4">Aide à la prise des médicaments selon l'ordonnance médicale et
+                            suivi du traitement.</p>
+                        <div class="flex items-center text-yellow-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-walking text-5xl text-red-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mobilité et accompagnement</h3>
+                        <p class="text-gray-600 mb-4">Aide aux déplacements et accompagnement dans les sorties pour
+                            maintenir une vie sociale.</p>
+                        <div class="flex items-center text-red-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-5xl text-indigo-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Soutien psychologique</h3>
+                        <p class="text-gray-600 mb-4">Écoute active et soutien moral pour préserver le bien-être
+                            émotionnel de la personne.</p>
+                        <div class="flex items-center text-indigo-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>&copy; 2025 Auxiliaire de Vie</footer>
 </body>
 

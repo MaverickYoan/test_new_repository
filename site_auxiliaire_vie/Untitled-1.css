@@ -1,0 +1,655 @@
+* ::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+/******************************************************************/
+/* * style pour la démo */
+html {
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 0.5rem;
+}
+
+a {
+    color: crimson;
+    font-weight: 400;
+    transition: all 0.8s cubic-bezier(.14, 1.36, .5, .88);
+    display: inline-block;
+}
+
+a:hover {
+    transform: scale(1.1)
+}
+
+/******************************************************************/
+
+/* * créer des outlines sur tous les éléments de la page (permet un debuggage rapide)
+* {
+    border: 1px solid blue;
+} */
+
+/* * Paramètre - body */
+body {
+    /* * Retro vibe font */
+    font-family: 'Courier New', Courier, monospace;
+    /* * Dark background */
+    background-color: #000000;
+    /* * Neon green text */
+    color: #0f0;
+    line-height: 1.6;
+    padding: 0px;
+}
+
+/* * Paramètre - .navbar */
+.navbar {
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    z-index: 99;
+}
+
+/* * .nav-links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* * .nav-links & li - margin */
+.nav-links li {
+    margin-left: 20px;
+}
+
+/* * .nav-links & a - margin */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* * burger - display */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* * burger - width */
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* * scroll animation */
+.scroll {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: contain 30% contain 50%;
+    view-timeline-inset: 0%;
+}
+
+/* * scroll animation */
+@keyframes reveal {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale (1);
+        opacity: 1;
+    }
+}
+
+/* * images shop taille */
+.shop-img {
+    grid-row: auto;
+    width: 20%;
+}
+
+/* * apparition animation des textes */
+h2,
+p {
+    animation: slide linear;
+    animation-timeline: view();
+    animation-range: cover 0 cover 30%;
+}
+
+/* * apparition animation des textes transform */
+@keyframes slide {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* * Articles section */
+
+.container .filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10%;
+    background-color: #30c52d;
+}
+
+.container button.active {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* * disposition card chiens/chats */
+.card {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* * taille img chiens/chats */
+.card img {
+    width: 80%;
+    object-fit: contain;
+}
+
+/* * marge gauche image chiens/chats desktop */
+.pets {
+    margin-left: 0.5rem;
+}
+
+
+/* * border radius cartes Chiens et Chats dans Articles */
+.pets {
+    border-radius: 15%;
+}
+
+/* * Largeur des cartes Chiens et Chats dans Articles */
+.articles {
+    width: 90%;
+}
+
+/* * catégories taille, couleur, matériaux, descriptions et prix */
+.filterDiv {
+    float: left;
+    color: #22ff00;
+    width: 100%;
+    text-align: center;
+    margin: 2px;
+    display: none;
+    gap: 1rem;
+}
+
+/* * texte des catégories taille, couleur, matériaux, descriptions et prix */
+span {
+    color: white;
+}
+
+/* * Affichage des cartes Chiens et Chats dans Articles */
+.show {
+    display: block;
+}
+
+/* * Affichage des cartes Chiens et Chats dans Articles */
+.container {
+    margin-top: 0.5rem;
+}
+
+/* * Style des boutons (Tous, Chiens et le bouton Chats) */
+.btn {
+    text-decoration: none;
+    padding: 10px;
+    font-family: arial;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+}
+
+/* * au passage de la souris sur le bouton */
+.btn:hover {
+    background-color: #0f0;
+    /* * Neon green on hover */
+    color: #ffffff;
+    box-shadow: 0 0 12px #0f0;
+}
+
+/* * lorsque l'on click sur le bouton */
+.btn.active {
+    background-color: #62ff00;
+    color: rgb(255, 0, 251);
+}
+
+/* * padding background témoignages section */
+.une {
+    padding: 16px;
+    background: rgb(0, 0, 0);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+}
+
+/* * Témoignages */
+.text-une {
+    font-size: 1.875rem;
+    font: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    border: 1px solid white;
+}
+
+/* * bordures blanches autour Témoignages*/
+.grid {
+    border: 1px solid white;
+}
+
+/* * disposition éléments Témoignages */
+.tem1 {
+    background: #000000;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem;
+    padding: 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+/* * disposition initiales */
+.entete {
+    width: 1.875rem;
+    height: 1.875rem;
+    background-size: 100;
+    border-radius: 100;
+    display: flex;
+    justify-content: center;
+    color: rgb(9, 255, 0);
+    font-weight: 700;
+    font: bold;
+    font-size: small;
+    margin-right: 4px;
+    align-items: center;
+    border: 2px solid green;
+    border-radius: 50%;
+    width: 25%;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+/* * textes prénoms et type de bénéficiaire */
+.une-sous-font {
+    font-size: small;
+    color: white;
+    font: 600;
+}
+
+/* * commentaires témoignages */
+.une-comm-font {
+    font-size: ;
+    color: gray;
+    font: 700;
+    font-style: italic;
+}
+
+/* * disposition étoiles témoignages section */
+.stars {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* * étoiles */
+.fa,
+.fa-star {
+    display: flex;
+    color: rgb(89, 255, 0);
+    margin-left: 2rem;
+    align-items: center;
+}
+
+/* * Formulaire de contact */
+#contact {
+    margin-left: 25%;
+    margin-top: 2rem;
+    width: 50%;
+    border: 2px solid rgb(0, 255, 0);
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* * directOptic&audition */
+.agrees {
+    margin-top: 0.1em;
+    color: white;
+    font-size: 0.5em;
+    text-decoration-style: none;
+}
+
+
+/* * media queries */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* * Disposition du menu burger */
+    .hamburger-menu {
+        display: flex;
+        right: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        /* * transform: rotate(45deg) translate(5px, 5px); */
+        transform: translateY(0px) rotate(-135deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+
+        transform: translateY(0px) rotate(135deg);
+    }
+
+    /* * - 1 - Articles section */
+
+    .container {
+        max-width: 1000px;
+        position: static;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 20px;
+        background-color: #000000;
+    }
+
+    .container .filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        color: #ffffff;
+    }
+
+    .container button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 10%;
+        background-color: #30c52d;
+    }
+
+    .container button.active {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        background-color: #000000;
+    }
+
+    .card img {
+        object-fit: contain;
+    }
+
+    .card h3 {
+        display: flex;
+    }
+
+    #contact {
+        margin-left: 25%;
+        margin-top: 2rem;
+        width: 50%;
+        border: 2px solid rgb(0, 255, 0);
+        display: block;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    /* * marge gauche image chiens/chats mobile */
+    .pets {
+        margin-left: 0.5rem;
+    }
+
+}
+
+/* * rend le texte adaptable à la taille de la fenêtre */
+html {
+    font-size: clamp(1rem, 2vw, 0.5rem);
+}
+
+/* * crop image chat en cercle  */
+.section-image-chat {
+    width: 50%;
+    /* * crop l'image en cercle */
+    clip-path: circle(50% at 50% 50%);
+    /* // - 3 - crop l'image en polygon 8 côtés */
+    /* // - 3 - clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
+
+}
+
+/* * couleur texte droits */
+h6 {
+    color: white;
+}
+
+/*_________________flèche retour en haut____________________*/
+/* * flèche retour en haut  */
+.back-to-top {
+    /* *  Basic styling  */
+    background-color: oklch(100% 0 0);
+    border: 2px solid currentColor;
+    border-radius: 0.5rem;
+    display: inline-block;
+    padding: 0.3rem;
+    /* *  Hidden by default  */
+    position: fixed;
+    inset: auto 2rem 2rem auto;
+}
+
+/* * utiliser la couleur du texte  */
+.back-to-top:is(:link, :visited) {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* * masquer le texte retour en haut  */
+.back-to-top span {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.back-to-top {
+    --green: oklch(85.33% 0.15 141.46);
+}
+
+/* * animation progression de couleur la flèche  */
+@keyframes progress {
+    0% {
+        --progress: 0%;
+    }
+
+    100% {
+        --progress: 100%;
+    }
+}
+
+/* * animation de la flèche  */
+.back-to-top {
+    --green: oklch(85.33% 0.15 141.46);
+    animation: progress linear;
+    animation-timeline: scroll();
+}
+
+/* * rotation de la flèche  */
+.back-to-top svg {
+    transform: rotate(var(--angle));
+}
+
+/* * propriete de la progression de la fleche  */
+@property --progress {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: -90deg;
+}
+
+@keyframes progress {
+    0% {
+        --progress: 0%;
+        --angle: 90deg;
+    }
+
+    2% {
+        --angle: 90deg;
+
+    }
+
+    100% {
+        --progress: 100%;
+    }
+}
+
+@supports not (animation-timeline: scroll) {
+    .back-to-top {
+        background: var(--green);
+    }
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* * Disposition Bouton Appel gratuit */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* * Disposition Bouton Appel gratuit */
+.btn:hover {
+    background: #153814;
+    text-decoration: none;
+}
+
+/* * taille et texte, ombre Bouton Appel gratuit */
+.btn {
+    text-decoration: none;
+    padding: 10px;
+    font-family: arial;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: #3ec615;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+}
+
+/* * Ombre au passage de la souris sur Bouton Appel gratuit */
+.btn:hover {
+    padding: 10px;
+    box-shadow: 1px 1px 4px #ffffff;
+    -webkit-box-shadow: 1px 1px 4px #ffffff;
+    -moz-box-shadow: 1px 1px 4px #ffffff;
+}
+
+/* * Bouton Testez gratuitement */
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    /* * Neon pink */
+    color: #1a1a1a;
+    /* * Dark text */
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 0 8px #ff00ff;
+    border-radius: 10%;
+}
+
+/* * au passage de la souris sur Bouton Testez gratuitement */
+button:hover {
+    background-color: #0f0;
+    /* * Neon green on hover */
+    color: #1a1a1a;
+    box-shadow: 0 0 12px #0f0;
+}
+
+/* * lorsque l'on click sur Bouton Testez gratuitement */
+button:active {
+    transform: scale(0.98);
+    /* * Slight press effect */
+}
+
+/* __________________________________________________ */

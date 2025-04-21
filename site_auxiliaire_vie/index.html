@@ -1,31 +1,400 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil - Auxiliaire de Vie</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuxiCare - Services d'Auxiliaire de Vie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-gray-50 font-sans">
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
 
-<body>
-    <header>
-        <h1>Auxiliaire de Vie</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <!-- Header -->
+    <header class="bg-green-700 text-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-hands-helping text-2xl"></i>
+                <h1 id="AuxiCare" class="text-2xl font-bold">AuxiCare</h1>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="navbar">
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#AuxiCare">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <h2>Bienvenue</h2>
-        <p>
-            Je vous accompagne au quotidien avec bienveillance, respect et
-            professionnalisme.
-        </p>
-    </main>
-    <footer>&copy; 2025 Auxiliaire de Vie</footer>
-</body>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 left-0 h-full w-64 bg-green-800 text-white z-50 p-4 transform -translate-x-full transition-transform duration-300" id="mobileMenu">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-hands-helping text-2xl"></i>
+                <h2 class="text-xl font-bold">AuxiCare</h2>
+            </div>
+            <button id="closeMobileMenu" class="text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4">
+            <a href="#AuxiCare" class="block py-2 hover:bg-green-700 px-2 rounded">Accueil</a>
+            <a href="#services" class="block py-2 hover:bg-green-700 px-2 rounded">Services</a>
+            <a href="#about" class="block py-2 hover:bg-green-700 px-2 rounded">À propos</a>
+            <a href="#contact" class="block py-2 hover:bg-green-700 px-2 rounded">Contact</a>
+            <a href="#" id="mobileLoginBtn" class="bg-white text-green-700 px-4 py-2 rounded-lg font-medium hover:bg-green-50 transition mt-4 text-center">Espace Pro</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-green-600 text-white pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Soins à domicile personnalisés</h2>
+                <p class="text-xl mb-6">Des services d'auxiliaire de vie qualifiés pour accompagner vos proches dans leur quotidien.</p>
+                abducted
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-green-700 px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition text-center">Prendre rendez-vous</a>
+                    <a href="#services" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition text-center">Nos services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1579684385127-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=880&q=80" alt="Auxiliaire de vie aidant une personne âgée" class="rounded-lg shadow-xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-utensils text-5xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Aide aux repas</h3>
+                        <p class="text-gray-600 mb-4">Préparation des repas adaptés et aide à la prise alimentaire dans le respect des goûts et régimes.</p>
+                        <div class="flex items-center text-blue-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-shower text-5xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Toilette et hygiène</h3>
+                        <p class="text-gray-600 mb-4">Aide à la toilette et à l'habillage dans le respect de l'intimité et de la dignité de la personne.</p>
+                        <div class="flex items-center text-green-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-home text-5xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Ménage et courses</h3>
+                        <p class="text-gray-600 mb-4">Entretien du logement et aide aux courses pour maintenir un environnement sain et sécurisé.</p>
+                        <div class="flex items-center text-purple-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-pills text-5xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Gestion des médicaments</h3>
+                        <p class="text-gray-600 mb-4">Aide à la prise des médicaments selon l'ordonnance médicale et suivi du traitement.</p>
+                        <div class="flex items-center text-yellow-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-walking text-5xl text-red-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Mobilité et accompagnement</h3>
+                        <p class="text-gray-600 mb-4">Aide aux déplacements et accompagnement dans les sorties pour maintenir une vie sociale.</p>
+                        <div class="flex items-center text-red-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300 hover:-translate-y-2">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-5xl text-indigo-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Soutien psychologique</h3>
+                        <p class="text-gray-600 mb-4">Écoute active et soutien moral pour préserver le bien-être émotionnel de la personne.</p>
+                        <div class="flex items-center text-indigo-600">
+                            <span class="mr-2">En savoir plus</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=880&q=80" alt="Équipe d'auxiliaires de vie" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Notre Engagement</h2>
+                    <p class="text-gray-600 mb-4">AuxiCare est une équipe de professionnels dévoués qui mettent leur expertise et leur humanité au service des personnes âgées ou en situation de dépendance.</p>
+                    <p class="text-gray-600 mb-6">Nos auxiliaires de vie sont rigoureusement sélectionnés, formés et supervisés pour offrir des services de qualité adaptés à chaque situation.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Professionnalisme</h3>
+                                <p class="text-gray-600">Des intervenants diplômés et expérimentés</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Disponibilité</h3>
+                                <p class="text-gray-600">Services 7j/7 selon vos besoins</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Personnalisation</h3>
+                                <p class="text-gray-600">Un plan d'accompagnement sur mesure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Témoignages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold mr-4">M.D</div>
+                        <div>
+                            <h3 class="font-semibold">Marie Dupont</h3>
+                            <p class="text-sm text-gray-600">Fille de bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"L'auxiliaire qui vient aider ma mère est formidable. Elle est patiente, attentionnée et très professionnelle."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">J.L</div>
+                        <div>
+                            <h3 class="font-semibold">Jean Lambert</h3>
+                            <p class="text-sm text-gray-600">Bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Grâce à mon auxiliaire, je peux rester chez moi en toute sécurité. Elle m'aide pour les tâches difficiles."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">S.T</div>
+                        <div>
+                            <h3 class="font-semibold">Sophie Tremblay</h3>
+                            <p class="text-sm text-gray-600">Fille de bénéficiaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"L'équipe d'AuxiCare a su s'adapter aux besoins spécifiques de mon père. Le service est flexible."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contactez-nous</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Informations de contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Adresse</h4>
+                                <p class="text-gray-600">123 Rue des Services, 75000 Paris</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Téléphone</h4>
+                                <p class="text-gray-600">01 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-envelope text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600"><a href="mailto:contact@auxicare.fr">contact@auxicare.fr</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-clock text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Horaires</h4>
+                                <p class="text-gray-600">Lundi-Vendredi: 8h-19h<br>Samedi: 9h-13h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Suivez-nous</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="bg-green-800 text-white p-3 rounded-full hover:bg-green-900 transition"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form action="https://formspree.io/f/mnqekgvo" method="POST" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-800 font-medium">Nom :</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-800 font-medium">Email :</label>
+                            <input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-800 font-medium">Message :</label>
+                            <textarea id="message" name="message" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 h-32"></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white text-center py-4">
+        <p>&copy; 2025 Auxiliaire de Vie. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
