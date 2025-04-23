@@ -1,0 +1,153 @@
+clairpets/
+│
+├── index.html
+├── style/
+│   └── main.css
+├── js/
+│   └── script.js
+├── img/
+│   └── tes-images.jpg/png/svg...
+├── favicon.ico
+└── README.md
+
+clairpets/
+├── index.html
+├── style/
+│   └── main.css
+├── js/
+│   └── script.js
+├── img/
+│   ├── favicon.ico
+│   ├── chat-noir-et-blanc.jpg
+│   ├── 2419b0346ce9b26e2070499fb9604a72d6a29337_original.jpeg
+│   ├── husky.jpg
+│   ├── xC6yKJ6ienhqT2-iU0oPr.png
+│   ├── vue-rapprochee-du-chien-detournant-regard_1048944-21271398.avif
+│   ├── 527910887.jpg
+│   ├── 0000.avif
+│   └── istockphoto-1397756029-612x612.jpg
+├── README.md
+
+index.html
+===========
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="keywords" content="hypermétropie, myopie, astigmatisme, lunettes">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <title>Clair'Pets</title>
+</head>
+<body id="content">
+    <!-- Inclure ici la navbar, les sections, etc. (extraits dans index.html pour simplification) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+style/main.css
+==============
+/* Contiendra tout le CSS déplacé du HTML, exemple : */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.scroll {
+    display: flex;
+    overflow-x: auto;
+}
+
+/* Ajouter ici toutes les autres règles CSS */
+
+js/script.js
+=============
+// Script JS déplacé depuis l'HTML, exemple :
+
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+}
+
+function w3AddClass(element, name) {
+    var i, arr1 = element.className.split(" "), arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+function w3RemoveClass(element, name) {
+    var i, arr1 = element.className.split(" "), arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    filterSelection("all");
+    const btnContainer = document.getElementById("myBtnContainer");
+    const btns = btnContainer.getElementsByClassName("btn");
+    for (let btn of btns) {
+        btn.addEventListener("click", function () {
+            const current = document.getElementsByClassName("active");
+            if (current.length) current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+});
+
+README.md
+=========
+# 🕶️ Clair'Pets
+
+**Clair'Pets** est une boutique en ligne de lunettes pour animaux 🐶🐱. Ce site vitrine présente la marque, les produits proposés, ainsi qu'un formulaire de contact.
+
+## 📁 Structure
+
+```bash
+clairpets/
+├── index.html
+├── style/
+│   └── main.css
+├── js/
+│   └── script.js
+├── img/
+│   └── images et icônes du site
+└── README.md
+```
+
+## ⚖️ Fonctionnalités
+- Filtrage des produits par type (chats, chiens, lunettes)
+- Responsive design
+- Témoignages clients
+- Formulaire de contact
+
+## ⚡ Technologies
+- HTML5
+- CSS3
+- JavaScript Vanilla
+- Font Awesome
+
+## 🚀 Démo
+Mettre en ligne avec GitHub Pages ou Netlify.
+
+## 📱 Capture d'écran
+![screenshot](img/screenshot.jpg)
+
+## ✉ Contact
+Conçu par [Ton Nom] – contact : [ton@email.com]
